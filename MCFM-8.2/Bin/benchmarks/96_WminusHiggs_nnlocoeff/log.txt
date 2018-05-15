@@ -1,0 +1,1822 @@
+
+
+
+ maximum number of threads available:            8
+
+
+
+ >>>>>>>>           8  threads <<<<<<<<
+
+
+
+
+
+
+
+
+
+
+ ************** MCFM - version 8.1 ****************
+ *                                                *
+ * MCFM, v8.1                 November 4th, 2016  *
+ *                                                *
+ * Authors: John Campbell, Keith Ellis,           *
+ *          Walter Giele, Ciaran Williams         *
+ *         (johnmc@fnal.gov, ellis@fnal.gov,      *
+ *          giele@fnal.gov,ciaranwi@buffalo.edu)  *
+ *                                                *
+ * For details see:                               *
+ *                                                *
+ *  Color singlet production at NNLO in MCFM      *
+ *   R. Boughezal, J. Campbell, R.K. Ellis,       *
+ *    C. Focke, W. Giele, X. Liu, F. Petriello,   *
+ *    C. Williams,  arXiv:1605.08011              *
+ *    (overview of NNLO implementation in MCFM)   *
+ *                                                *
+ *  A study of weak corrections to Drell-Yan,     *
+ *   top-quark pair and di-jet production at      *
+ *    high energies with MCFM                     *
+ *   J. M. Campbell, D. Wackeroth, J. Zhou,       *
+ *   arXiv:1608.03356 (weak corrections in MCFM)  *
+ *                                                *
+ *  arXiv:1603.02663 (diphotons at NNLO)          *
+ *  arXiv:1601.00658 (VH at NNLO)                 *
+ *                                                *
+ *  arXiv:1502.02990 (VBF and VBS Higgs)          *
+ *  arXiv:1403.2641  (Triphoton production)       *
+ *  arXiv:1312.1628  (gg->WW, Higgs interference) *
+ *  arXiv:1311.3589  (gg->ZZ, Higgs interference) *
+ *  Phys.Rev.D87:114006, arXiv:1302.3856          *
+ *  (tZ, tH -- with R. Rontsch)                   *
+ *  arXiv:1211.6390 (DM, P. Fox and C. Williams)  *
+ *  JHEP 1211:162 (2012), arXiv:1208.0566         *
+ *  (Z+gam+jet,Z+gam+gam -- with H. Hartanto)     *
+ *  arXiv:1204.1513 (top production+decay)        *
+ *  JHEP 1207:052 (2012), arXiv:1204.5678 (ttW)   *
+ *  JHEP 1110:005 (2011), arXiv:1107.5569         *
+ *         (gg->WW,Higgs intference)              *
+ *  JHEP 1107:018 (2011), arXiv:1105.0020         *
+ *         (diboson update)                       *
+ *  JHEP 1103:027 (2011), arXiv:1011.6647         *
+ *         (Wbb for mb>0, with S. Badger)         *
+ *  Phys.Rev.D81:074023, arXiv:1001.4495 (H+2jet) *
+ *                                                *
+ *  P.R.L. 102:142001, arXiv:0903.0005 [hep-ph]   *
+ *    (t-channel single top + explicit b,         *
+ *      JC, R.Frederix, F.Maltoni, F.Tramontano)  *
+ *  N.P.B 726:109(2005), hep-ph/0506289 (W+t)     *
+ *  Phys.Rev.D70:094012, hep-ph/0408158 (Sngl Top)*
+ *       (with Francesco Tramontano)              *
+ *                                                *
+ *  Phys.Rev.D65:113007, hep-ph/0202176 (W,Z+2j)  *
+ *  Phys.Rev.D62:114012, hep-ph/0006304 (W,Z+bb)  *
+ *  Phys.Rev.D60:113006, hep-ph/9905386 (diboson) *
+ *                                                *
+ * On the web:  http://mcfm.fnal.gov/             *
+ **************************************************
+
+ * Using input file named Store/benchmarks/96_WminusHiggs_nnlocoeff/input.DAT                                                                                                                                                                                                             
+
+ * [Flags to specify the mode in which MCFM is run]                                          
+ *                   -1            [nevtrequested] 
+ *                    F            [creatent] 
+ *                    F            [dswhisto] 
+ *                    T            [writerefs] 
+ *                    F            [writetop] 
+ *                    F            [writedat] 
+ *                    F            [writegnu] 
+ *                    F            [writeroot] 
+ *                    F            [writepwg] 
+
+ * [General options to specify the process and execution]                                    
+ *                   96            [nproc] 
+ *            nnlocoeff            [part] 
+ * benchmark                       [runstring] 
+ *           14000.0000            [sqrts] 
+ *                    1            [ih1] 
+ *                    1            [ih2] 
+ *             125.0000            [hmass] 
+ *               1.0000            [scale] 
+ *               1.0000            [facscale] 
+ * m(3456)                         [dynamicscale] 
+ *                    F            [zerowidth] 
+ *                    F            [removebr] 
+ *                    4            [itmx1] 
+ *                20000            [ncall1] 
+ *                   10            [itmx2] 
+ *                20000            [ncall2] 
+ *             2.00E-01            [taucut] 
+ *                    F            [dryrun] 
+ *                    T            [Qflag] 
+ *                    T            [Gflag] 
+ * none                            [ewcorr] 
+
+ * [Heavy quark masses]                                                                      
+ *             173.3000            [top mass] 
+ *               4.6600            [bottom mass] 
+ *               1.2750            [charm mass] 
+
+ * [Pdf selection]                                                                           
+ *              CT14.NN            [pdlabel] 
+ * MSTW2008nlo90cl.LHgr            [LHAPDF group] 
+ *                   -1            [LHAPDF set] 
+
+ * [Jet definition and event cuts]                                                           
+ *               0.0000            [m34min] 
+ *           13998.6000            [m34max] 
+ *               0.0000            [m56min] 
+ *           13998.6000            [m56max] 
+ *               0.0000            [m3456min] 
+ *           14000.0000            [m3456max] 
+ *                    T            [inclusive] 
+ *                 ankt            [algorithm] 
+ *        30.00, 1000000.00        [ptjet range] 
+ *         0.00,       2.40        [etajet range] 
+ *               0.5000            [Rcut] 
+ *                    T            [makecuts] 
+ *        20.00, 1000000.00        [leptpt range] 
+ *         0.00,       2.40        [leptrap range] 
+ *         0.00,       0.00        [leptveto] 
+ *              30.0000            [misspt] 
+ *        20.00, 1000000.00        [leptpt2 range] 
+ *         0.00,       2.40        [leptrap2 range] 
+ *         0.00,       0.00        [leptveto2] 
+ *               0.0000            [mtrans34cut] 
+ *               0.0000            [Rjlmin] 
+ *               0.0000            [Rllmin] 
+ *               0.0000            [delyjjmin] 
+ *                    T            [jetsopphem] 
+ *                    0            [lbjscheme] 
+ *         0.00, 1000000.00        [ptbjet range] 
+ *         0.00,      99.00        [etabjet range] 
+
+ * [Settings for photon processes]                                                           
+ *             GdRG__LO            [fragset] 
+ *               1.0000            [frag_scale] 
+ *        40.00, 1000000.00        [gammpt range] 
+ *         0.00,       2.50        [gammrap range] 
+ *              25.0000            [gammpt2] 
+ *              25.0000            [gammpt3] 
+ *               0.0000            [Rgalmin] 
+ *               0.4000            [Rgagamin] 
+ *               0.0000            [Rgajetmin] 
+ *               0.4000            [cone_ang] 
+ *               0.5000            [epsilon_h] 
+ *               1.0000            [n_pow] 
+
+ * [Anomalous couplings of the W and Z]                                                      
+ *               0.0000            [delg1_z] 
+ *               0.0000            [delk_z] 
+ *               0.0000            [delk_g] 
+ *               0.0000            [lambda_z] 
+ *               0.0000            [lambda_g] 
+ *               0.0000            [h1Z] 
+ *               0.0000            [h1gam] 
+ *               0.0000            [h2Z] 
+ *               0.0000            [h2gam] 
+ *               0.0000            [h3Z] 
+ *               0.0000            [h3gam] 
+ *               0.0000            [h4Z] 
+ *               0.0000            [h4gam] 
+ *               2.0000            [tevscale] 
+
+ * [Anomalous width of the Higgs]                                                            
+ *               1.0000            [Gamma_H/Gamma_H(SM)] 
+ * [Technical parameters that should not normally be changed]
+
+ *                    F            [debug] 
+ *                    T            [verbose] 
+ *                    T            [new_pspace] 
+ *                    T            [spira] 
+ *                    F            [noglue] 
+ *                    F            [ggonly] 
+ *                    F            [gqonly] 
+ *                    F            [omitgg] 
+ *                    T            [clustering] 
+ *                    F            [realwt] 
+ *                    0            [colourchoice] 
+ *             1.00E-08            [rtsmin] 
+ *             1.00E-09            [cutoff] 
+ *               0.0100            [aii] 
+ *               0.0100            [aif] 
+ *               0.0100            [afi] 
+ *               0.0100            [aff] 
+ *               0.0100            [bfi] 
+ *               0.0100            [bff] 
+ Warning: cut1,cut2 not specified
+
+ Chooser:process chosen by nproc=          96
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))                                   *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+
+ ****************************************
+ *     Cross section in femtobarns      *
+ ****************************************
+
+ Chooser:process chosen by nproc=          96
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))                                   *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ nnlo below warmup integration
+
+ input parameters for vegas:  ndim= 12  ncall=      200000.
+                              it=    0  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+
+ ****************** Basic mass cuts *****************
+ *                                                  *
+ *              0.00  <   m34  < 13998.60           *
+ *              0.00  <   m56  < 13998.60           *
+ *              0.00  <  m3456 < 14000.00           *
+ ****************************************************
+
+ ****************** Generic cuts ********************
+ *                                                  *
+ *        pt(lepton)      >    20.00 GeV            *
+ *      0.000 <    |eta(lepton)|   <     2.400      *
+ *       pt(missing)      >    30.00 GeV            *
+ *        pt(lepton)      >    20.00 GeV            *
+ *      0.000 <  |eta(2nd lepton)| <     2.400      *
+ *  (3,4) transverse mass >     0.00 GeV            *
+ *      R(jet,lepton)     >     0.00                *
+ *     R(lepton,lepton)   >     0.00                *
+ * |eta(jet1)-eta(jet2)|  >     0.00                *
+ ****************************************************
+
+ ************** Dynamic scale choice ****************
+ *                                                  *
+ *                 RENORMALIZATION                  *
+ *       mu_ren  =  1.00 x m(3456)                  *
+ *                                                  *
+ *                  FACTORIZATION                   *
+ *       mu_fac  =  1.00 x m(3456)                  *
+ *                                                  *
+ ****************************************************
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  = 0.24817568       accum. integral = 0.24817568    *
+*  std. dev. = 0.11212768E-01   accum. std. dev = 0.11212768E-01*
+*   max. wt. =    0.00000                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  = 0.26004383       accum. integral = 0.25947893    *
+*  std. dev. = 0.25066647E-02   accum. std. dev = 0.24462815E-02*
+*   max. wt. =    0.00000                                       *
+*                                                               *
+**************   chi**2/iteration =  1.056       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  = 0.25353183       accum. integral = 0.25543945    *
+*  std. dev. = 0.16810806E-02   accum. std. dev = 0.13854760E-02*
+*   max. wt. =    0.00000                                       *
+*                                                               *
+**************   chi**2/iteration =  2.528       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  = 0.25875006       accum. integral = 0.25699651    *
+*  std. dev. = 0.14703025E-02   accum. std. dev = 0.10083346E-02*
+*   max. wt. =    0.00000                                       *
+*                                                               *
+**************   chi**2/iteration =  2.580       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  = 0.25792962       accum. integral = 0.25730358    *
+*  std. dev. = 0.14397558E-02   accum. std. dev = 0.82592363E-03*
+*   max. wt. =    0.00000                                       *
+*                                                               *
+**************   chi**2/iteration =  2.007       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_below_PS1.grid                                                *
+ ****************************************************
+ Reached batchPrecisionGoal with                200000  calls per iteration
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ nnlo virt above warmup integration
+
+ input parameters for vegas:  ndim= 14  ncall=      200000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+
+ *********** Basic jet-defining parameters **********
+ *     (Anti-kt algorithm - see arXiv:0802.1189)    *
+ *                                                  *
+ *           pt(jet)   >  30.0000                   *
+ *         0.000 < |pseudo-rap(jet)| <      2.400   *
+ * pseudo-cone size, R :   0.5000                   *
+ *                                                  *
+ *    Cross-section defined by:   1 <= jets <= 1    *
+ ****************************************************
+[[[3434mm34m
+
+[      ____  __________  __                    
+
+      ____  __________  __                    
+     / __ \/ ____/ __ \/ /   ____  ____  ____ 
+34     / __ \/ ____/ __ \/ /   ____  ____  ____ m
+
+      ____  __________  __                    
+     / __ \/ ____/ __ \/ /   ____  ____  ____ 
+    / / / / /   / / / / /   / __ \/ __ \/ __ \
+   / /_/ / /___/ /_/ / /___/ /_/ / /_/ / /_/ /
+   \___\_\____/_____/_____/\____/\____/ .___/ 
+                                     /_/      
+   ___git___: 2.0.2 | __authors__: S.C., K.E., G.Z.[39m
+[34m      ____  __________  __                    
+
+    / / / / /   / / / / /   / __ \/ __ \/ __ \
+   / /_/ / /___/ /_/ / /___/ /_/ / /_/ / /_/ /
+     / __ \/ ____/ __ \/ /   ____  ____  ____    \___\_\____/_____/_____/\____/\____/ .___/ 
+
+    / / / / /   / / / / /   / __ \/ __ \/ __ \      ____  __________  __                    
+
+    / / / / /   / / / / /   / __ \/ __ \/ __ \   / /_/ / /___/ /_/ / /___/ /_/ / /_/ / /_/ /
+
+     / __ \/ ____/ __ \/ /   ____  ____  ____ 
+    / / / / /   / / / / /   / __ \/ __ \/ __ \   / /_/ / /___/ /_/ / /___/ /_/ / /_/ / /_/ /
+   \___\_\____/_____/_____/\____/\____/ .___/ 
+                                     /_/      
+                                     /_/      
+
+   ___git___: 2.0.2 | __authors__: S.C., K.E., G.Z.   \___\_\____/_____/_____/\____/\____/ .___/    ___git___: 2.0.2 | __authors__: S.C., K.E., G.Z.
+                                     /_/      
+   / /_/ / /___/ /_/ / /___/ /_/ / /_/ / /_/ /   ___git___: [2.0.2 | __authors__: S.C., K.E., G.Z.39[[39m
+39m
+m
+
+   \___\_\____/_____/_____/\____/\____/ .___/ 
+                                     /_/      
+   ___git___: 2.0.2 | __authors__: S.C., K.E., G.Z.[39m
+ Poles cancelled!
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  = -3.0241890       accum. integral = -3.0241890    *
+*  std. dev. = 0.13136420       accum. std. dev = 0.13136420    *
+*   max. wt. =   0.351503E-01                                   *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  = -2.9738169       accum. integral = -2.9748507    *
+*  std. dev. = 0.19014551E-01   accum. std. dev = 0.18818435E-01*
+*   max. wt. =   0.351503E-01                                   *
+*                                                               *
+**************   chi**2/iteration = 0.1426       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  = -2.9875001       accum. integral = -2.9843086    *
+*  std. dev. = 0.10931470E-01   accum. std. dev = 0.94524029E-02*
+*   max. wt. =   0.351503E-01                                   *
+*                                                               *
+**************   chi**2/iteration = 0.2397       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  = -2.9942383       accum. integral = -2.9890386    *
+*  std. dev. = 0.99106679E-02   accum. std. dev = 0.68401294E-02*
+*   max. wt. =   0.351503E-01                                   *
+*                                                               *
+**************   chi**2/iteration = 0.3347       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  = -2.9769144       accum. integral = -2.9849258    *
+*  std. dev. = 0.95466996E-02   accum. std. dev = 0.55602354E-02*
+*   max. wt. =   0.351503E-01                                   *
+*                                                               *
+**************   chi**2/iteration = 0.5170       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_virt_above_PS1.grid                                           *
+ ****************************************************
+ Reached batchPrecisionGoal with                200000  calls per iteration
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ nnlo real above warmup integration
+
+ input parameters for vegas:  ndim= 16  ncall=     2000000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  1.7460711       accum. integral =  1.7460711    *
+*  std. dev. = 0.22724880       accum. std. dev = 0.22724880    *
+*   max. wt. =   0.116120                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  3.8425105       accum. integral =  1.8344976    *
+*  std. dev. =  1.0829133       accum. std. dev = 0.22240456    *
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  3.554       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  2.3469756       accum. integral =  1.9915040    *
+*  std. dev. = 0.33464740       accum. std. dev = 0.18522881    *
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  2.595       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  2.7309107       accum. integral =  2.2532396    *
+*  std. dev. = 0.25023134       accum. std. dev = 0.14887828    *
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  3.607       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  2.5757611       accum. integral =  2.4381279    *
+*  std. dev. = 0.12845118       accum. std. dev = 0.97255358E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  3.378       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ Reached batchPrecisionGoal with               2000000  calls per iteration
+ warmup result:  -0.28949430632700190      +/-   9.7417672995209259E-002
+ first full integration
+ ipsgen            1  contribution
+ nnlo below selected
+ Chooser:process chosen by nproc=          96
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))                                   *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_below_PS1.grid                                               *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 12  ncall=      800000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  = 0.25561776       accum. integral = 0.25561776    *
+*  std. dev. = 0.72349810E-03   accum. std. dev = 0.72349810E-03*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  = 0.25690068       accum. integral = 0.25626658    *
+*  std. dev. = 0.71524895E-03   accum. std. dev = 0.50864882E-03*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.574       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  = 0.25632982       accum. integral = 0.25628813    *
+*  std. dev. = 0.70736369E-03   accum. std. dev = 0.41296669E-03*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7937       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  = 0.25691953       accum. integral = 0.25645227    *
+*  std. dev. = 0.69676451E-03   accum. std. dev = 0.35525627E-03*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7319       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  = 0.25659673       accum. integral = 0.25648210    *
+*  std. dev. = 0.69648843E-03   accum. std. dev = 0.31646621E-03*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.5579       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_below_PS1.grid                                                *
+ ****************************************************
+ chisq last:   0.55792272309226887     
+ partial warmup result:  -0.29031578501018229      +/-   9.7414685816966898E-002
+ first full integration
+ ipsgen            1  contribution
+ nnlo virt above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_virt_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 14  ncall=      800000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  = -2.9841973       accum. integral = -2.9841973    *
+*  std. dev. = 0.49102656E-02   accum. std. dev = 0.49102656E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  = -2.9918683       accum. integral = -2.9879826    *
+*  std. dev. = 0.49749524E-02   accum. std. dev = 0.34947278E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.192       ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  = -2.9780624       accum. integral = -2.9846593    *
+*  std. dev. = 0.49237636E-02   accum. std. dev = 0.28498542E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.942       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  = -2.9864569       accum. integral = -2.9851085    *
+*  std. dev. = 0.49372343E-02   accum. std. dev = 0.24681889E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.330       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  = -2.9906615       accum. integral = -2.9862311    *
+*  std. dev. = 0.49033620E-02   accum. std. dev = 0.22046384E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.253       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_virt_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:    1.2534654338697804     
+ partial warmup result:  -0.29162105683121320      +/-   9.7280857448763719E-002
+ first full integration
+ ipsgen            1  contribution
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=     8000000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration   1) **************
+*                                                               *
+*  integral  =  2.8375145       accum. integral =  2.8375145    *
+*  std. dev. = 0.69455871E-01   accum. std. dev = 0.69455871E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  0.000       ****************
+
+
+************* Integration by Vegas (iteration   2) **************
+*                                                               *
+*  integral  =  2.8230003       accum. integral =  2.8270343    *
+*  std. dev. = 0.43091979E-01   accum. std. dev = 0.36617060E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.3122E-01   ****************
+
+
+************* Integration by Vegas (iteration   3) **************
+*                                                               *
+*  integral  =  2.7248537       accum. integral =  2.7783117    *
+*  std. dev. = 0.38355182E-01   accum. std. dev = 0.26485327E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.863       ****************
+
+
+************* Integration by Vegas (iteration   4) **************
+*                                                               *
+*  integral  =  2.7813032       accum. integral =  2.7793276    *
+*  std. dev. = 0.36934341E-01   accum. std. dev = 0.21523390E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.245       ****************
+
+
+************* Integration by Vegas (iteration   5) **************
+*                                                               *
+*  integral  =  2.8254524       accum. integral =  2.7934489    *
+*  std. dev. = 0.32401918E-01   accum. std. dev = 0.17928409E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.286       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:    1.2855219789325976     
+ result:    6.3699935541353003E-002 +/-   1.8066223610096507E-002
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=    12800000.
+                              it=    6  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  =  2.7693168       accum. integral =  2.7809901    *
+*  std. dev. = 0.17354061E-01   accum. std. dev = 0.12469279E-01*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.216       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  =  2.7666899       accum. integral =  2.7754575    *
+*  std. dev. = 0.15696961E-01   accum. std. dev = 0.97636024E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.098       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  =  2.7734907       accum. integral =  2.7747929    *
+*  std. dev. = 0.13667654E-01   accum. std. dev = 0.79446971E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9434       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  =  2.7583991       accum. integral =  2.7704802    *
+*  std. dev. = 0.13297065E-01   accum. std. dev = 0.68200997E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9654       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  =  2.7680608       accum. integral =  2.7699853    *
+*  std. dev. = 0.13449250E-01   accum. std. dev = 0.60827126E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8611       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:   0.86113079671645132     
+ result:    4.0236345887296743E-002 +/-   6.4776518986165597E-003
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=    20480000.
+                              it=   11  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration  11) **************
+*                                                               *
+*  integral  =  2.7706021       accum. integral =  2.7701101    *
+*  std. dev. = 0.12081935E-01   accum. std. dev = 0.54330140E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7753       ****************
+
+
+************* Integration by Vegas (iteration  12) **************
+*                                                               *
+*  integral  =  2.7721269       accum. integral =  2.7705202    *
+*  std. dev. = 0.10753003E-01   accum. std. dev = 0.48491987E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7074       ****************
+
+
+************* Integration by Vegas (iteration  13) **************
+*                                                               *
+*  integral  =  2.7840686       accum. integral =  2.7727321    *
+*  std. dev. = 0.10977982E-01   accum. std. dev = 0.44357267E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.7546       ****************
+
+
+************* Integration by Vegas (iteration  14) **************
+*                                                               *
+*  integral  =  2.7500400       accum. integral =  2.7695528    *
+*  std. dev. = 0.10988923E-01   accum. std. dev = 0.41132652E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9785       ****************
+
+
+************* Integration by Vegas (iteration  15) **************
+*                                                               *
+*  integral  =  2.7676677       accum. integral =  2.7693361    *
+*  std. dev. = 0.11413302E-01   accum. std. dev = 0.38696355E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9104       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:   0.91036704711155370     
+ result:    3.9587111104962158E-002 +/-   4.4648247900763291E-003
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo virt above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_virt_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 14  ncall=     1280000.
+                              it=   16  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+
+************* Integration by Vegas (iteration   6) **************
+*                                                               *
+*  integral  = -2.9816319       accum. integral = -2.9850758    *
+*  std. dev. = 0.38065094E-02   accum. std. dev = 0.19077630E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.221       ****************
+
+
+************* Integration by Vegas (iteration   7) **************
+*                                                               *
+*  integral  = -2.9874034       accum. integral = -2.9855451    *
+*  std. dev. = 0.37962158E-02   accum. std. dev = 0.17046174E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.068       ****************
+
+
+************* Integration by Vegas (iteration   8) **************
+*                                                               *
+*  integral  = -2.9818204       accum. integral = -2.9849110    *
+*  std. dev. = 0.37631330E-02   accum. std. dev = 0.15527419E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.032       ****************
+
+
+************* Integration by Vegas (iteration   9) **************
+*                                                               *
+*  integral  = -2.9861446       accum. integral = -2.9850908    *
+*  std. dev. = 0.37591336E-02   accum. std. dev = 0.14351319E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9144       ****************
+
+
+************* Integration by Vegas (iteration  10) **************
+*                                                               *
+*  integral  = -2.9820023       accum. integral = -2.9847004    *
+*  std. dev. = 0.37729235E-02   accum. std. dev = 0.13413699E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8779       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_virt_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:   0.87791502178046077     
+ result:    4.1117799820957757E-002 +/-   4.1077370027486374E-003
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=    32768000.
+                              it=   11  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration  16) **************
+*                                                               *
+*  integral  =  2.7784623       accum. integral =  2.7695006    *
+*  std. dev. = 0.28563139E-01   accum. std. dev = 0.38346056E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8564       ****************
+
+
+************* Integration by Vegas (iteration  17) **************
+*                                                               *
+*  integral  =  2.8255030       accum. integral =  2.7699273    *
+*  std. dev. = 0.43762286E-01   accum. std. dev = 0.38199690E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9044       ****************
+
+
+************* Integration by Vegas (iteration  18) **************
+*                                                               *
+*  integral  =  2.7771464       accum. integral =  2.7702986    *
+*  std. dev. = 0.16403517E-01   accum. std. dev = 0.37204202E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8620       ****************
+
+
+************* Integration by Vegas (iteration  19) **************
+*                                                               *
+*  integral  =  2.7842734       accum. integral =  2.7714217    *
+*  std. dev. = 0.12585774E-01   accum. std. dev = 0.35678027E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8771       ****************
+
+
+************* Integration by Vegas (iteration  20) **************
+*                                                               *
+*  integral  =  2.7728141       accum. integral =  2.7715428    *
+*  std. dev. = 0.11559842E-01   accum. std. dev = 0.34091238E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.8317       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:   0.83169025913525618     
+ result:    4.3324470539546578E-002 +/-   3.6771659280920824E-003
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=    52428800.
+                              it=   21  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration  21) **************
+*                                                               *
+*  integral  =  2.7546247       accum. integral =  2.7686237    *
+*  std. dev. = 0.74656537E-02   accum. std. dev = 0.31010993E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.002       ****************
+
+
+************* Integration by Vegas (iteration  22) **************
+*                                                               *
+*  integral  =  2.7711112       accum. integral =  2.7689026    *
+*  std. dev. = 0.87260155E-02   accum. std. dev = 0.29220581E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9582       ****************
+
+
+************* Integration by Vegas (iteration  23) **************
+*                                                               *
+*  integral  =  2.7506651       accum. integral =  2.7685012    *
+*  std. dev. = 0.19477129E-01   accum. std. dev = 0.28897189E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9536       ****************
+
+
+************* Integration by Vegas (iteration  24) **************
+*                                                               *
+*  integral  =  2.7328948       accum. integral =  2.7676661    *
+*  std. dev. = 0.18646737E-01   accum. std. dev = 0.28556315E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.067       ****************
+
+
+************* Integration by Vegas (iteration  25) **************
+*                                                               *
+*  integral  =  2.7670867       accum. integral =  2.7676196    *
+*  std. dev. = 0.96641643E-02   accum. std. dev = 0.27385773E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration =  1.023       ****************
+
+ ****************************************************
+ * Writing out vegas grid to Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                           *
+ ****************************************************
+ chisq last:    1.0226310624935737     
+ result:    3.9401269317029364E-002 +/-   3.0658163041781673E-003
+ ipsgen            1  contribution
+
+ ****************************************************
+ output files  Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark
+ ****************************************************
+ nnlo real above selected
+ Chooser:process chosen by nproc=         615
+
+ *************************** f(p1)+f(p2) --> ******************************************
+ * W^-(-->e^-(p3)+nu~(p4)) + H(-->tau(p5)+tau~(p6))+g(p7)                             *
+ **************************************************************************************
+
+ ************** Electroweak parameters **************
+ *                                                  *
+ *  zmass(+)   91.1876000     wmass(+)  80.3850000  *
+ * zwidth(+)    2.4952000    wwidth(+)   2.0930000  *
+ *     Gf(+) 0.116639D-04   1/aemmz    132.2319487  *
+ *     xw       0.2228972      mtop(+) 173.3000000  *
+ *   gwsq       0.4263525       esq      0.0950328  *
+ * top width    1.4777084 (LO)                      *
+ *    mb        4.6600000        mc      1.2750000  *
+ *                                                  *
+ * Parameters marked (+) are input, others derived  *
+ ****************************************************
+
+ ****************** Higgs parameters ****************
+ *                                                  *
+ *   mass(H) =  125.00      width(H) =  0.41650E-02 *
+ *                                                  *
+ *              Br( H -> b bbar)  =   0.51294       *
+ *              Br( H -> tau tau) =   0.06212       *
+ *              Br( H -> W W)     =   0.00000       *
+ *              Br( H -> Z Z)     =   0.00000       *
+ *              Br( H -> gam gam) =   0.00236       *
+ *              Br( H -> Z gam)   =   0.00156       *
+ ****************************************************
+ *                                                  *
+ * Note: branching ratios reported here can be > 1  *
+ *       since the total Higgs width is calculated  *
+ *       at NLO but the BR calculation uses a       *
+ *       partial width at LO only.                  *
+ *                                                  *
+ ****************************************************
+
+ ***************** CKM mixing matrix ****************
+ *                                                  *
+ *      Vud=.97500    Vus=.22200    Vub=0.0000      *
+ *      Vcd=.22200    Vcs=.97500    Vcb=0.0000      *
+ ****************************************************
+
+ ************* Strong coupling, alpha_s  ************
+ *                                                  *
+ *  Dynamic scale - alpha_s changed event-by-event  *
+ *       alpha_s (zmass)  0.11800000                *
+ *         (using 3-loop running of alpha_s)        *
+ ****************************************************
+ ****************************************************
+ * Reading in vegas grid from Store/benchmarks/96_WminusHiggs_nnlocoeff/WHbbar_nnlocoeff_CT14.NN_1.00_1.00_125_2.0E-1_benchmark_dvegas_nnlo_real_above_PS1.grid                                          *
+ ****************************************************
+
+ input parameters for vegas:  ndim= 16  ncall=    83886080.
+                              it=   26  itmx=    5
+                              nprn=  0  alph= 1.50
+                              mds=  0   nd= 100
+                              xl( 1)=   0.000     xu( 1)=   1.000    
+                              xl( 2)=   0.000     xu( 2)=   1.000    
+                              xl( 3)=   0.000     xu( 3)=   1.000    
+                              xl( 4)=   0.000     xu( 4)=   1.000    
+                              xl( 5)=   0.000     xu( 5)=   1.000    
+                              xl( 6)=   0.000     xu( 6)=   1.000    
+                              xl( 7)=   0.000     xu( 7)=   1.000    
+                              xl( 8)=   0.000     xu( 8)=   1.000    
+                              xl( 9)=   0.000     xu( 9)=   1.000    
+                              xl(10)=   0.000     xu(10)=   1.000    
+                              xl(11)=   0.000     xu(11)=   1.000    
+                              xl(12)=   0.000     xu(12)=   1.000    
+                              xl(13)=   0.000     xu(13)=   1.000    
+                              xl(14)=   0.000     xu(14)=   1.000    
+                              xl(15)=   0.000     xu(15)=   1.000    
+                              xl(16)=   0.000     xu(16)=   1.000    
+
+************* Integration by Vegas (iteration  26) **************
+*                                                               *
+*  integral  =  2.7713837       accum. integral =  2.7682049    *
+*  std. dev. = 0.63819199E-02   accum. std. dev = 0.25166542E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9935       ****************
+
+
+************* Integration by Vegas (iteration  27) **************
+*                                                               *
+*  integral  =  2.7726475       accum. integral =  2.7689712    *
+*  std. dev. = 0.55122138E-02   accum. std. dev = 0.22893374E-02*
+*   max. wt. =    1.06132                                       *
+*                                                               *
+**************   chi**2/iteration = 0.9760       ****************
+
