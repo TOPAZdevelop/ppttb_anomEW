@@ -13,9 +13,11 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
       include 'sprods_com.f'
       include 'breit.f'
       include 'first.f'
+      include 'anomcoup.f'      
       integer j,k
       real(dp):: msq(-nf:nf,-nf:nf),p(mxpart,4),gaq(nf),gvq(nf),
-     .     gat,gvt,ss,beta,z,qqb(nf),qbq(nf),cs,sw2,cw2,mz,T3(nf)
+     .     gat,gvt,ss,beta,z,qqb(nf),qbq(nf),cs,sw2,cw2,mz,T3(nf),
+     .     gvt_sq,gat_sq,gw_sq,g_rest
 
       if(first) then
          first=.false.
@@ -32,6 +34,16 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
       gvt = gvq(2)
       gat = gaq(2)
 
+      
+c**********************************************************************************
+c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
+
+        call ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+
+c     END MARKUS      
+c**********************************************************************************
+      
+      
       mz = zmass
 
       call dotem(4,p,s)
@@ -63,5 +75,6 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
 ! factor of two for the interference, 1/Nc**2/4 is the color and spin average
       msq = msq*2._dp*esq*gsq/Nc**2/4._dp
 !      msq = 0._dp
+
 
       end subroutine qqb_QQb_mix

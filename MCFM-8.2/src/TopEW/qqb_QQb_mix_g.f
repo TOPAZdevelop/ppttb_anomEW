@@ -1,4 +1,4 @@
-      subroutine qqb_QQb_mix_g(p,msq)
+      subroutine qqb_QQb_mix_g(p,msq) !  only called in softcheck.f
       implicit none
 c---Matrix element squared averaged over initial colors and spins
 c--- for mixed QCD/Z matrix element for top pair production,

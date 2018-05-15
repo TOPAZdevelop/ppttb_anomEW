@@ -127,5 +127,20 @@ c--- Masses below here are currently unused
       data epinv/ 1d3/
       data epinv2/1d3/
 ************************************************************************
+
+
+****** MARKUS
+      include 'anomcoup.f'      
+       data C_phiq_333/  0d0/ 
+       data C_phiu_33/   0d0/  
+!        data C_phiq_333/  5d0/   ! this probes vector coupling only 
+!        data C_phiu_33/  10d0/  
+!        data C_phiq_333/ -5d0/   ! this probes axial coupling only 
+!        data C_phiu_33/  10d0/ 
+       data vev/ 246d0/ 
+       data Lambda_BSM/ 1000d0/
+****** END MARKUS
+
+
       return
       end

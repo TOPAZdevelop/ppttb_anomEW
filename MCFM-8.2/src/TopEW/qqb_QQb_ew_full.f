@@ -38,7 +38,7 @@
       call qqbQQb_ew_oneloop(qqbew,ss,beta,z)
       call ggQQb_ew_oneloop(ggew1,ss,beta,z)
       call ggQQb_ew_oneloop(ggew2,ss,beta,-z)
-      call qqb_QQb(p,m2)
+      call qqb_QQb(p,m2) ! this is the QCD tree in ../Top/
 
       msq = 0._dp
 

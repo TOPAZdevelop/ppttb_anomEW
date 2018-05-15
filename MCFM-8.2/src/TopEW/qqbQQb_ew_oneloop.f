@@ -14,8 +14,9 @@
      .     xI1,xI2,xI3,xI4,D6,sw2,cw2,mw,mz,mh,born,f1,f2,
      .     rz,rw,rb,rh,yphi,ys,ini_corr(nf),dFD(nf),T3(nf),gvq(nf),
      .     gaq(nf),qa(5),bxew(nf,-1:0),bxqcd(nf,-1:0),BB(nf,-1:0),fac
-      real(dp) :: db0
+      real(dp) :: db0,gvt_sq,gat_sq,gw_sq,g_rest
       integer ep
+      
 
       ep = 0
 c      musq = (2._dp*mt)**2
@@ -41,6 +42,15 @@ c      alpha = 1._dp/126.3_dp
       gvt = gvq(2)
       gat = gaq(2)
 
+c**********************************************************************************
+c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
+
+        call ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        
+c     END MARKUS      
+c**********************************************************************************
+
+      
 !      as = 1._dp
       sigma0 = pi*as**2/8._dp*(Nc**2-1._dp)/Nc**2*beta/s
 
@@ -69,36 +79,36 @@ C      BB = 0._dp
 !      stop
 !      BB(:,-1) = - 2._dp*fac*(-gvq(:)*gvt + 3._dp*beta*z*gaq(:)*gat)
 
-      dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz)+2._dp*gw**2*f1(rw))
+      dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz)+2._dp*gw_sq*f1(rw))
 
       born = sigma0*(2._dp - beta**2 + beta**2*z**2)
 
       ini_corr = 2._dp*born*dFD
 
       qa(1) = 
-     .     (0.25_dp*alpha*sigma0*(-2._dp*(gat**2 + gvt**2)*(1._dp + z**2) 
-     .     + 2._dp*((1._dp - beta**2)*(-3._dp*gat**2 + gvt**2) 
-     .     + 2._dp*(gat**2 + gvt**2)*rz)*s*(2._dp - beta**2*(1._dp 
-     .     - z**2))*db0(mt**2,mz**2,mt**2) + (8._dp*(gat**2 
-     .     + gvt**2)*(1._dp + z**2)*(-xI1(mt**2,musq,ep) 
+     .     (0.25_dp*alpha*sigma0*(-2._dp*(gat_sq + gvt_sq)*(1._dp + z**2) 
+     .     + 2._dp*((1._dp - beta**2)*(-3._dp*gat_sq + gvt_sq) 
+     .     + 2._dp*(gat_sq + gvt_sq)*rz)*s*(2._dp - beta**2*(1._dp 
+     .     - z**2))*db0(mt**2,mz**2,mt**2) + (8._dp*(gat_sq 
+     .     + gvt_sq)*(1._dp + z**2)*(-xI1(mt**2,musq,ep) 
      .     + xI1(mz**2,musq,ep)))/((1._dp - beta**2)*s) 
-     .     - 4._dp*(gat**2*(1._dp - 5._dp*z**2 - 3._dp*beta**2*(1._dp 
-     .     - z**2)) - gvt**2*(3._dp + z**2 - beta**2*(1._dp - z**2)) 
-     .     + ((gat**2 + gvt**2)*rz*(1._dp - beta**2 - 3._dp*z**2 
+     .     - 4._dp*(gat_sq*(1._dp - 5._dp*z**2 - 3._dp*beta**2*(1._dp 
+     .     - z**2)) - gvt_sq*(3._dp + z**2 - beta**2*(1._dp - z**2)) 
+     .     + ((gat_sq + gvt_sq)*rz*(1._dp - beta**2 - 3._dp*z**2 
      .     + 7._dp*beta**2*z**2 + 2._dp*beta**4*(1._dp - z**2)))/(beta**2*
      .     (1._dp - beta**2)))*xI2(mt**2,mz**2,mt**2,musq,ep) 
-     .     + 2._dp*(-4._dp*gvt**2*(1._dp + z**2) - (-3._dp*gat**2 
-     .     + gvt**2)*f2(z,beta) + (2._dp*(gat**2 + gvt**2)*rz*f2(z,beta))
+     .     + 2._dp*(-4._dp*gvt_sq*(1._dp + z**2) - (-3._dp*gat_sq 
+     .     + gvt_sq)*f2(z,beta) + (2._dp*(gat_sq + gvt_sq)*rz*f2(z,beta))
      .     /beta**2)*xI2(s,mt**2,mt**2,musq,ep) + 2._dp*s*(-(1._dp 
-     .     + beta**2)*gvt**2*(2._dp - beta**2*(1._dp - z**2)) 
-     .     - gat**2*(2._dp - 3._dp*beta**2 + 5._dp*beta**2*z**2 
-     .     + 3._dp*beta**4*(1._dp - z**2)) + (2._dp*(gat**2 
-     .     + gvt**2)*rz**2*f2(z,beta))/beta**2 + 4._dp*rz*(-gvt**2*
-     .     (1._dp + z**2) + gat**2*f2(z,beta)))*xI3(mt**2,mt**2,s,mt**2,
+     .     + beta**2)*gvt_sq*(2._dp - beta**2*(1._dp - z**2)) 
+     .     - gat_sq*(2._dp - 3._dp*beta**2 + 5._dp*beta**2*z**2 
+     .     + 3._dp*beta**4*(1._dp - z**2)) + (2._dp*(gat_sq 
+     .     + gvt_sq)*rz**2*f2(z,beta))/beta**2 + 4._dp*rz*(-gvt_sq*
+     .     (1._dp + z**2) + gat_sq*f2(z,beta)))*xI3(mt**2,mt**2,s,mt**2,
      .     mz**2,mt**2,musq,ep)))/pi
 
       qa(2) = 
-     .     (0.5_dp*alpha*gw**2*sigma0*(-2._dp*(1._dp + z**2) 
+     .     (0.5_dp*alpha*gw_sq*sigma0*(-2._dp*(1._dp + z**2) 
      .     + (-1._dp + beta**2 + 4._dp*(-rb + rw))*s*(2._dp - beta**2*(1._dp 
      .     - z**2))*db0(mt**2,mb**2,mw**2) + (8._dp*(1._dp 
      .     + z**2)*(-xI1(mb**2,musq,ep) + xI1(mw**2,musq,ep)))/((1._dp 
@@ -116,7 +126,10 @@ C      BB = 0._dp
      .     + 2._dp*(-rb + rw)**2)*f2(z,beta))*xI3(mt**2,mt**2,s,mb**2,
      .     mw**2,mb**2,musq,ep))/beta**2))/pi
 
-      qa(3) = (0.5_dp*alpha*gat**2*mt**2*sigma0*(-2._dp*(1._dp + z**2) 
+         
+!      MARKUS: chi contribution 
+!      MARKUS: replaced gat_sq coupl. by explicit expression  1d0/16._dp/sw2/cw2
+      qa(3) = (0.5_dp*alpha/16._dp/sw2/cw2*mt**2*sigma0*(-2._dp*(1._dp+z**2)
      .     + 4._dp*rz*s*(2._dp - beta**2*(1._dp - z**2))*db0(mt**2,mz**2,
      .     mt**2) - (8._dp*(1._dp + z**2)*(xI1(mt**2,musq,ep) 
      .     - xI1(mz**2,musq,ep)))/((1._dp - beta**2)*s) - (4._dp*rz*(1._dp 
@@ -128,7 +141,10 @@ C      BB = 0._dp
      .     + rz**2*f2(z,beta))*xI3(mt**2,mt**2,s,mt**2,mz**2,mt**2,musq,
      .     ep))/beta**2))/(mz**2*pi)
 
-      qa(4) = (0.5_dp*alpha*gw**2*sigma0*((-0.25_dp*ys*(1._dp + z**2))/rw 
+    
+!      MARKUS: phi contribution 
+!      MARKUS: replaced gw_sq coupl. by explicit expression  0.125_dp/sw2
+      qa(4)=(0.5_dp*alpha*0.125_dp/sw2*sigma0*((-0.25_dp*ys*(1._dp+z**2))/rw
      .     + 0.125_dp*s*((-(1._dp - beta**2)**2)/rw + 8._dp*(1._dp 
      .     - beta**2)*yphi - 16._dp*rb*yphi + 4._dp*ys)*(2._dp - beta**2*
      .     (1._dp - z**2))*db0(mt**2,mb**2,mw**2) + (ys*(1._dp 
@@ -155,8 +171,25 @@ C      BB = 0._dp
      .     + 16._dp*(-8._dp*rb**2 + 4._dp*rb**2*yphi + rw*ys)*f2(z,beta))*
      .     xI3(mt**2,mt**2,s,mb**2,mw**2,mb**2,musq,ep))/beta**2))/pi
 
+     
+!       qa(5) = 
+!      .     (0.5_dp*alpha*gw_sq*mt**2*sigma0*(-1._dp - z**2 + 2._dp*(-1._dp 
+!      .     + beta**2 + rh)*s*(2._dp - beta**2*(1._dp - z**2))*db0(mt**2,
+!      .     mt**2,mh**2) + (4._dp*(1._dp + z**2)*
+!      .     (xI1(mh**2,musq,ep) - xI1(mt**2,musq,ep)))/((1._dp - beta**2)*
+!      .     s) - 2._dp*(2._dp*(1._dp - beta**2)*(1._dp - z**2) + (rh*(1._dp 
+!      .     - beta**2 - 3._dp*z**2 + 7._dp*beta**2*z**2 + 2._dp*beta**4*
+!      .     (1._dp - z**2)))/(beta**2*(1._dp - beta**2)))*xI2(mt**2,mt**2,
+!      .     mh**2,musq,ep) + ((beta**2*(5._dp - 3._dp*z**2 - 4._dp*beta**2*
+!      .     (1._dp - z**2)) + 2._dp*rh*f2(z,beta))*xI2(s,mt**2,mt**2,musq,
+!      .     ep))/beta**2 + (2._dp*s*(3._dp*beta**2*(1._dp - beta**2)*rh*
+!      .     (1._dp - z**2) - beta**2*(1._dp - beta**2)*(2._dp - beta**2*
+!      .     (1._dp - z**2)) + rh**2*f2(z,beta))*xI3(mt**2,mt**2,s,mt**2,
+!      .     mh**2,mt**2,musq,ep))/beta**2))/(mw**2*pi)
+
+c MARKUS: replaced gw_sq coupl. by vev
       qa(5) = 
-     .     (0.5_dp*alpha*gw**2*mt**2*sigma0*(-1._dp - z**2 + 2._dp*(-1._dp 
+     .     (0.5_dp/vev**2*mt**2*sigma0*(-1._dp - z**2 + 2._dp*(-1._dp 
      .     + beta**2 + rh)*s*(2._dp - beta**2*(1._dp - z**2))*db0(mt**2,
      .     mt**2,mh**2) + (4._dp*(1._dp + z**2)*
      .     (xI1(mh**2,musq,ep) - xI1(mt**2,musq,ep)))/((1._dp - beta**2)*
@@ -168,8 +201,9 @@ C      BB = 0._dp
      .     ep))/beta**2 + (2._dp*s*(3._dp*beta**2*(1._dp - beta**2)*rh*
      .     (1._dp - z**2) - beta**2*(1._dp - beta**2)*(2._dp - beta**2*
      .     (1._dp - z**2)) + rh**2*f2(z,beta))*xI3(mt**2,mt**2,s,mt**2,
-     .     mh**2,mt**2,musq,ep))/beta**2))/(mw**2*pi)
-
+     .     mh**2,mt**2,musq,ep))/beta**2))/(8*pi**2)
+     
+     
       do ep = -1,0
          bxew(:,ep) = 
      .     (-0.015625_dp*as*BB(:,0)*beta*(-(1._dp + beta*z)*
@@ -280,14 +314,41 @@ c--- g(top Y) = (tevscale) x g(SM, top Y)
 c--- it therefore affects Higgs diagrams as the square
       qa(5)=qa(5)*tevscale**2
 
+
+!     MARKUS: marking contributions that do not scale like gvt,gat,gw
+      qa(3:5)     = qa(3:5)     * g_rest
+      ini_corr(:) = ini_corr(:) * g_rest
+
       corr = qa(1) + qa(2) + qa(3) + qa(4) + qa(5) 
      .     + bxew(:,0) + bxew(:,-1) + bxqcd(:,0) + bxqcd(:,-1)
       corr = corr + ini_corr
 
       corr = corr/born
 
+!         print *,"checker",qa(1) , qa(2) , qa(3) , qa(4) , qa(5) 
+!      .     , bxew(:,0) , bxew(:,-1) , bxqcd(:,0) , bxqcd(:,-1)
+!      .     , ini_corr
+!         print *, ""
+!         print *,"checker", corr
+!         pause
+
+
       end subroutine qqbQQb_ew_oneloop
 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
       function f1(x)
       implicit none

@@ -64,3 +64,32 @@ c--- avoid calculating unnecessarily by checking input file flags
       msq = msq*m2!/gsq**2*16._dp*pi**2!*0.01_dp
 
       end subroutine qqb_QQb_mix_v
+
+      
+      
+      
+      
+      subroutine ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest) ! ( variables are in common block of anomcoup.f and set in mdata.f )
+      implicit none 
+      include 'types.f'      
+      include 'anomcoup.f'      
+      real(8) :: gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest
+      
+        gvt = gvt + (vev/Lambda_BSM)**2 *(C_phiq_333 - 0.5d0*C_phiu_33)
+        gat = gat + (vev/Lambda_BSM)**2 *(C_phiq_333 + 0.5d0*C_phiu_33)
+        gw  = gw  + (vev/Lambda_BSM)**2 *(0.5d0*C_phiq_333)
+        
+        gvt_sq = gvt**2
+        gat_sq = gat**2
+        gw_sq  = gw**2              
+      
+        gvt    = gvt    * coupl_gvt
+        gat    = gat    * coupl_gat
+        gw     = gw     * coupl_gw
+        gvt_sq = gvt_sq * coupl_gvt_sq
+        gat_sq = gat_sq * coupl_gat_sq
+        gw_sq  = gw_sq  * coupl_gw_sq
+        g_rest = 1d0    * coupl_rest
+      
+      return
+      end subroutine

@@ -495,6 +495,23 @@ c--- anomalous couplings
       if (verbose) call writeinput(6,' * ',' ','h4gam')
       read(20,*) tevscale
       if (verbose) call writeinput(6,' * ',' ','tevscale')
+!       
+! 
+! 
+      read(20,*) coupl_gvt
+      if (verbose) call writeinput(6,' * ',' ','coupl_gvt')
+      read(20,*) coupl_gat
+      if (verbose) call writeinput(6,' * ',' ','coupl_gat')
+      read(20,*) coupl_gw
+      if (verbose) call writeinput(6,' * ',' ','coupl_gw')
+      read(20,*) coupl_gvt_sq
+      if (verbose) call writeinput(6,' * ',' ','coupl_gvt_sq')
+      read(20,*) coupl_gat_sq
+      if (verbose) call writeinput(6,' * ',' ','coupl_gat_sq')
+      read(20,*) coupl_gw_sq
+      if (verbose) call writeinput(6,' * ',' ','coupl_gw_sq')
+      read(20,*) coupl_rest
+      if (verbose) call writeinput(6,' * ',' ','coupl_rest')
 
       if ( nproc >= 550 .and. nproc <= 557 ) then
          if (verbose) call writeinput(6,' * ',' ','cttH')
@@ -709,42 +726,42 @@ c      write(6,*)
 c      endif
       
 c--- check dynstring to see whether to do scale variation and truncate dynstring if so
-      if (dynstring(len(trim(dynstring))-8:len(trim(dynstring))) == '+scalevar') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-9)
-        maxscalevar=6
-      elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar2') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-10)
-        maxscalevar=2
-      elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar6') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-10)
-        maxscalevar=6
-      else
+!       if (dynstring(len(trim(dynstring))-8:len(trim(dynstring))) == '+scalevar') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-9)
+!         maxscalevar=6
+!       elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar2') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-10)
+!         maxscalevar=2
+!       elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar6') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-10)
+!         maxscalevar=6
+!       else
         doscalevar=.false.
-      endif
+!       endif
       
-c--- check dynstring to see whether to do scale variation and truncate dynstring if so
-      if (dynstring(len(trim(dynstring))-8:len(trim(dynstring))) == '+scalevar') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-9)
-        maxscalevar=6
-      elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar2') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-10)
-        maxscalevar=2
-      elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar6') then
-        doscalevar=.true.
-        dynstring=dynstring(1:len(trim(dynstring))-10)
-        maxscalevar=6
-      else
-        doscalevar=.false.
-      endif
-      if ((doscalevar) .and. (kewcorr /= knone)) then
-        write(6,*) 'Cannot compute EW corrections and scale variation in a single run'
-        stop
-      endif
+! c--- check dynstring to see whether to do scale variation and truncate dynstring if so
+!       if (dynstring(len(trim(dynstring))-8:len(trim(dynstring))) == '+scalevar') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-9)
+!         maxscalevar=6
+!       elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar2') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-10)
+!         maxscalevar=2
+!       elseif (dynstring(len(trim(dynstring))-9:len(trim(dynstring))) == '+scalevar6') then
+!         doscalevar=.true.
+!         dynstring=dynstring(1:len(trim(dynstring))-10)
+!         maxscalevar=6
+!       else
+!         doscalevar=.false.
+!       endif
+!       if ((doscalevar) .and. (kewcorr /= knone)) then
+!         write(6,*) 'Cannot compute EW corrections and scale variation in a single run'
+!         stop
+!       endif
       
 c---  create logical:: variable dynamicscale for use in other routines
       if (  (dynstring == 'no') .or. (dynstring == '.false.')

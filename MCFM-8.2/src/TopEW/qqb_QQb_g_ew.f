@@ -8,11 +8,13 @@
       include 'ewcharge.f'
       include 'qcdcouple.f'
       include 'sprods_com.f'
+      include 'anomcoup.f'      
       integer j,k
       real(dp):: msq(-nf:nf,-nf:nf),p(mxpart,4),rl(4,4,nf),
      &     gvq(nf),gaq(nf),gvt,gat,T3(nf),sw2,cw2,s12,s34,sz12,sz34,
      &     t1,t2,u1,u2,genfac,p1dp2,p1dp5,p2dp5,p3dp5,p4dp5,
-     &     fac1,fac2,ttv1,ttv2,tta1,tta2,mz,qqb(nf),cs
+     &     fac1,fac2,ttv1,ttv2,tta1,tta2,mz,qqb(nf),cs,
+     &     gvt_sq,gat_sq,gw_sq,g_rest
 
 
       T3 = (/-0.5_dp,0.5_dp,-0.5_dp,0.5_dp,-0.5_dp/)
@@ -23,6 +25,16 @@
       gvt = gvq(2)
       gat = gaq(2)
 
+      
+c**********************************************************************************
+c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
+
+        call ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+
+c     END MARKUS      
+c**********************************************************************************
+      
+      
       mz = zmass
  
       call dotem(5,p,s)

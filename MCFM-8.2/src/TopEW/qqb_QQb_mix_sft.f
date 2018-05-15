@@ -1,4 +1,4 @@
-      subroutine qqb_QQb_mix_sft(p,msq)
+      subroutine qqb_QQb_mix_sft(p,msq)!  only called in softcheck.f
       implicit none
       include 'types.f'
       include 'mxpart.f'

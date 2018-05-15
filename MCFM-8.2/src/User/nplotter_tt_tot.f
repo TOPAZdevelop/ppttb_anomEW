@@ -135,123 +135,123 @@ c---   llplot:  equal to "lin"/"log" for linear/log scale
       call bookplot(n,tag,'m34',m34,wt,wt2,500._dp,10000._dp,200._dp,'lin')
       n=n+1
 
-      call bookplot(n,tag,'ptt CHM1',pt3,wt*half,wt2*half**2,0._dp,60._dp,60._dp,'lin')
-      call bookplot(n,tag,'ptt CHM1',pt4,wt*half,wt2*half**2,0._dp,60._dp,60._dp,'lin')
+      call bookplot(n,tag,'ptt CHM1',pt3,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
+      call bookplot(n,tag,'ptt CHM1',pt4,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
       n=n+1
-      call bookplot(n,tag,'ptt CHM2',pt3,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
-      call bookplot(n,tag,'ptt CHM2',pt4,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM3',pt3,wt*half,wt2*half**2,100._dp,150._dp,50._dp,'lin')
-      call bookplot(n,tag,'ptt CHM3',pt4,wt*half,wt2*half**2,100._dp,150._dp,50._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM4',pt3,wt*half,wt2*half**2,150._dp,200._dp,50._dp,'lin')
-      call bookplot(n,tag,'ptt CHM4',pt4,wt*half,wt2*half**2,150._dp,200._dp,50._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM5',pt3,wt*half,wt2*half**2,200._dp,260._dp,60._dp,'lin')
-      call bookplot(n,tag,'ptt CHM5',pt4,wt*half,wt2*half**2,200._dp,260._dp,60._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM6',pt3,wt*half,wt2*half**2,260._dp,320._dp,60._dp,'lin')
-      call bookplot(n,tag,'ptt CHM6',pt4,wt*half,wt2*half**2,260._dp,320._dp,60._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM7',pt3,wt*half,wt2*half**2,320._dp,400._dp,80._dp,'lin')
-      call bookplot(n,tag,'ptt CHM7',pt4,wt*half,wt2*half**2,320._dp,400._dp,80._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CHM8',pt3,wt*half,wt2*half**2,400._dp,500._dp,100._dp,'lin')
-      call bookplot(n,tag,'ptt CHM8',pt4,wt*half,wt2*half**2,400._dp,500._dp,100._dp,'lin')
-      n=n+1
-      
-      call bookplot(n,tag,'yt CHM1',y3,wt*half,wt2*half**2,-2.5_dp,-1.6_dp,0.9_dp,'lin')
-      call bookplot(n,tag,'yt CHM1',y4,wt*half,wt2*half**2,-2.5_dp,-1.6_dp,0.9_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM2',y3,wt*half,wt2*half**2,-1.6_dp,-1.2_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM2',y4,wt*half,wt2*half**2,-1.6_dp,-1.2_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM3',y3,wt*half,wt2*half**2,-1.2_dp,-0.8_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM3',y4,wt*half,wt2*half**2,-1.2_dp,-0.8_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM4',y3,wt*half,wt2*half**2,-0.8_dp,-0.4_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM4',y4,wt*half,wt2*half**2,-0.8_dp,-0.4_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM5',y3,wt*half,wt2*half**2,-0.4_dp,0._dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM5',y4,wt*half,wt2*half**2,-0.4_dp,0._dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM6',y3,wt*half,wt2*half**2,0._dp,0.4_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM6',y4,wt*half,wt2*half**2,0._dp,0.4_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM7',y3,wt*half,wt2*half**2,0.4_dp,0.8_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM7',y4,wt*half,wt2*half**2,0.4_dp,0.8_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM8',y3,wt*half,wt2*half**2,0.8_dp,1.2_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM8',y4,wt*half,wt2*half**2,0.8_dp,1.2_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM9',y3,wt*half,wt2*half**2,1.2_dp,1.6_dp,0.4_dp,'lin')
-      call bookplot(n,tag,'yt CHM9',y4,wt*half,wt2*half**2,1.2_dp,1.6_dp,0.4_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'yt CHM10',y3,wt*half,wt2*half**2,1.6_dp,2.5_dp,0.9_dp,'lin')
-      call bookplot(n,tag,'yt CHM10',y4,wt*half,wt2*half**2,1.6_dp,2.5_dp,0.9_dp,'lin')
-      n=n+1
-      
-      call bookplot(n,tag,'mtt CFHM1',m34,wt,wt2,240._dp,412.5_dp,172.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'mtt CFHM2',m34,wt,wt2,412.5_dp,505._dp,92.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'mtt CFHM3',m34,wt,wt2,505._dp,615.5_dp,110._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'mtt CFHM4',m34,wt,wt2,615._dp,750._dp,135._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'mtt CFHM5',m34,wt,wt2,750._dp,1200._dp,450._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'mtt CFHM6',m34,wt,wt2,1200._dp,2000._dp,800._dp,'lin')
-      n=n+1
+!       call bookplot(n,tag,'ptt CHM2',pt3,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM2',pt4,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM3',pt3,wt*half,wt2*half**2,100._dp,150._dp,50._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM3',pt4,wt*half,wt2*half**2,100._dp,150._dp,50._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM4',pt3,wt*half,wt2*half**2,150._dp,200._dp,50._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM4',pt4,wt*half,wt2*half**2,150._dp,200._dp,50._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM5',pt3,wt*half,wt2*half**2,200._dp,260._dp,60._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM5',pt4,wt*half,wt2*half**2,200._dp,260._dp,60._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM6',pt3,wt*half,wt2*half**2,260._dp,320._dp,60._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM6',pt4,wt*half,wt2*half**2,260._dp,320._dp,60._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM7',pt3,wt*half,wt2*half**2,320._dp,400._dp,80._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM7',pt4,wt*half,wt2*half**2,320._dp,400._dp,80._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CHM8',pt3,wt*half,wt2*half**2,400._dp,500._dp,100._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM8',pt4,wt*half,wt2*half**2,400._dp,500._dp,100._dp,'lin')
+!       n=n+1
+!       
+!       call bookplot(n,tag,'yt CHM1',y3,wt*half,wt2*half**2,-2.5_dp,-1.6_dp,0.9_dp,'lin')
+!       call bookplot(n,tag,'yt CHM1',y4,wt*half,wt2*half**2,-2.5_dp,-1.6_dp,0.9_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM2',y3,wt*half,wt2*half**2,-1.6_dp,-1.2_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM2',y4,wt*half,wt2*half**2,-1.6_dp,-1.2_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM3',y3,wt*half,wt2*half**2,-1.2_dp,-0.8_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM3',y4,wt*half,wt2*half**2,-1.2_dp,-0.8_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM4',y3,wt*half,wt2*half**2,-0.8_dp,-0.4_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM4',y4,wt*half,wt2*half**2,-0.8_dp,-0.4_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM5',y3,wt*half,wt2*half**2,-0.4_dp,0._dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM5',y4,wt*half,wt2*half**2,-0.4_dp,0._dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM6',y3,wt*half,wt2*half**2,0._dp,0.4_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM6',y4,wt*half,wt2*half**2,0._dp,0.4_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM7',y3,wt*half,wt2*half**2,0.4_dp,0.8_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM7',y4,wt*half,wt2*half**2,0.4_dp,0.8_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM8',y3,wt*half,wt2*half**2,0.8_dp,1.2_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM8',y4,wt*half,wt2*half**2,0.8_dp,1.2_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM9',y3,wt*half,wt2*half**2,1.2_dp,1.6_dp,0.4_dp,'lin')
+!       call bookplot(n,tag,'yt CHM9',y4,wt*half,wt2*half**2,1.2_dp,1.6_dp,0.4_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'yt CHM10',y3,wt*half,wt2*half**2,1.6_dp,2.5_dp,0.9_dp,'lin')
+!       call bookplot(n,tag,'yt CHM10',y4,wt*half,wt2*half**2,1.6_dp,2.5_dp,0.9_dp,'lin')
+!       n=n+1
+!       
+!       call bookplot(n,tag,'mtt CFHM1',m34,wt,wt2,240._dp,412.5_dp,172.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'mtt CFHM2',m34,wt,wt2,412.5_dp,505._dp,92.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'mtt CFHM3',m34,wt,wt2,505._dp,615.5_dp,110._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'mtt CFHM4',m34,wt,wt2,615._dp,750._dp,135._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'mtt CFHM5',m34,wt,wt2,750._dp,1200._dp,450._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'mtt CFHM6',m34,wt,wt2,1200._dp,2000._dp,800._dp,'lin')
+!       n=n+1
+! 
+!       call bookplot(n,tag,'ptt CFHM1',pt3,wt,wt2,0._dp,45._dp,45._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM2',pt3,wt,wt2,45._dp,90._dp,45._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM3',pt3,wt,wt2,90._dp,140._dp,50._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM4',pt3,wt,wt2,140._dp,200._dp,60._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM5',pt3,wt,wt2,200._dp,300._dp,100._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM6',pt3,wt,wt2,300._dp,500._dp,200._dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ptt CFHM7',pt3,wt,wt2,500._dp,2000._dp,1500._dp,'lin')
+!       n=n+1
+! 
+!       call bookplot(n,tag,'ayt CFHM1',abs(y3),wt,wt2,0._dp,0.25_dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM2',abs(y3),wt,wt2,0.25_dp,0.5_dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM3',abs(y3),wt,wt2,0.5_dp,0.75_dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM4',abs(y3),wt,wt2,0.75_dp,1._dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM5',abs(y3),wt,wt2,1._dp,1.25_dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM6',abs(y3),wt,wt2,1.25_dp,1.5_dp,0.25_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'ayt CFHM7',abs(y3),wt,wt2,1.5_dp,10._dp,8.5_dp,'lin')
+!       n=n+1
+! 
+!       call bookplot(n,tag,'Dyt CFHM1',dely,wt,wt2,-8._dp,-1.5_dp,6.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM2',dely,wt,wt2,-1.5_dp,-1._dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM3',dely,wt,wt2,-1._dp,-0.5_dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM4',dely,wt,wt2,-0.5_dp,0._dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM5',dely,wt,wt2,0._dp,0.5_dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM6',dely,wt,wt2,0.5_dp,1._dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM7',dely,wt,wt2,1._dp,1.5_dp,0.5_dp,'lin')
+!       n=n+1
+!       call bookplot(n,tag,'Dyt CFHM7',dely,wt,wt2,1.5_dp,8._dp,6.5_dp,'lin')
+!       n=n+1
 
-      call bookplot(n,tag,'ptt CFHM1',pt3,wt,wt2,0._dp,45._dp,45._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM2',pt3,wt,wt2,45._dp,90._dp,45._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM3',pt3,wt,wt2,90._dp,140._dp,50._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM4',pt3,wt,wt2,140._dp,200._dp,60._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM5',pt3,wt,wt2,200._dp,300._dp,100._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM6',pt3,wt,wt2,300._dp,500._dp,200._dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ptt CFHM7',pt3,wt,wt2,500._dp,2000._dp,1500._dp,'lin')
-      n=n+1
-
-      call bookplot(n,tag,'ayt CFHM1',abs(y3),wt,wt2,0._dp,0.25_dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM2',abs(y3),wt,wt2,0.25_dp,0.5_dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM3',abs(y3),wt,wt2,0.5_dp,0.75_dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM4',abs(y3),wt,wt2,0.75_dp,1._dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM5',abs(y3),wt,wt2,1._dp,1.25_dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM6',abs(y3),wt,wt2,1.25_dp,1.5_dp,0.25_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'ayt CFHM7',abs(y3),wt,wt2,1.5_dp,10._dp,8.5_dp,'lin')
-      n=n+1
-
-      call bookplot(n,tag,'Dyt CFHM1',dely,wt,wt2,-8._dp,-1.5_dp,6.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM2',dely,wt,wt2,-1.5_dp,-1._dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM3',dely,wt,wt2,-1._dp,-0.5_dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM4',dely,wt,wt2,-0.5_dp,0._dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM5',dely,wt,wt2,0._dp,0.5_dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM6',dely,wt,wt2,0.5_dp,1._dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM7',dely,wt,wt2,1._dp,1.5_dp,0.5_dp,'lin')
-      n=n+1
-      call bookplot(n,tag,'Dyt CFHM7',dely,wt,wt2,1.5_dp,8._dp,6.5_dp,'lin')
-      n=n+1
-
-      goto 777 ! no more histograms for now
+!       goto 777 ! no more histograms for now
 
       if (kewcorr /= knone) then
 
