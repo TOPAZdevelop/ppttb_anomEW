@@ -74,7 +74,7 @@ MOD_QCDLOOP=$(MCFMHOME)/qcdloop-2.0.2
 VPATH		= $(DIRS):$(MOD_QCDLOOP):$(INCPATH):$(TENSORREDDIR)/Include:$(SOURCEDIR)/mpidummy
 
 # Flags for compilation
-FFLAGS 	= -fno-f2c -ffixed-line-length-none -fopenmp -fcheck=all -O2 \
+FFLAGS 	= -fno-f2c -ffixed-line-length-none -fopenmp -O2 \
  -I$(INCPATH) -I$(MPIDUMMY) -I$(TENSORREDDIR)/Include -L$(PVDIR) -L$(PVEXTDIR) -J$(OBJNAME) -I$(MOD_QCDLOOP)
 
 # If using FROOT package for ROOT ntuples, first specify C++ compiler:
