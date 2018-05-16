@@ -183,6 +183,7 @@ c           write(6,*) 'This point does not have enough jets'
          write(6,*) '2._dp*p1.p4',s(1,4)
          write(6,*) '2._dp*p2.p4',s(2,4)
          if (npart > 2) then
+         write(6,*) '2._dp*p1.p2',s(1,2)
          write(6,*) '2._dp*p1.p5',s(1,5)
          write(6,*) '2._dp*p2.p5',s(2,5)
          write(6,*) '2._dp*p3.p4',s(3,4)
@@ -207,6 +208,11 @@ c           write(6,*) 'This point does not have enough jets'
          write(6,*) '2._dp*p2.p8',s(2,8)
          write(6,*) '2._dp*p7.p8',s(7,8)
          endif
+         
+
+!       if ( dabs(s(2,5)/s(1,2)).gt.1d-5 ) then 
+!        return
+!       endif           
          
 c         write(6,*) '0',jets,msq(2,0),(pjet(5,4)+pjet(6,4))**2
 c     &                      -(pjet(5,1)+pjet(6,1))**2
@@ -312,10 +318,11 @@ c         if ((jj <= 0) .or. (kk <= 0)) goto 69 ! DEBUG: QQ only
    69    continue
          enddo
          enddo
-
    68 continue
       enddo
+         
       pause
+         
       enddo 
 
 c---c--- This block of code is useful for checking the symmetry of

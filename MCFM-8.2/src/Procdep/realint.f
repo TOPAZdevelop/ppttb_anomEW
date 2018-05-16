@@ -644,7 +644,7 @@ c         pause
            msq(:,:)=zip
            msqc(:,:,:)=zip
          else
-c           call singcheck(qqb_QQb_mix_g,qqb_QQb_mix_gs,p)
+!            call singcheck(qqb_QQb_mix_g,qqb_QQb_mix_gs,p)          
            if (includereal) call qqb_QQb_mix_g(p,msq)
            call qqb_QQb_mix_gs(p,msqc)
            wt_noew=zip ! non-EW calculation has no real contribution

@@ -81,14 +81,14 @@ c      common/runstring/runstring
 
 c--- automatic reweighting for EW corrections
 c--- comment-out this block (the next 8 lines) to remove this reweighting
-      if ((kewcorr /= knone) .or. (doreweight)) then
-        if    ((kcase==ktwojet) .or. (kcase==ktwo_ew)
-     &    .or. (kcase==ktt_tot) .or. (kcase==ktt_mix) ) then
-          reweight=(two*dot(ptrans,1,2)/(sqrts*sqrts))**2
-        elseif (kcase==kZ_only) then
-          reweight=sqrt(two*dot(ptrans,1,2))/sqrts
-        endif
-      endif
+!       if ((kewcorr /= knone) .or. (doreweight)) then
+!         if    ((kcase==ktwojet) .or. (kcase==ktwo_ew)
+!      &    .or. (kcase==ktt_tot) .or. (kcase==ktt_mix) ) then
+!           reweight=(two*dot(ptrans,1,2)/(sqrts*sqrts))**2
+!         elseif (kcase==kZ_only) then
+!           reweight=sqrt(two*dot(ptrans,1,2))/sqrts
+!         endif
+!       endif
 
 c--- default: include this contribution
       mcfmincdipole=.true.

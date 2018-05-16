@@ -186,6 +186,7 @@ c--- (W+2 jet and Z+2 jet processes only)
 
       if (dynamicscale) call scaleset(initscale,initfacscale,p)
      
+     
 ! adjust scales for scale variation
       if (doscalevar) then
         if (dynamicscale .eqv. .false.) then
@@ -897,10 +898,13 @@ c        msq=zip
         msq(:,:)=0._dp
         call dkuqqb_QQb_v(p,msqv)
       elseif (kcase==ktt_mix) then
+         
         call qqb_QQb_mix(p,msq)
         call qqb_QQb_mix_v(p,msqv)
         call qqb_QQb_mix_z(p,z)
-        call qqb_QQb(p,msq_noew) ! matrix elements with no EW corrections
+!         call qqb_QQb(p,msq_noew) ! matrix elements with no EW corrections
+        
+        
       elseif ((kcase==ktt_tot)
      &   .or. (kcase==kbb_tot)
      &   .or. (kcase==kcc_tot)) then

@@ -1,4 +1,4 @@
-      subroutine qqb_QQb_g_ew(p,msq)
+      subroutine qqb_QQb_g_ew(p,msq)!    MARKUS: this is not used anywhere
       implicit none
       include 'types.f'
       include 'nf.f'
