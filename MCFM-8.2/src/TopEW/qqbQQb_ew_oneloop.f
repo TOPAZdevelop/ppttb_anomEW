@@ -79,7 +79,9 @@ C      BB = 0._dp
 !      stop
 !      BB(:,-1) = - 2._dp*fac*(-gvq(:)*gvt + 3._dp*beta*z*gaq(:)*gat)
 
-      dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz)+2._dp*gw_sq*f1(rw))
+!       dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz)*g_rest+2._dp*gw_sq*f1(rw))  !   MARKUS: should one use 0.5_dp/sqrt(2._dp*sw2) instead of gw here????
+      dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz) * g_rest
+     .     +2._dp*(0.5_dp/sqrt(2._dp*sw2))**2*f1(rw) * g_rest)  !   new version 
 
       born = sigma0*(2._dp - beta**2 + beta**2*z**2)
 
@@ -317,11 +319,11 @@ c--- it therefore affects Higgs diagrams as the square
 
 !     MARKUS: marking contributions that do not scale like gvt,gat,gw
       qa(3:5)     = qa(3:5)     * g_rest
-      ini_corr(:) = ini_corr(:) * g_rest
 
       corr = qa(1) + qa(2) + qa(3) + qa(4) + qa(5) 
      .     + bxew(:,0) + bxew(:,-1) + bxqcd(:,0) + bxqcd(:,-1)
       corr = corr + ini_corr
+
 
       corr = corr/born
 
