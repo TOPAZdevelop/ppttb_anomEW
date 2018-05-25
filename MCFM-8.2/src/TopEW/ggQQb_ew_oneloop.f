@@ -82,10 +82,10 @@ c MARKUS: replaced gw_sq coupl. by vev
 
       
       trizx = 
-     .     + 16._dp*alpha/pi*sigma0*gat*mt**2/mz**2
+     .     + 16._dp*alpha/pi*sigma0*mt**2/mz**2
      .     /(1._dp-beta**2*z**2)*(
-     .     + gat*mt**2*xI3(0._dp,0._dp,s,mt**2,mt**2,mt**2,musq,ep)
-     .     + gab*mb**2*xI3(0._dp,0._dp,s,mb**2,mb**2,mb**2,musq,ep)
+     .     + gat_sq *mt**2*xI3(0._dp,0._dp,s,mt**2,mt**2,mt**2,musq,ep)
+     .     + gab*gat*mb**2*xI3(0._dp,0._dp,s,mb**2,mb**2,mb**2,musq,ep)
      .     )
 
 

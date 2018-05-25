@@ -15,7 +15,7 @@
       include 'verbose.f'
       include 'mpicommon.f'
       logical:: first,VBSprocess
-      real(dp):: p(mxpart,4),s34,s56,s36,s45,s3456,s78
+      real(dp):: p(mxpart,4),s34,s56,s36,s45,s3456,s78,pt3,pt4
       data first/.true./
       save first,VBSprocess
 !$omp threadprivate(first,VBSprocess)
@@ -80,6 +80,14 @@ c--- only apply cuts on s34 if vectors 3 and 4 are defined
       if ((abs(p(3,4)) > 1.e-8_dp) .and. (abs(p(4,4)) > 1.e-8_dp)) then
         s34=+(p(3,4)+p(4,4))**2-(p(3,1)+p(4,1))**2
      &      -(p(3,2)+p(4,2))**2-(p(3,3)+p(4,3))**2
+     
+! MARKUS: apply boost4 cut
+        pt3 = dsqrt(p(3,1)**2+p(3,2)**2)
+        pt4 = dsqrt(p(4,1)**2+p(4,2)**2)
+! !         if( pt3.lt.1025d0 .or. pt4.lt.1025d0 ) return 1
+!         if( pt3.lt.1025d0 ) return 1
+! END: MARKUS 
+     
 c--- do not accept s34<cutoff either
         if ((s34 < max(wsqmin,cutoff)).or.(s34 > wsqmax)) return 1
       endif

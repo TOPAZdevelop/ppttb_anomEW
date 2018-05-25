@@ -80,8 +80,8 @@ C      BB = 0._dp
 !      BB(:,-1) = - 2._dp*fac*(-gvq(:)*gvt + 3._dp*beta*z*gaq(:)*gat)
 
 !       dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz)*g_rest+2._dp*gw_sq*f1(rw))  !   MARKUS: should one use 0.5_dp/sqrt(2._dp*sw2) instead of gw here????
-      dFD = - alpha/8._dp/pi*((gvq**2+gaq**2)*f1(rz) * g_rest
-     .     +2._dp*(0.5_dp/sqrt(2._dp*sw2))**2*f1(rw) * g_rest)  !   new version 
+      dFD = - alpha/8._dp/pi*( (gvq**2+gaq**2)*f1(rz) * g_rest
+     .      +2._dp*(0.5_dp/sqrt(2._dp*sw2))**2*f1(rw) * g_rest )  !   new version 
 
       born = sigma0*(2._dp - beta**2 + beta**2*z**2)
 
