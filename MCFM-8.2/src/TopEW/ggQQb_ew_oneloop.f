@@ -115,7 +115,7 @@ C --- In the ref. (II.18-22), and Appendix B (B.1-15).
      .     xI3(s,mt**2,mt**2,mb**2,mb**2,mw**2,musq,ep)))/pi
 
 
-!     MARKUS: chi contribution 
+!     MARKUS: chi contribution, vertex, s-channel gluon
       vrts(3) = 
      .     (-8._dp*alpha*chifacs*genfacschi*sigma0*
      .     (beta**2*s*db0(mt**2,mt**2,mz**2) + 2._dp*
@@ -125,7 +125,7 @@ C --- In the ref. (II.18-22), and Appendix B (B.1-15).
      .     xI3(s,mt**2,mt**2,mt**2,mt**2,mz**2,musq,ep)))/pi
 
      
-!     MARKUS: phi contribution 
+!     MARKUS: phi contribution vertex, s-channel gluon 
 !      MARKUS: replaced gw_sq coupl. by explicit expression  0.125_dp/sw2
       vrts(4) = 
      .     (-8._dp*alpha*genfacs*(0.125_dp/sw2)*sigma0*

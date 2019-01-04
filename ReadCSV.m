@@ -185,3 +185,8 @@ GetSignificance[xCphiq_,xCphiu_]:=Module[{Si},
 
 pp=(vev/Lambda)^2 //N;
 Fig1=ContourPlot[GetSignificance[CPhiQ/pp,CPhiU/pp] , {CPhiU,-0.4,2.0}, {CPhiQ, -0.8,0.4},Contours->{1.0,2.0,3.0},PlotLegends->Automatic,FrameLabel->Automatic]
+
+
+
+
+

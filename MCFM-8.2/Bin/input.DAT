@@ -13,8 +13,8 @@
 
 [General options to specify the process and execution]
 157	 	[nproc]
-'real'           [part 'lo','nlo','nnlo','nlocoeff','nnlocoeff']
-'13TeV_111111'		['runstring']
+'virt'           [part 'lo','nlo','nnlo','nlocoeff','nnlocoeff']
+'PaperRun_111111'		['runstring']
 13000d0		[sqrts in GeV]
 +1		[ih1 =1 for proton and -1 for antiproton]
 +1		[ih2 =1 for proton and -1 for antiproton]
@@ -37,12 +37,12 @@
 
 [Heavy quark masses]
 173.0d0		[top mass]
-4.66d0		[bottom mass]
+4.60		[bottom mass]
 1.275d0		[charm mass]
 
 [Pdf selection]
-'mstw8nl'	[pdlabel]
-'MSTW2008nlo90cl.LHgrid'	[LHAPDF gridfile]
+'MMHT_nl'	[pdlabel]
+'xx.LHgrid'	[LHAPDF gridfile]
 -1           	[LHAPDF set]
 
 [Jet definition and event cuts]
