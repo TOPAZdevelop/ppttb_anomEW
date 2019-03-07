@@ -1,0 +1,277 @@
+
+
+* eval propagator functions
+id PropDenom(pDumX?,mX?) = PropDenom(pDumX.pDumX-mX^2);
+
+argument PropDenom;
+#call simplify();
+endargument;
+
+
+
+* expand Ga(pi-pj)=Ga(pi)-Ga(pj)
+id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
+
+
+* move Chir to the left
+#call moveChirR();
+#call simplify();
+
+
+
+* do SM only 
+id voL=0;
+
+
+**************************************************
+
+* cancelling l^2
+*repeat;
+*    id q1.q1*LoopDenom(q1,MZ?, ?args) = LoopDenom(?args) + MZ^2*LoopDenom(q1,MZ, ?args);
+*endrepeat;
+
+* removing dim-8 terms
+*id voL^4=0;
+
+* checking that only q1-linear terms multiply LoopDenom and not higher 
+*Print;
+*Bracket LoopDenom;
+*.sort
+*.end
+
+* doing the shift q1 --> q1-p3
+*id Ga(DumStr1?,q1)*LoopDenom(p3+q1,MT, -p4+q1,MT) = Ga(DumStr1,q1-p3)*LoopDenom(q1,MT, -p4-p3+q1,MT);
+*id q1(LorX?)*LoopDenom(p3+q1,MT, -p4+q1,MT) = (q1(LorX)-p3(LorX))*LoopDenom(q1,MT, -p4-p3+q1,MT);
+*id LoopDenom(p3+q1,MT, -p4+q1,MT) = LoopDenom(q1,MT, -p4-p3+q1,MT);
+
+
+* expand Ga(pi-pj)=Ga(pi)-Ga(pj)
+*id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
+
+**************************************************
+
+
+id Ga(DumStr1?,p3) = -Ga(DumStr1,p4) + Ga(DumStr1,p1) + Ga(DumStr1,p2);
+id p3 = -p4+p1+p2;
+
+
+* Dirac algebra
+repeat;
+   #call commuteToLeft(p2);
+   #call commuteToRight(p1);
+   #call applyDiracEq(1);  
+endrepeat;
+#call simplify();
+
+repeat;
+   #call commuteToLeft(p3);
+   #call commuteToRight(p4);
+   #call applyDiracEq(2);  
+endrepeat;
+#call simplify();
+
+.sort
+
+
+
+
+* pull out loop momenta q1
+id once Ga(DumStr1?,q1) = Ga(DumStr1,DumLor1)*q1(DumLor1);
+id once Ga(DumStr1?,q1) = Ga(DumStr1,DumLor2)*q1(DumLor2);
+id once Ga(DumStr1?,q1) = Ga(DumStr1,DumLor3)*q1(DumLor3);
+id once Ga(DumStr1?,q1) = Ga(DumStr1,DumLor4)*q1(DumLor4);
+id once pDumX?FVec.q1 = pDumX(DumLor5)*q1(DumLor5);
+id once pDumX?FVec.q1 = pDumX(DumLor6)*q1(DumLor6);
+id once pDumX?FVec.q1 = pDumX(DumLor7)*q1(DumLor7);
+id once pDumX?FVec.q1 = pDumX(DumLor8)*q1(DumLor8);
+id once LeviCiv(q1,LorX?,LorY?,LorZ?) = LeviCiv(DumLor9,LorX,LorY,LorZ)*q1(DumLor9);
+
+
+* identify tensor integrals (Denner's conventions)
+multiply SIntDummy;
+id q1(LorW?DumId)*q1(LorX?DumId)*q1(LorY?DumId)*q1(LorZ?DumId) = LoopMom(LorW,LorX,LorY,LorZ)/SIntDummy;
+id q1(LorW?DumId)*q1(LorX?DumId)*q1(LorY?DumId)                = LoopMom(LorW,LorX,LorY)     /SIntDummy;
+id q1(LorW?DumId)*q1(LorX?DumId)                               = LoopMom(LorW,LorX)          /SIntDummy;
+id q1(LorW?DumId)                                              = LoopMom(LorW)               /SIntDummy;
+id SIntDummy                                                   = LoopMom(0);
+
+
+id LoopDenom( q1,m0?, pDumW?,m1? ) * LoopMom(?args)                   
+   = i_*Pi^2 * TI(2,?args,pDumW-q1,m0,m1);
+id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args) 
+   = i_*Pi^2 * TI(3,?args,pDumW-q1,pDumX-q1,m0,m1,m2);
+id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2?, pDumY?,m3? ) * LoopMom(?args) 
+   = i_*Pi^2 * TI(4,?args,pDumW-q1,pDumX-q1,pDumY-q1,m0,m1,m2,m3);
+
+   
+   
+id TI(2,0,pDumW?,m0?,m1?) 
+ = SI(2,pDumW,m0,m1);
+id TI(3,0,pDumW?,pDumX?,m0?,m1?,m2?) 
+ = SI(3,pDumW,pDumX,m0,m1,m2);
+id TI(4,0,pDumW?,pDumX?,pDumY?,m0?,m1?,m2?,m3?) 
+ = SI(4,pDumW,pDumX,pDumY,m0,m1,m2,m3);
+
+* remove LoopMom(0) from the LO contribution
+id LoopMom(0)=1;
+
+
+
+* insert tensor decomposition ( scalar integrals must be identified first )
+#include /mnt/pep/mschulze/lib/FeynArtsToForm/LorDec.frm
+
+
+
+
+sum DumLor1;
+sum DumLor2;
+sum DumLor3;
+sum DumLor4;
+sum DumLor5;
+sum DumLor6;
+sum DumLor7;
+sum DumLor8;
+sum DumLor9;
+
+#call simplify();
+.sort 
+
+
+* move Chir to the left
+#call moveChirR();
+#call simplify();
+
+
+
+id Ga(DumStr1?,p3) = -Ga(DumStr1,p4) + Ga(DumStr1,p1) + Ga(DumStr1,p2);
+id p3 = -p4+p1+p2;
+
+
+* Dirac algebra
+repeat;
+   #call commuteToLeft(p2);
+   #call commuteToRight(p1);
+   #call applyDiracEq(1);  
+endrepeat;
+#call simplify();
+
+repeat;
+   #call commuteToLeft(p3);
+   #call commuteToRight(p4);
+   #call applyDiracEq(2);  
+endrepeat;
+#call simplify();
+
+.sort
+
+
+
+
+
+* now we conjugate the LO
+
+
+#do i=1,2
+   multiply SpiStr(`i');
+   repeat;
+      id SpiStr(`i',?args1)*Ga?{ASpi,Ga,Chir,Spi}(`i',?args2) = SpiStr(`i',?args1,Ga(`i',?args2));
+   endrepeat;
+   id SpiStr(`i',?args) = SpiStr(?args);
+#enddo
+
+
+
+
+
+.store
+Off statistics;
+
+
+Global [cc1,1] = [1,1];
+
+id i_ = -i_;
+id cI = -cI;
+
+* removing the WFRC for this piece (higher order)
+id dZfL=1;
+id dZfR=1;
+
+id SpiStr(?args) = SpiStr(reverse_(?args));
+
+argument SpiStr;
+   id ASpi(?args) = SpiDum(?args);
+   id Spi(?args) = ASpi(?args);
+   id SpiDum(?args) = Spi(?args);
+   id Chir(DumSymb1?,lambda?) = Chir(DumSymb1,-lambda);
+endargument;
+
+#call conjugateEp();
+
+*rename open Lorentz indices
+#do i = 1,20,1
+id Lor{`i'} = LorP{`i'};
+argument;
+   id Lor{`i'} = LorP{`i'};
+   argument;
+      id Lor{`i'} = LorP{`i'};
+   endargument;
+endargument;
+#enddo
+
+
+
+.store
+Off statistics;
+
+
+
+
+
+
+
+
+* square matrix elements
+
+Global [1,1,1] = [1,1]*[cc1,1];
+Global [2,1,1] = [2,1]*[cc1,1];
+Global [3,1,1] = [3,1]*[cc1,1];
+
+
+repeat;
+   id SpiStr(?args1,Spi(DumSymb1?,+p1?,mX?))*SpiStr(ASpi(DumSymb1?,+p1?,mX?),?args2) = SpiStr(?args1,Ga(DumSymb1,p1),?args2)+mX*SpiStr(?args1,?args2);
+endrepeat;
+id SpiStr(ASpi(DumSymb1?,+p1?,mX?),?args,Spi(DumSymb1?,+p1?,mX?)) = SpiStr(Ga(DumSymb1,p1),?args)+mX*SpiStr(?args);
+
+
+
+
+#do i=1,10
+   id once SpiStr(?args) = SpiStr{`i'}(?args);
+   argument SpiStr{`i'};
+      id Ga?{ASpi,Spi,Ga,Chir}(DumSymb1?,?args) = Ga(`i',?args);
+   endargument;
+
+   repeat;
+      id SpiStr{`i'}(Ga?{ASpi,Spi,Ga,Chir}(?args1),?args2) = Ga(?args1)*SpiStr{`i'}(?args2);
+   endrepeat;
+   id SpiStr{`i'} = 1;
+#enddo
+
+
+
+#call moveChir()
+#call simplify;
+
+
+
+#call evalTrace(1);
+#call evalTrace(2);
+
+
+*#call FORMTraceD(1);
+*#call FORMTraceD(2);
+
+#call simplify();
+
+id LeviCiv(p1,p2,p3,p4)=0;
+

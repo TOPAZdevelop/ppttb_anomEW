@@ -38,7 +38,7 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
 c**********************************************************************************
 c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
 
-        call ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
 
 c     END MARKUS      
 c**********************************************************************************

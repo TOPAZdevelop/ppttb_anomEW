@@ -69,21 +69,21 @@ c--- avoid calculating unnecessarily by checking input file flags
       
       
       
-      subroutine ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest) ! ( variables are in common block of anomcoup.f and set in mdata.f )
+      subroutine ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest) ! ( variables are in common block of anomcoup.f and set in mdata.f )
       implicit none 
       include 'types.f'      
       include 'anomcoup.f'      
-      real(8) :: gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest
+      real(8) :: gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,sw2
       logical,save :: FirstTime=.true.
       
-        gvt = gvt + (vev/Lambda_BSM)**2 *(C_phiq_333 - 0.5d0*C_phiu_33)
-        gat = gat + (vev/Lambda_BSM)**2 *(C_phiq_333 + 0.5d0*C_phiu_33)
-        gw  = gw  + (vev/Lambda_BSM)**2 *(0.5d0*C_phiq_333)
+        gvt = gvt + (vev/Lambda_BSM)**2 *(C_phiq_333 - 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gat = gat + (vev/Lambda_BSM)**2 *(C_phiq_333 + 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gw  = gw  + (vev/Lambda_BSM)**2 *(C_phiq_333)*0.5d0/dsqrt(2d0)/dsqrt(sw2)
         
         gvt_sq = gvt**2
         gat_sq = gat**2
         gw_sq  = gw**2              
-      
+       
         gvt    = gvt    * coupl_gvt
         gat    = gat    * coupl_gat
         gw     = gw     * coupl_gw

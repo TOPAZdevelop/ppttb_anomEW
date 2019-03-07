@@ -65,7 +65,7 @@ c----         are set in the input file
 
 c---  Widths: note that the top width is calculated in the program
 c---  The W width of 2.1054 is derived using the measured BR of
-c---    10.86 +/- 0.09 % (PDG 2015) and the LO partial width calculation
+c---    10.86 +/- 0.09 % (PDG 2015) and the LO par1tial width calculation
 c---    for Mw=80.385 GeV
       data wwidth,zwidth/2.093_dp,2.4952_dp/
       data tauwidth/2.269e-12_dp/
@@ -137,7 +137,7 @@ c--- Masses below here are currently unused
 !        data C_phiu_33/  10d0/  
 !        data C_phiq_333/ -5d0/   ! this probes axial coupling only 
 !        data C_phiu_33/  10d0/ 
-       data vev/ 246d0/ 
+       data vev/ 246.21845810181631d0/ 
        data Lambda_BSM/ 1000d0/
 ****** END MARKUS
 

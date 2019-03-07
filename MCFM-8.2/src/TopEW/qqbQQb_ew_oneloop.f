@@ -15,7 +15,15 @@
      .     rz,rw,rb,rh,yphi,ys,ini_corr(nf),dFD(nf),T3(nf),gvq(nf),
      .     gaq(nf),qa(5),bxew(nf,-1:0),bxqcd(nf,-1:0),BB(nf,-1:0),fac
       real(dp) :: db0,gvt_sq,gat_sq,gw_sq,g_rest,MARKUS_qa(3:4),PreFac,myDB0
+      real(dp) :: vol,C33phiq3,C33phiu
       integer ep
+      
+      
+!          s=   173308.20441330347d0
+!          beta = 0.55464632643236811d0
+!          z = 0.61536288270299611d0
+      
+      
       
 
       ep = 0
@@ -42,14 +50,26 @@ c      alpha = 1._dp/126.3_dp
       gvt = gvq(2)
       gat = gaq(2)
 
+!          print *, gvt,gat,gw
+
+
 c**********************************************************************************
 c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
 
-        call ResetEWCouplings(gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        
+        vol = vev/Lambda_BSM
+        C33phiq3 = C_phiq_333 
+        C33phiu = C_phiu_33
         
 c     END MARKUS      
 c**********************************************************************************
 
+
+!          print *, alpha,musq,mt,mb,mw,mz
+!          print *, gvt,gat,gw
+      
+      
       
 !      as = 1._dp
       sigma0 = pi*as**2/8._dp*(Nc**2-1._dp)/Nc**2*beta/s
@@ -58,7 +78,7 @@ c*******************************************************************************
       u = -s*(1._dp+beta*z)/2._dp+mt**2
 
       
-        mb=0.0001d0
+!         mb=0.0001d0
       
       rz = mz**2/s
       rb = mb**2/s
@@ -157,27 +177,64 @@ C      BB = 0._dp
      .     ep))/beta**2)
      .     )/(mz**2*pi)
 
-           MARKUS_qa(3)= PreFac*(alpha*((-1 + beta**2)*s*
-     -       (1 + z**2 - 2*MZ**2*(2 + beta**2*(-1 + z**2))*DB0(MT**2,MT**2,MZ**2)) - 
-     -      4*(1 + z**2)*xI1(MT**2,musq,ep) + 4*(1 + z**2)*xI1(MZ**2,musq,ep) + 
-     -      (2*MZ**2*(-1 + beta**2 - 2*beta**4 + (3 - 7*beta**2 + 2*beta**4)*z**2)*
-     -         xI2(MT**2,MT**2,MZ**2,musq,ep))/beta**2 - 
-     -      ((-1 + beta**2)*(beta**2*s*(1 + z**2) + 
-     -           MZ**2*(2 - 6*z**2 + 4*beta**2*(-1 + z**2)))*
-     -         xI2(s,MT**2,MT**2,musq,ep))/beta**2 - 
-     -      (2*(-1 + beta**2)*MZ**2*
-     -         (beta**2*(-1 + beta**2)*s*(-1 + z**2) + 
-     -           MZ**2*(1 - 3*z**2 + 2*beta**2*(-1 + z**2)))*
-     -         xI3(MT**2,MT**2,s,MT**2,MZ**2,MT**2,musq,ep))/beta**2))/
-     -  (8.*MW**2*Pi*SW2)
+        
+        print *, "MCFM   qa(3)",qa(3)
+               
+         
+         MARKUS_qa(3)= 
+     -  (alpha*PreFac*(16*(4*C33phiq3**2 + C33phiu**2)*MZ**2*voL**4+
+     -  (-1 + beta**2)*s*(1 + 8*C33phiq3*voL**2 + 4*C33phiu*voL**2 + 
+     -     12*C33phiq3**2*voL**4 + 4*C33phiq3*C33phiu*voL**4 + 
+     -     3*C33phiu**2*voL**4 + (z + (2*C33phiq3 + C33phiu)*voL**2*z)**2) -
+     -  2*(-1 + beta**2)*MZ**2*s*(2 + beta**2*(-1 + z**2))*
+     -   DB0(MT**2,MT**2,MZ**2)))/(8.*MW**2*Pi*SW2) + 
+     -  (alpha*PreFac*(-2 - 8*C33phiq3*C33phiu*voL**4 - 
+     -  2*(z + (2*C33phiq3 + C33phiu)*voL**2*z)**2 + 
+     -  beta**2*voL**2*(4*C33phiq3 + 2*C33phiu + 
+     -     (4*C33phiq3**2 + C33phiu**2)*voL**2)*(-1 + z**2))*
+     -     xI1(MT**2,musq,ep))/(4.*MW**2*Pi*SW2) + 
+     -  (alpha*PreFac*(-(beta**2*voL**2*
+     -     (4*C33phiq3 + 2*C33phiu + 3*(4*C33phiq3**2 + C33phiu**2)*voL**2)*
+     -     (-1 + z**2)) + 2*(1 - 8*C33phiq3**2*voL**4 + 
+     -     4*C33phiq3*C33phiu*voL**4 - 2*C33phiu**2*voL**4 + 
+     -     (z + (2*C33phiq3 + C33phiu)*voL**2*z)**2))*xI1(MZ**2,musq,ep))/
+     -   (4.*MW**2*Pi*SW2) + (alpha*MZ**2*PreFac*
+     -     (2*beta**4*(1 + (2*C33phiq3 + C33phiu)*voL**2*
+     -      (3 + (2*C33phiq3 + C33phiu)*voL**2))*(-1 + z**2) + 
+     -  (1 + (2*C33phiq3 + C33phiu)*voL**2)**2*(-1 + 3*z**2) + 
+     -  beta**2*(1 - 7*z**2 - 
+     -     (2*C33phiq3 + C33phiu)*voL**2*
+     -      (-6 + 14*z**2 + (2*C33phiq3 + C33phiu)*voL**2*(-1 + 7*z**2))))*
+     -     xI2(MT**2,MT**2,MZ**2,musq,ep))/(4.*beta**2*MW**2*Pi*SW2) - 
+     -  (alpha*PreFac*(2*(-1 + beta**2)*
+     -  (MZ + (2*C33phiq3 + C33phiu)*MZ*voL**2)**2*
+     -   (1 - 3*z**2 + 2*beta**2*(-1 + z**2)) + 
+     -  beta**2*s*(2*beta**4*(4*C33phiq3**2 + C33phiu**2)*voL**4*
+     -      (-1 + z**2) - (1 + (2*C33phiq3 + C33phiu)*voL**2)**2*(1 + z**2) + 
+     -     beta**2*(1 + 4*C33phiq3*voL**2 + 2*C33phiu*voL**2 + 
+     -        20*C33phiq3**2*voL**4 + 4*C33phiq3*C33phiu*voL**4 + 
+     -        5*C33phiu**2*voL**4 + (z + (2*C33phiq3 + C33phiu)*voL**2*z)**2))
+     -  )*xI2(s,MT**2,MT**2,musq,ep))/(8.*beta**2*MW**2*Pi*SW2) + 
+     - (alpha*(4*C33phiq3**2 + C33phiu**2)*PreFac*(-4*MZ**2+s+3*beta**2*s)*
+     -     voL**4*(2 + beta**2*(-1 + z**2))*xI2(s,MT**2,MZ**2,musq,ep))/
+     -   (16.*MW**2*Pi*SW2) - (alpha*(-1 + beta**2)*PreFac*
+     -     (MZ + (2*C33phiq3 + C33phiu)*MZ*voL**2)**2*
+     -     (beta**2*(-1 + beta**2)*s*(-1 + z**2) + 
+     -  MZ**2*(1 - 3*z**2 + 2*beta**2*(-1 + z**2)))*
+     -     xI3(MT**2,MT**2,s,MT**2,MZ**2,MT**2,musq,ep))
+     -   /(4.*beta**2*MW**2*Pi*SW2)
        
         MARKUS_qa(3)=  MARKUS_qa(3)*sigma0
+
+        print *, "MARKUS_qa(3)",MARKUS_qa(3)
+        pause
+    
     
      
-          print *, "MCFM qa(3)",qa(3)
-          print *, "M    qa(3)",MARKUS_qa(3)
-          print *, "ratio",qa(3)/MARKUS_qa(3)
-          print *, "diff ",(qa(3)-MARKUS_qa(3))/( (2._dp - beta**2 + beta**2*z**2)* sigma0 )
+!           print *, "MCFM qa(3)",qa(3)
+!           print *, "M    qa(3)",MARKUS_qa(3)
+!           print *, "ratio",qa(3)/MARKUS_qa(3)
+!           print *, "diff ",(qa(3)-MARKUS_qa(3))/( (2._dp - beta**2 + beta**2*z**2)* sigma0 )
           
    
    
@@ -230,12 +287,12 @@ C      BB = 0._dp
        
            MARKUS_qa(4)=  MARKUS_qa(4)*sigma0
       
-          print *, "" 
-          print *, "MCFM qa(4)",qa(4)
-          print *, "M    qa(4)",MARKUS_qa(4)
-          print *, "ratio",qa(4)/MARKUS_qa(4)
-          print *, "diff ",(qa(4)-MARKUS_qa(4))/( (2._dp - beta**2 + beta**2*z**2)* sigma0 )
-          pause     
+!           print *, "" 
+!           print *, "MCFM qa(4)",qa(4)
+!           print *, "M    qa(4)",MARKUS_qa(4)
+!           print *, "ratio",qa(4)/MARKUS_qa(4)
+!           print *, "diff ",(qa(4)-MARKUS_qa(4))/( (2._dp - beta**2 + beta**2*z**2)* sigma0 )
+!           pause     
      
 !       qa(5) = 
 !      .     (0.5_dp*alpha*gw_sq*mt**2*sigma0*(-1._dp - z**2 + 2._dp*(-1._dp 
@@ -387,6 +444,12 @@ c--- it therefore affects Higgs diagrams as the square
      .     + bxew(:,0) + bxew(:,-1) + bxqcd(:,0) + bxqcd(:,-1)
       corr = corr + ini_corr
 
+!           print *, "sigma0",sigma0/(1.6165339918089825d-008)
+!           print *, "qa(1)",qa(1)/(6.8983663068961704d-011 )
+!           print *, "qa(2)",qa(2)/(-6.2986394714637139d-010)
+!           print *, "bxew(:,0)",bxew(1,0)/(-1.2493253459727560d-009),bxew(2,0)/(1.1917719716490102d-009)
+!           print *, "bxqcd(:,0)",bxqcd(1,0)/(-1.5066686083764934d-010),bxqcd(2,0)/(1.2651028762611221d-010)
+!           pause
 
       corr = corr/born
 
