@@ -1,0 +1,218 @@
+(* ::Package:: *)
+
+InitPath = "/users/pep/mschulze/lib/MathLib/";
+FeynArtsPath = "/users/pep/mschulze/lib/FeynArts-3.5/";
+FeynArtsToFormPath = "/users/pep/mschulze/lib/FeynArtsToForm/";
+ProjectPath = "/users/pep/mschulze/projects/ppttb_anomEW/Calc/";
+
+Get[ InitPath<>"StandardInit.m" ];
+Get[ InitPath<>"SIOrder.m" ];
+Get[ ProjectPath<>"DiagGG1_output.dat" ];
+
+
+
+Clear[TCReplList,SIList];
+TIReduction = Get[ InitPath<>"TIReduction.dat" ];
+EWConterterms = Get[ InitPath<>"EW_Renormalization.dat"];
+
+
+
+insertMasses = { p1.p1 -> 0,
+                 p2.p2 -> 0,
+                 p3.p3 -> MT^2,
+                 p4.p4 -> MT^2,
+  p1.p3 -> shat/4 (1 - beta z ),
+  p1.p4 -> shat/4 (1 + beta z ),
+  p2.p3 -> shat/4 (1 + beta z ),
+  p2.p4 -> shat/4 (1 - beta z ),
+   p3.p4 -> p1.p2 - MT^2,
+p1.p2-> shat/2
+};
+
+
+TheAmpList    = StringReplace[AmpList,"["->"M["] // ToExpression;
+TheRedAmpList = StringReplace[AmpList,"["->"redM["] // ToExpression;
+
+
+   (* generate list of all tensor integral coefficients *)
+   TCList={};
+   For[i=1,i<=Length[TheAmpList],i++,
+         TCList = Union[TCList, Cases[ TheAmpList[[i]] ,TC[___],100] ];
+   ];
+
+   (* simplify this list *)
+   TCReplList={};
+   For[i=1, i<=Length[TCList],i++,
+         Print[i,"/",Length[TCList],": simplifying ",TCList[[i]]];
+         
+         TheCoeff = TCList[[i]] //.TIReduction //Expand;
+         TheCoeff = TheCoeff    //.insertMasses;
+         TheCoeff = TheCoeff    // Expand;
+         TheCoeff = SimplifyTC[ TheCoeff ];
+         TheCoeff = Collect[ TheCoeff, SI[___], Simplify];
+         TCReplList = Append[TCReplList,TCList[[i]]-> TheCoeff ];
+   ];
+ 
+ 
+
+  SIList={};
+  For[i=1,i<=Length[TheAmpList],i++,
+         Print["reducing diagram ",i,"/",Length[TheAmpList]];
+         dummy = TheAmpList[[i]] //. TCReplList; 
+         Print["expanding in D-4"];
+         dummy = Expand[ dummy ] //. InsertFinitePart   /. DSTm4->0;
+         Print["converting to invariants"];
+         dummy = SIInvariants[ dummy,insertMasses];         
+         dummy = SIOrder[ dummy ]  //. insertMasses;
+         dummy = dummy //. { SI[1,0]->0 };
+         Print["simplifying amplitude"];
+         dummy = dummy //. PropDenom[x_]->1/x    // SimplAmp;
+         Evaluate[ TheRedAmpList[[i]] ] = dummy;
+
+         (* generate list of integrals in terms of invariants *)
+         SIList = Union[SIList, Cases[ TheRedAmpList[[i]] ,SI[___],100] ] //SIOrder //Simplify;
+         TheRedAmpList[[i]] = TheRedAmpList[[i]]/(16 Pi^4); 
+   ];
+
+
+
+
+SIList // TableForm 
+
+
+InsertSIList= {};
+% //TableForm
+
+
+TreeAmpD = (M[0,0]  // Expand   ) //. { dZfL^2->0 , dZfR^2->0, dZfL*dZfR->0   } //. PropDenom[x_]->1/x //. insertMasses //. MT -> Sqrt[shat/4 (1-beta^2)] // Collect[#,{DSTm4},FullSimplify]& ;
+TreeAmpD = TreeAmpD/(NCol^2-1)^2 //. {  dZfL->0, dZfR->0 , DSTm4->0  }  // FullSimplify   (*  removing WFRC for now *)
+
+TreeAmpScharf = GS^4 (4 Pi)^2 (2 Pi)^2 (NCol^2-2+NCol^2 z^2 beta^2 )/(1- z^2 beta^2 )^2/(NCol^2-1)/NCol ( 1-z^4 beta^4 +2  beta^2 (1-z^2) (1-beta^2)    ) // FullSimplify
+
+
+
+
+
+
+
+(* Note that TheRedAmpList[[9]] \[Equal] TheRedAmpList[[8]] with z\[Rule]-z  *)
+
+bx3=(TheRedAmpList[[9]])/(PreFac/(16 Pi^4))  //. {SI[args___]->SI[args], MT -> Sqrt[shat/4 (1-beta^2)]} //. shat -> s //. NCol-> 3  // Collect[#,SI[___],FullSimplify]&  //FullSimplify
+UVCheck=TheRedAmpList[[9]]  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+bx3 // FortranForm
+
+
+
+
+
+
+
+
+
+
+
+insertBs={
+TC[2,1,psq,MT^2,MZ^2] ->   ( TC[2,1,p,MT,MZ] //.TIReduction //. p.p->psq   // SIInvariants[ #,{p.p->psq}]& // Expand),
+TC[2,1,psq,MT^2,MW^2] ->   ( TC[2,1,p,MT,MW] //.TIReduction //. p.p->psq   // SIInvariants[ #,{p.p->psq}]& // Expand),
+TC[2,1,psq,0,MW^2] ->   ( TC[2,1,p,0,MW] //.TIReduction //. p.p->psq   // SIInvariants[ #,{p.p->psq}]& // Expand),
+TC[2,1,psq,MB^2,MW^2] ->   ( TC[2,1,p,MB,MW] //.TIReduction //. p.p->psq   // SIInvariants[ #,{p.p->psq}]& // Expand),
+D[SI[2,psq,m1sq_,m2sq_]  ,psq] -> DB0[psq,m1sq,m2sq],
+SI[1,0]->0
+};
+
+deltaZchi0 = +alpha/4/Pi /4/SW^2 MT^2/MW^2 ( 2 TC[2,1,psq,MT^2,MZ^2] + 2 MT^2 * DD[ 2 TC[2,1,psq,MT^2,MZ^2]   +  2 SI[2,psq,MT^2,MZ^2] ,psq ] ) //. insertBs  // Expand;
+
+
+
+
+
+vrts3 = (TheRedAmpList[[1]])  //. {SI[args___]->SI[args], MT -> Sqrt[shat/4 (1-beta^2)]} //. shat -> s //. NCol-> 3  // Collect[#,SI[___],FullSimplify]&  //FullSimplify
+UVCheck=TheRedAmpList[[1]]  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+deltaZchi0 =deltaZchi0  /. DD->D   //.insertBs   //. psq->MT^2    // FullSimplify;
+
+FORMPreFac=(alpha 4 Pi)*GS^4*SW^(-2)*MW^(-2)*Pi^2 / PreFac;  (* this is equal to one *)
+CTZchi0 = deltaZchi0/FORMPreFac  * M[13,1]  // Expand;
+CTZchi0 = CTZchi0  /. {r_.* DSTm4* SI[1,m0sq_]-> r* (-2*m0sq), r_.* DSTm4* SI[2,p1_,m0sq_,m1sq_]-> r* (-2)}  /. DSTm4->0 // FullSimplify;
+UVCheck= CTZchi0  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+vrts3Renorm= 2*TheRedAmpList[[1]] + CTZchi0  //. PreFac-> alpha (4 Pi)*(alphas 4 Pi)^2*SW^(-2)*MW^(-2)*Pi^2  // FullSimplify 
+UVCheck= vrts3Renorm //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+vrts3Renorm/(alpha alphas^2/MW^2*MZ^2/SW^2 * Pi)  //. {SI[args___]->SI[args], DB0[args___]->DB0[args], MT -> Sqrt[shat/4 (1-beta^2)]} //. shat -> s //. NCol-> 3   // FullSimplify
+%  // FortranForm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vrt3 = (TheRedAmpList[[3]]+TheRedAmpList[[4]])  //. {SI[args___]->SI[args], MT -> Sqrt[shat/4 (1-beta^2)]} //FullSimplify
+UVCheck=(TheRedAmpList[[3]]+TheRedAmpList[[4]])  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+deltaZchi0 =deltaZchi0  /. DD->D   //.insertBs   //. psq->MT^2    // FullSimplify;
+
+FORMPreFac= ( alpha 4 Pi)*GS^4*SW^(-2)*MW^(-2)*Pi^2 / PreFac;  (* this is equal to one *) 
+CTZchi0 = deltaZchi0/FORMPreFac  * M[14,1]  // Expand;
+CTZchi0 = CTZchi0  /. {r_.* DSTm4* SI[1,m0sq_]-> r* (-2*m0sq), r_.* DSTm4* SI[2,p1_,m0sq_,m1sq_]-> r* (-2)}  /. DSTm4->0 // FullSimplify;
+UVCheck= CTZchi0  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+FUDGEFACTOR=1/2;
+vrt3Renorm= 2*vrt3 *FUDGEFACTOR + CTZchi0  //. PreFac-> alpha (4 Pi)*(alphas 4 Pi)^2*SW^(-2)*MW^(-2)*Pi^2  //. {SI[args___]->SI[args], DB0[args___]-> DB0[args], MT -> Sqrt[shat/4 (1-beta^2)]} //. shat->s //. NCol-> 3 // Collect[#,SI[___],FullSimplify]& //FullSimplify 
+UVCheck= vrt3Renorm //. InsertUVDiv  //. {SI[args___]->SI[args], DB0[args___]-> DB0[args], MT -> Sqrt[shat/4 (1-beta^2)], shat-> s} // Series[#,{DSTm4,0,-1}]& // Normal // Expand
+
+
+vrt3Renorm/(alpha alphas^2 Pi /3/MW^2/SW^2) // FullSimplify // FortranForm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+slf3 = TheRedAmpList[[12]]  //. {SI[args___]->SI[args], MT -> Sqrt[shat/4 (1-beta^2)]}  //. shat-> s   //FullSimplify
+UVCheck=TheRedAmpList[[12]]  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+Get[ ProjectPath<>"DiagGG4_output.dat" ];   (* loading CT diagrams *)
+
+FORMPreFac= ( alpha 4 Pi)*GS^4*SW^(-2)*MW^(-2)*Pi^2 / PreFac;  (* this is equal to one *) 
+
+MassCT = M[2,1]/FORMPreFac    //. {dMf1[3,3]-> delM[MT], dZfL1[__]-> delZfL[MT],  dZfR1[__]-> delZfR[MT] }  //. EWConterterms  //. {ID[pho]-> 0,ID[Z0]->0, ID[Wpm]-> 0, ID[Hig]-> 0, ID[phi]->0, ID[Chi]-> 1  } ;
+MassCT = MassCT //. Der[arg_,p2_,eval_]:>  ( D[arg,p2]  //. p2-> eval) //. D[SI[2,p_,m1_,m2_],p_]:>  DB0[p,m1,m2] //. {SI[args___]->SI[args], DB0[args___]-> DB0[args], MT -> Sqrt[shat/4 (1-beta^2)]} //. shat->s  //. alphao4Pi-> alpha/(4 Pi) //. sw2-> SW^2 // FullSimplify
+UVCheck = MassCT  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)]  /. shat-> s // Series[#,{DSTm4,0,-1}]& // Normal // FullSimplify
+
+
+(* ::InheritFromParent:: *)
+(**)
+
+
+slf3Renorm = slf3 + MassCT // FullSimplify
+UVCheck = slf3Renorm  //. InsertUVDiv //. MT -> Sqrt[shat/4 (1-beta^2)] /. shat-> s // Series[#,{DSTm4,0,-1}]& // Normal // Expand
+
+
+slf3Renorm /(PreFac/256/Pi^4) //. NCol-> 3  // Collect[#,{SI[___],DB0[___]},FullSimplify]& // FortranForm
