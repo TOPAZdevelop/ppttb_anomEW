@@ -13,7 +13,7 @@ endargument;
 id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
 
 
-* move Chir to the left
+* move Chir to the right
 #call moveChirR();
 #call simplify();
 
@@ -29,6 +29,8 @@ endrepeat;
 
 
 ******************* higher-rank tensor reduction *******************************
+** comment: implmement a higher-rank reduction and show that higher-ranks cancel out 
+
 
 * cancelling l^2
 repeat;
@@ -37,9 +39,9 @@ endrepeat;
 
 
 *
-* checking that LoopDenom(p3+q1,MT,-p4+q1,MT) multiplies q1-terms only linearly 
+* checking that LoopDenom(p3+q1,MT,-p4+q1,MT)*q1.q1 multiplies q1-indepdent terms
 * and
-* LoopDenom(p3+q1,MT,-p4+q1,MT)*q1.q1 multiplies q1-indepdent terms 
+* LoopDenom(p3+q1,MT,-p4+q1,MT) multiplies q1-terms only linearly 
 * before doing the shifts
 * 
 *Print;
@@ -51,8 +53,8 @@ endrepeat;
 *
 * doing the shift for the q1.q1 term
 * 
-id DID(1)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(1)*( LoopDenom(q1,MT) + (MZ^2-2*q1.p3+p3.p3)*LoopDenom(q1,MZ, -p3-p4+q1,MT) );  
-id DID(2)*LoopDenom(p3+q1, 0, -p4+q1, 0)*q1.q1 = DID(2)*( LoopDenom(q1, 0) + (MW^2-2*q1.p3+p3.p3)*LoopDenom(q1,MW, -p3-p4+q1, 0) );
+id DID(2)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(2)*( LoopDenom(q1,MT) + (MZ^2-2*q1.p3+p3.p3)*LoopDenom(q1,MZ, -p3-p4+q1,MT) );  
+id DID(3)*LoopDenom(p3+q1, 0, -p4+q1, 0)*q1.q1 = DID(3)*( LoopDenom(q1, 0) + (MW^2-2*q1.p3+p3.p3)*LoopDenom(q1,MW, -p3-p4+q1, 0) );
 
 
 
@@ -279,6 +281,7 @@ Off statistics;
 Global [1,1,1] = [1,1]*[cc1,1];
 Global [2,1,1] = [2,1]*[cc1,1];
 Global [3,1,1] = [3,1]*[cc1,1];
+Global [4,1,1] = [4,1]*[cc1,1];
 
 
 repeat;
@@ -310,7 +313,6 @@ id SpiStr(ASpi(DumSymb1?,+p1?,mX?),?args,Spi(DumSymb1?,+p1?,mX?)) = SpiStr(Ga(Du
 
 #call evalTrace(1);
 #call evalTrace(2);
-
 
 *#call FORMTraceD(1);
 *#call FORMTraceD(2);

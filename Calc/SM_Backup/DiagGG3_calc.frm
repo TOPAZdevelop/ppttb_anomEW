@@ -64,6 +64,8 @@ id q1(LorW?DumId)                                              = LoopMom(LorW)  
 id SIntDummy                                                   = LoopMom(0);
 
 
+id LoopDenom( q1,m0? ) * LoopMom(?args)                   
+   = i_*Pi^2 * TI(1,?args,m0);
 id LoopDenom( q1,m0?, pDumW?,m1? ) * LoopMom(?args)                   
    = i_*Pi^2 * TI(2,?args,pDumW-q1,m0,m1);
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args) 
@@ -71,6 +73,9 @@ id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args)
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2?, pDumY?,m3? ) * LoopMom(?args) 
    = i_*Pi^2 * TI(4,?args,pDumW-q1,pDumX-q1,pDumY-q1,m0,m1,m2,m3);
 
+   
+id TI(1,0,m0?) 
+ = SI(1,m0);
 id TI(2,0,pDumW?,m0?,m1?) 
  = SI(2,pDumW,m0,m1);
 id TI(3,0,pDumW?,pDumX?,m0?,m1?,m2?) 

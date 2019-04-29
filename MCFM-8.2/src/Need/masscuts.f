@@ -82,10 +82,10 @@ c--- only apply cuts on s34 if vectors 3 and 4 are defined
      &      -(p(3,2)+p(4,2))**2-(p(3,3)+p(4,3))**2
      
 ! MARKUS: apply boost4 cut
-        pt3 = dsqrt(p(3,1)**2+p(3,2)**2)
+!         pt3 = dsqrt(p(3,1)**2+p(3,2)**2)
 !         pt4 = dsqrt(p(4,1)**2+p(4,2)**2)
 !         if( pt3.lt.950d0 ) return 1
-        if( pt3.lt.400d0 ) return 1
+!         if( pt3.lt.400d0 ) return 1
 !         if( pt3.lt.700d0 ) return 1
 ! END: MARKUS 
      

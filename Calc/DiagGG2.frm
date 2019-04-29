@@ -16,18 +16,21 @@
 
 
 
+* removing also diags 2,5,6,8 because they are the u-channel diagrams that can be obtained from the remaining t-channel diagrams
+
+
 *id DID(1) =0;
-*id DID(2) =0;
+id DID(2) =0;
 *id DID(3) =0;
 *id DID(4) =0;
-*id DID(5) =0;
-*id DID(6) =0;
+id DID(5) =0;
+id DID(6) =0;
 *id DID(7) =0;
-*id DID(8) =0;
+id DID(8) =0;
 *id DID(9) =0;
 
   
-
+  
 id MU=0;
 id MB=0;
 argument;
@@ -36,7 +39,7 @@ argument;
 endargument;
 
 id IndexDelta(Col1?,Col2?) = SUND(Col1,Col2);
-id DID(Col1?)=1;
+
 id SumOver(?args) = 1;
 
          
@@ -44,8 +47,11 @@ id SumOver(?args) = 1;
 #include `WorkPath'DiagGG2_calc.frm
 
 
+
+
+
 id i_=cI;
-id EL^2*GS^4*SW^(-2)*MW^(-2)*Pi^2*Sqrt2^(-2) = PreFac;
+id EL^2*GS^4*SW^(-2)*MW^(-2)*Pi^2 = PreFac;
 
 id p1?.p2? = Dot(p1,p2);
 argument;
@@ -55,7 +61,7 @@ endargument;
 
 Format mathematica;
 Print;
-Bracket PreFac,cI,EL,GS,ICol,SW,MW,Pi,PropDenom,TC;
+Bracket PreFac,cI,EL,GS,ICol,SW,MW,Pi,PropDenom,TC,SI,voL;
 .sort;
 
 

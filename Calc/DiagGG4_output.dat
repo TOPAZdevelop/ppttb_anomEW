@@ -18,307 +18,502 @@ M[1,1] = ( + GS^4 * ( 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
          2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4
          *z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^4*z^4 - 1/2/( - 1/2*shat - 1/2*shat*
+         NCol^(-1)*MT*shat^2*beta^4*z^4 + 1/2/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^2 + 1/2/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^2*z^2
-          - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*
-         shat^2*beta^3*z + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
-         ,3]*NCol*MT*shat^2*beta^3*z^3 + 1/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 2/( - 1/2*shat - 1/2
-         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^2 + 1/( - 1/2
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2 - 1/2/( - 1/2
          *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^4
-          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3*z
-          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2*
+         beta*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*DSTm4^2*MT*shat^2 - 1/4/( - 1/2*shat - 1/2*shat*beta
          *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4
-         *z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z - 1/4/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5
-         *z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^5*z^5 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2 + 1/8/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2*z^2 + 1/8/(
+         beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4^2*MT*shat^2*beta*z - 1/2/(
           - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*
-         beta^3*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol*shat^3*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         MT*shat^2*beta^2*z^2 - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/(
           - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         *dZfL1[3,3,3]*NCol*shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2
+         *dMf1[3,3]*NCol*MT*shat^2*beta^3*z + 1/2/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z^3 + 1/( - 1/2
          *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 2
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^4*z^2 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol*MT*shat^2*beta^4*z^4 - 1/2/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2 + 1/2/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2*beta*z - 1/4/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4^2*MT*
+         shat^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         DSTm4^2*MT*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/8/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 - 1/
+         8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*
+         shat^3*beta^3*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^4*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z - 1/4/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^5*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^5*z^5 + 1/16/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3 - 1/16/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*
+         shat^3*beta*z - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^2*z^2 + 1/16/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta^3*z^3 + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*DSTm4^2*shat^3 - 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta*z - 1/
+         32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)
+         *DSTm4^2*shat^3*beta^2*z^2 + 1/32/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*z^3 - 1/8
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*
+         beta^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol*shat^3*beta^3*z - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z^3 + 1/8/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4 - 
+         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z + 1/4/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^3
           - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
          *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol*shat^3*beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*
+         shat^3*beta^5*z^5 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*DSTm4*shat^3 + 1/16/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^5 + 1/8/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^2
-          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3*z + 1/8/( - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta*z + 1/16/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*
+         beta^2*z^2 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/32/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3 + 1/32/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3
-         *z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^2 - 1/8/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*
-         z^4 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*
+         beta*z + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol*DSTm4^2*shat^3*beta^2*z^2 - 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*beta^3*z^3 + 1/8
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*
+         shat^3*beta^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3*z + 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3
+         *beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^2 - 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4
+         *z^4 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
          NCol^(-1)*shat^3*beta^5*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z
          )/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
          *z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^3 + 1/8/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
          2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5
-         *z^5 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
-         *shat^3*beta^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z - 1/8/( - 1/2*
+         *z^5 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2
+         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta*z - 1/16/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z^3
-          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4 - 1/8/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z + 
-         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta^2*z^2 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^(-1)*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat - 1/2
+         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3 - 1/32/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*
+         DSTm4^2*shat^3*beta*z - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^2*z^2 + 1/32/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*
+         shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
          2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT
-         *shat + 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol*MT*shat*beta*z + 1/( - 1/2*shat + 
-         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol*MT*shat*beta^3*z - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat*beta^3*z^3
-          + 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dMf1[3,3]*NCol^3*MT*shat - 1/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*
-         shat*beta*z - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
-          + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*beta^3*z + 1/( - 
-         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dMf1[3,3]*NCol^3*MT*shat*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
-         *shat^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta*z + 1/8/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol*shat^2*beta^2*z^2 + 1/8/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^2*beta^3*z - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^3*z^3 - 
-         1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^4*z^2 + 1/8/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol*shat^2*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*beta*z
-         )/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2
-          - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta*z - 1/8/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol^3*shat^2*beta^2*z^2 - 1/8/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2
-         *beta^3*z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
-          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/
-         8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
-         *z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^4*z^2 - 1/8/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol^3*shat^2*beta^4*z^4 - 1/8/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2
-          + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta*z + 1/8/( - 1/2*shat + 
-         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol*shat^2*beta^2*z^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/(
-          - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3
-         *z - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3*z^3 - 1/8/( - 1/2
-         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dZfR1[3,3,3]*NCol*shat^2*beta^4*z^2 + 1/8/( - 1/2*shat + 1/2*
+         dZfR1[3,3,3]*NCol*shat^3*beta^2 + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^2*z^2 + 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z - 
+         1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4
+          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*shat^3*beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/16/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3 + 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4*shat^3*beta*z + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^2*z^2 - 1/16/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^3*
+         z^3 - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
-         *shat^2*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2 - 1/8/(
+         *DSTm4^2*shat^3 + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta*z + 1/32/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*
+         z^2 - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
+         *DSTm4^2*shat^3*beta^3*z^3 - 1/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat + 1/(
           - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         *dZfR1[3,3,3]*NCol^3*shat^2*beta*z - 1/8/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^3*shat^2*beta^2*z^2 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*
-         beta^3*z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/8/(
-          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         *dZfR1[3,3,3]*NCol^3*shat^2*beta^4*z^2 - 1/8/( - 1/2*shat + 1/
-         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^3*shat^2*beta^4*z^4 + 1/( - 1/2*shat + 1/2*shat*beta*z)/(
-          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         *dMf1[3,3]*NCol^(-1)*MT*shat^2 - 1/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta*z + 1/2/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
-         beta^2 - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         *dMf1[3,3]*NCol*MT*shat*beta*z + 1/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat
+         *beta^3*z - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat*beta^3*z^3 - 1/2/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[
+         3,3]*NCol*DSTm4*MT*shat + 1/2/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat*
+         beta*z + 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat - 1/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*
+         MT*shat*beta*z - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*beta^3*z + 
+         1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dMf1[3,3]*NCol^3*MT*shat*beta^3*z^3 + 1/2/( - 1/2*shat + 1/
          2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^2*z^2 - 1/2/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^3*z + 1/2/( - 
+         NCol^3*DSTm4*MT*shat - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4*MT*shat*
+         beta*z - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2 + 1/8/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol*shat^2*beta*z + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^2*z^2
+          + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^3*z - 1/4/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol*shat^2*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z
+         )/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*
+         beta^4*z^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^4*z^4 - 1/16
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol*DSTm4*shat^2 + 1/16/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
+         *DSTm4*shat^2*beta*z + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^2*
+         beta^2*z^2 - 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^2*beta^3*z^3
+          + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)*dZfL1[3,3,3]*NCol^3*shat^2 - 1/8/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^2*beta*z - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*
+         beta^2*z^2 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^3*z + 1/4
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat + 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^2*beta^4*z^2 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*
+         beta^4*z^4 + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4*shat^2 - 1/16/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*DSTm4*shat^2*beta*z - 1/16/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*DSTm4*shat^2*beta^2*z^2 + 1/16/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*DSTm4*shat^2*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta*z + 1/8/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*shat^2*beta^2*z^2 + 1/8/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^2*beta^3*z - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3*z^3 - 
+         1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^4*z^2 + 1/8/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol*shat^2*beta^4*z^4 - 1/16/( - 1/2*shat + 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*
+         shat^2 + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^2*beta*z + 1/16/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfR1[3,3,3]*NCol*DSTm4*shat^2*beta^2*z^2 - 1/16/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol*DSTm4*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         shat^2 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta*z - 1/8/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol^3*shat^2*beta^2*z^2 - 1/8/( - 1/2*shat + 1/2
+         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^3*shat^2*beta^3*z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*
+         beta^3*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^4*z^2 - 1/
+         8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^4*z^4 + 1/16/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^3*DSTm4*shat^2 - 1/16/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*
+         shat^2*beta*z - 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^2*
+         beta^2*z^2 + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^2*beta^3*
+         z^3 + 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*MT*shat^2 - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dMf1[3,3]*NCol^(-1)*MT*shat^2*beta*z + 1/2/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2 - 1/2/( - 
          1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
           - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
-         beta^3*z^3 - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^4 + 2/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4*z^2 - 1/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4*
-         z^4 - 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT
-         *shat^2 + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2
-         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*
-         MT*shat^2*beta*z - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
-         ,3]*NCol*MT*shat^2*beta^2 + 1/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dMf1[3,3]*NCol*MT*shat^2*beta^2*z^2 + 1/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z - 1/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z^3
-          + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*
-         shat^2*beta^4 - 4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+         beta^2*z^2 - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
           + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol*MT*shat^2*beta^4*z^2 + 2/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^4 + 1/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2 - 1/( - 1/2*shat + 1/
-         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta*z + 1/2/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^2
-          - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*
-         shat^2*beta^2*z^2 - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dMf1[3,3]*NCol^3*MT*shat^2*beta^3*z + 1/2/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^3*z^3 - 1/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^4
-          + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*
-         shat^2*beta^4*z^2 - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
-         ,3]*NCol^3*MT*shat^2*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*
+         NCol^(-1)*MT*shat^2*beta^3*z + 1/2/( - 1/2*shat + 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3 - 1/8/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta*z
-          + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 - 1/4/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3*z
-          + 3/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 3/8/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4
-         *z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z - 1/4/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5
-         *z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^5*z^5 - 1/4/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol*shat^3 + 1/4/( - 1/2*shat + 1/2*shat
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^3*z^3 - 1/( - 
+         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
+         beta^4 + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*MT*shat^2*beta^4*z^2 - 1/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4*z^4 + 1/( - 
+         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*
+         shat^2 - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*DSTm4*MT*shat^2*beta*z + 1/4/( - 1/2*shat + 1/2*shat
          *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta*z - 1/4/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2 + 1/
-         2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*
-         beta^2*z^2 + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol*shat^3*beta^3*z - 3/4/( - 1/2*shat + 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z^3 + 1/4/( - 1/2*shat + 1/
-         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4 - 3/4/( - 1/2
-         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^2
-          + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^3*beta^4*z^4 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dZfL1[3,3,3]*NCol*shat^3*beta^5*z + 1/2/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^3 - 1/4/( - 1/
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4^2*MT*shat^2 - 1/4/( - 1/
          2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*
-         z^5 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^3*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2 - 1/4/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2*z^2
-          - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*
+         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4^2*MT*
+         shat^2*beta*z - 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol*MT*shat^2 + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol*MT*shat^2*beta*z - 1/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dMf1[3,3]*NCol*MT*shat^2*beta^2 + 1/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^2*z^2 + 1/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z - 
+         1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^3*z^3 + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol*MT*shat^2*beta^4 - 4/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dMf1[3,3]*NCol*MT*shat^2*beta^4*z^2 + 2/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^4 - 2/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2 + 2/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*
+         shat^2*beta*z - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol*DSTm4^2*MT*shat^2 + 1/2/( - 1/2*shat + 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dMf1[3,3]*NCol*DSTm4^2*MT*shat^2*beta*z + 1/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2 - 1/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta*z
+          + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*
+         shat^2*beta^2 - 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol^3*MT*shat^2*beta^2*z^2 - 1/2/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^3*z + 1/2/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^3*
+         z^3 - 1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*
+         MT*shat^2*beta^4 + 2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol^3*MT*shat^2*beta^4*z^2 - 1/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^4*z^4 + 1/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4*MT*shat^2 - 
+         1/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4*MT*
+         shat^2*beta*z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol^3*DSTm4^2*MT*shat^2 - 1/4/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4^2*MT*shat^2*beta*z + 1/8/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3
+          - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*shat^3*beta*z + 1/8/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/4/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 - 1/
+         4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*
          shat^3*beta^3*z + 3/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
          shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*shat*
+         3,3,3]*NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 3/8/( - 
+         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^4*z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4 + 3/8/( - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z - 1/4/( - 
+         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^5*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^5*z^5 + 1/8/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3 - 1/8/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta*z - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^3*z^3
+          + 1/32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*DSTm4^2*shat^3 - 1/32/( - 1/2*shat + 1/2*shat*beta*z
+         )/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta*z - 1/32/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*
+         shat^3*beta^2*z^2 + 1/32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*z^3 - 1/4/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3 + 1/4/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta*z - 
+         1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^2 + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol*shat^3*beta^2*z^2 + 1/2/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z - 3/4/( - 1/2*
          shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4*
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z^3
+          + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^4 - 3/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4 - 1/4/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z + 
+         1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^5*z^3 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/4/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3 + 1/4/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta*
+         z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
+         *DSTm4*shat^3*beta^2*z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/16/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3 + 1/
+         16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         DSTm4^2*shat^3*beta*z + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*z^2 - 1/16/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*
+         beta^3*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2 - 1/4/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2*
+         z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^3*beta^3*z + 3/8/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4 + 3/8/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4*
          z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
          NCol^3*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)
@@ -329,9 +524,28 @@ M[1,1] = ( + GS^4 * ( 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
           - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
          /( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*
          beta^5*z^5 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
-          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol^(-1)*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+          + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*DSTm4*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*DSTm4*shat^3*beta*z - 1/8/( - 1/2*shat + 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4*shat^3*beta^2*
+         z^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3 - 1/32/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3*
+         beta*z - 1/32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*DSTm4^2*shat^3*beta^2*z^2 + 1/32/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3*beta^3*z^3
+          + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
          dZfR1[3,3,3]*NCol^(-1)*shat^3*beta*z + 1/8/( - 1/2*shat + 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
          2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/4/( - 
@@ -355,47 +569,85 @@ M[1,1] = ( + GS^4 * ( 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
          NCol^(-1)*shat^3*beta^5*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta
          *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^5 - 1/4/( - 1/2
+         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^5 + 1/8/( - 1/2
          *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3 + 1/4/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 
-         1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta*z - 
-         1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^2 + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^2*z^2 + 1/2/( - 1/2*shat + 1/2*shat*
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3
+          - 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3*beta*z - 1/8/( - 1/2*shat + 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z - 3/4/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z^3
-          + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^4 - 3/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4 - 1/4/( - 1/2
-         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z + 
-         1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^5*z^3 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 + 1/8/( - 1/2*shat + 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3 - 1/8/( - 1/2*shat
+         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^2*z^2 + 
+         1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)
+         *DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat + 1/2*shat*beta*z
+         )/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3 - 1/32/( - 1/2*shat
           + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta*z + 1/
-         8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
-         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3
-         *beta^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*
+         beta*z - 1/32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
          2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^3*shat^3*beta^2*z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)
+         NCol^(-1)*DSTm4^2*shat^3*beta^2*z^2 + 1/32/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*
+         z^3 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
+         *shat^3 + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol*shat^3*beta*z - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^2 + 1/2/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^2*z^2 + 1/2/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z - 
+         3/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^3*z^3 + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^4 - 3/4/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4
+          - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^5*z + 1/2/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*shat^3*beta^5*z^3 - 1/4/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/4/( - 1/2
+         *shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3 + 1/4
          /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z + 3/8/( - 1/2*shat + 1/
-         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/(
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*
+         shat^3*beta*z + 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*DSTm4*shat^3*beta^2*z^2 - 1/4/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/
+         16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4^2*shat^3 + 1/16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*DSTm4^2*shat^3*beta*z + 1/16/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*z^2 - 1/
+         16/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4^2*shat^3*beta^3*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z
+         )/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^3*shat^3 - 1/8/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^2 - 
+         1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         shat^3*beta^2*z^2 - 1/4/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z + 3/8/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/(
           - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
          /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*
          beta^4 + 3/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/
@@ -409,7 +661,26 @@ M[1,1] = ( + GS^4 * ( 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
          z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*
          beta^5*z^3 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
           + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol^3*shat^3*beta^5*z^5 ));
+         3]*NCol^3*shat^3*beta^5*z^5 + 1/8/( - 1/2*shat + 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3 - 1/8/( - 1/2*shat + 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3*beta*z - 
+         1/8/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         DSTm4*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat + 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*
+         shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4^2*shat^3
+          - 1/32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^3*DSTm4^2*shat^3*beta*z - 1/32/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4^2*shat^3*beta^2*z^2 + 1/
+         32/( - 1/2*shat + 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         DSTm4^2*shat^3*beta^3*z^3 ));
  
 M[2,1] = ( + GS^4 * (  - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
           - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat - 1/( - 1/2*shat - 
@@ -417,406 +688,677 @@ M[2,1] = ( + GS^4 * (  - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
          NCol*MT*shat*beta*z - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
          2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat*beta^3*z + 
          1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)*dMf1[3,3]*NCol*MT*shat*beta^3*z^3 + 1/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*
-         MT*shat + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2
-         *shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*beta*z + 1/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^3*MT*shat*beta^3*z - 1/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*beta^3
-         *z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2 - 1/8/( - 1/2*shat - 1/2
-         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^2*z^2
-          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^3*z + 1/4/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol*shat^2*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z
-         )/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*
-         beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^4*z^4 + 1/8
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^3*shat^2 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*
-         shat^2*beta*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^2*z^2
-          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^3*z - 1/4/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*
-         shat^2*beta^4*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^4*
-         z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2 - 1/8/( - 1/2*shat - 1/2
-         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^2*z^2
-          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3*z + 1/4/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol*shat^2*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z
-         )/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*
-         beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^4*z^4 + 1/8
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol^3*shat^2 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
-         shat^2*beta*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^2*z^2
-          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^3*z - 1/4/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
-         shat^2*beta^4*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^4*
-         z^4 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
-         dMf1[3,3]*NCol^(-1)*MT*shat^2*beta*z + 1/2/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2 - 1/2/( - 
-         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
-         beta^2*z^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^3*z - 1/2/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^3*z^3 - 1/( - 
-         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
-         beta^4 + 2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^4*z^2 - 1/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4*z^4 - 2/( - 
-         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2 - 2/(
+         *z)*dMf1[3,3]*NCol*MT*shat*beta^3*z^3 - 1/2/( - 1/2*shat - 1/2
+         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         DSTm4*MT*shat - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat*beta*z + 
+         1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)*dMf1[3,3]*NCol^3*MT*shat + 1/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*
+         beta*z + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat*beta^3*z - 1/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol^3*MT*shat*beta^3*z^3 + 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4
+         *MT*shat + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
+         1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4*MT*shat*beta*z - 1/8/(
           - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta
-         *z - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*
-         shat^2*beta^2 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+         *dZfL1[3,3,3]*NCol*shat^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*
+         beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^2*z^2 - 1/8/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*shat^2*beta^3*z + 1/4/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
+         *shat^2*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^4*z^2
+          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)*dZfL1[3,3,3]*NCol*shat^2*beta^4*z^4 - 1/16/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol*DSTm4*shat^2 - 1/16/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*
+         shat^2*beta*z + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^2*beta^2*
+         z^2 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^2*beta^3*z^3 + 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*shat^2 + 1/8/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2
+         *beta*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^2*z^2 + 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*shat^2*beta^3*z - 1/4/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*
+         beta^4*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^2*beta^4*z^4 + 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4*shat^2 + 1/16/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*DSTm4*shat^2*beta*z - 1/16/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*
+         DSTm4*shat^2*beta^2*z^2 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4*
+         shat^2*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2 - 1/8/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^2*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3*z + 
+         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol*shat^2*beta^3*z^3 - 1/8/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol*shat^2*beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^2*
+         beta^4*z^4 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^2 - 1/16/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*DSTm4*shat^2*beta*z + 1/16/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol*DSTm4*shat^2*beta^2*z^2 + 1/16/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4*shat^2*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2 + 
+         1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta*z - 1/8/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^3*shat^2*beta^2*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2
+         *beta^3*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^3*z^3 + 1/
+         8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^3*shat^2*beta^4*z^2 - 1/8/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^3*shat^2*beta^4*z^4 + 1/16/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         DSTm4*shat^2 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^2*beta*
+         z - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^2*beta^2*z^2 - 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^2*beta^3*z^3 + 1/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2 + 
+         1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*
+         shat^2*beta*z + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3
+         ,3]*NCol^(-1)*MT*shat^2*beta^2 - 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2*z^2 + 1/2/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2
+         *beta^3*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
           - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol*MT*shat^2*beta^2*z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z + 1/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z^3 + 2/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 4
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         NCol^(-1)*MT*shat^2*beta^3*z^3 - 1/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4 + 2/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4
+         *z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*MT*shat^2*beta^4*z^4 + 1/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2 + 1/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2*
+         beta*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*DSTm4^2*MT*shat^2 + 1/4/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4^2*MT*shat^2*beta*z - 2/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2 - 2/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta*z - 
+         1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^2 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT
+         *shat^2*beta^2*z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[
+         3,3]*NCol*MT*shat^2*beta^3*z + 1/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z^3 + 2/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 4/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
          beta^4*z^2 + 2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
          1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol*MT*shat^2*beta^4*z^4 + 1/( - 1/2*shat - 1/2*shat*beta*z)
+         NCol*MT*shat^2*beta^4*z^4 - 2/( - 1/2*shat - 1/2*shat*beta*z)
          /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dMf1[3,3]*NCol^3*MT*shat^2 + 1/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
-         beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta*z + 1/2/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^2 - 1/
-         2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2
-         *beta^2*z^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^3*MT*shat^2*beta^3*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z
+         z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2 - 2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2*beta*z - 1/2/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4^2*MT*shat^2
+          - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         DSTm4^2*MT*shat^2*beta*z + 1/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dMf1[3,3]*NCol^3*MT*shat^2 + 1/( - 1/2*shat - 1/2*shat*beta*z
          )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^3*z^3 - 1/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
-         1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^4 + 2/( - 1/2
+         *z)*dMf1[3,3]*NCol^3*MT*shat^2*beta*z + 1/2/( - 1/2*shat - 1/2
+         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^2 - 1/2/( - 1/2
          *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^2*
+         z^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*
+         MT*shat^2*beta^3*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dMf1[3,3]*NCol^3*MT*shat^2*beta^3*z^3 - 1/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^4 + 2/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
          2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*MT*shat^2*beta^4*
          z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
          shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*
-         MT*shat^2*beta^4*z^4 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         *dZfL1[3,3,3]*NCol^(-1)*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*
+         MT*shat^2*beta^4*z^4 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dMf1[3,3]*NCol^3*DSTm4*MT*shat^2 + 1/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta*z + 1/8/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
-         1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
-         beta^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2*z^2 + 1/4/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3*z - 3/8/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3
-         *z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^4 + 3/8/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^2 - 1/4/( - 1/2*shat
+         shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4*MT*shat^2*beta*z + 1/4/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*NCol^3*DSTm4^2*MT*
+         shat^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^3*DSTm4^2*MT*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3 + 1/8/( - 1/2*shat
           - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4*
-         z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z
-         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^3 - 1/8/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5
-         *z^5 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
-         *shat^3 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol*shat^3*beta*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
-         dZfL1[3,3,3]*NCol*shat^3*beta^2 + 1/2/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2*z^2 - 1/2/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z + 
-         3/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^3*beta^3*z^3 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
-         dZfL1[3,3,3]*NCol*shat^3*beta^4 - 3/4/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4
-          + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^3*beta^5*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol*shat^3*beta^5*z^3 + 1/4/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^5 + 1/8/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3 + 1/8/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*
-         beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^3*shat^3*beta^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         *dZfL1[3,3,3]*NCol^3*shat^3*beta^2*z^2 + 1/4/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
-         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^3*z - 3/8/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*
-         beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol^3*shat^3*beta^4 + 3/8/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4*z^2 - 1/4/( - 1/2*shat - 
-         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4*z^4 - 1/
-         8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3
-         *beta^5*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
-         3]*NCol^3*shat^3*beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^5*z^5 + 1/8/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3 + 1/8
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*
-         shat^3*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/4/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 + 1/4/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3
-         *beta^3*z - 3/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 3/8/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
-         1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*
-         beta^4*z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol^(-1)*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z + 1/4/( - 
-         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*
-         beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol^(-1)*shat^3*beta^5*z^5 - 1/4/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3 - 1/4/( - 1/2*shat - 1/2
-         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta*z - 1/4/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^2 + 1/
-         2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*
-         beta^2*z^2 - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
-         3]*NCol*shat^3*beta^3*z + 3/4/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z^3 + 1/4/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
-         1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4 - 3/4/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^2
-          + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^4*z^4 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
-         dZfR1[3,3,3]*NCol*shat^3*beta^5*z - 1/2/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
-         2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z^3 + 1/4/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
-         1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*
-         z^5 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^3*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
-         beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^2 - 1/4/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^2*z^2
-          + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
-         shat^3*beta^3*z - 3/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^4 + 3/8/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^4*
-         z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^3*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
-         1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^5*z^3 - 1/8/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*
-         beta^5*z^5 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^2 - 1/2/( - 1/2*shat - 1/2*shat*beta*
-         z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2*z^2 - 1/2/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^3
-         *z + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^3*z^3 - 1/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4 + 2/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4
-         *z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
-         NCol^(-1)*MT*shat^2*beta^4*z^4 - 1/2/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^2 + 1/2/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^2*z^2
-          + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*
-         shat^2*beta^3*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3
-         ,3]*NCol*MT*shat^2*beta^3*z^3 + 1/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 2/( - 1/2*shat - 1/2
-         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
-         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^2 + 1/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4*z^4
+         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta*z
           + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*shat^3*beta^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 + 1/4/( - 1/2*shat
           - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3*z
-          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^3*z
+          - 3/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
          NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 3/8/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4
-         *z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4
+         *z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
          NCol^(-1)*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
          beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z + 1/4/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5
          *z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol^(-1)*shat^3*beta^5*z^5 - 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2 + 1/8/( - 1/2*shat - 1/
-         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 
-         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^2*z^2 - 1/8/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*
-         beta^3*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
-         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
-         NCol*shat^3*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
-          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
-         *dZfL1[3,3,3]*NCol*shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*shat^3*beta^5*z^5 + 1/8/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3 + 1/8/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^3*z^3
+          + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^(-1)*DSTm4^2*shat^3 + 1/32/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta*z - 1/32/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*
+         shat^3*beta^2*z^2 - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*z^3 - 1/4/( - 1/2
          *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3 - 1/4/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta*z - 
+         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol*shat^3*beta^2*z^2 - 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z + 3/4/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z^3
+          + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^4 - 3/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4 + 1/4/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z - 
+         1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^5*z^3 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/4/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3 - 1/4/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta*
+         z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol
+         *DSTm4*shat^3*beta^2*z^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/16/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3 - 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         DSTm4^2*shat^3*beta*z + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*z^2 + 1/16/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*
+         beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2 - 1/4/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^2*
+         z^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^3*beta^3*z - 3/8/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4 + 3/8/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^4*
+         z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*beta^5*z^3 - 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*shat^3*
+         beta^5*z^5 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^3*DSTm4*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol^3*DSTm4*shat^3*beta*z - 1/8/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4*shat^3*beta^2*
+         z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3 + 1/32/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3*
+         beta*z - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol^3*DSTm4^2*shat^3*beta^2*z^2 - 1/32/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^3*DSTm4^2*shat^3*beta^3*z^3
+          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol^(-1)*shat^3*beta*z + 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/4/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*
+         beta^2*z^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^(-1)*shat^3*beta^3*z - 3/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3*z^3 - 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3
+         *beta^4 + 3/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*shat^3*beta^4*z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^4 - 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5
+         *z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*shat^3*beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^5 + 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3
+          + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3*beta*z - 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^2*z^2 - 
+         1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)
+         *DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3 + 1/32/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*
+         beta*z - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*DSTm4^2*shat^3*beta^2*z^2 - 1/32/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*
+         z^3 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
+         *shat^3 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol*shat^3*beta*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^2 + 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^2*z^2 - 1/2/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z + 
+         3/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^3*z^3 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^4 - 3/4/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/2/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4
+          + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^5*z - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*shat^3*beta^5*z^3 + 1/4/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/4/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3 - 1/4
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*
+         shat^3*beta*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*DSTm4*shat^3*beta^2*z^2 + 1/4/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4^2*shat^3 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol*DSTm4^2*shat^3*beta*z + 1/16/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*z^2 + 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         DSTm4^2*shat^3*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)*dZfR1[3,3,3]*NCol^3*shat^3 + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta*z + 1/8/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^2 - 
+         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         shat^3*beta^2*z^2 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z - 3/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^3*z^3 - 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*
+         beta^4 + 3/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^3*shat^3*beta^4*z^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*beta^5*z + 1/4
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*shat^3*
+         beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^3*shat^3*beta^5*z^5 + 1/8/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3 + 1/8/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3*beta*z - 
+         1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         DSTm4*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)*dZfR1[3,3,3]*NCol^3*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4^2*shat^3
+          + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^3*DSTm4^2*shat^3*beta*z - 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol^3*DSTm4^2*shat^3*beta^2*z^2 - 1/
+         32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^3*
+         DSTm4^2*shat^3*beta^3*z^3 + 1/2/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2 - 1/2/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^2*z^2
+          - 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*
+         MT*shat^2*beta^3*z + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^3*z^3 - 1/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*beta^4 + 2/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*MT*shat^2*
+         beta^4*z^2 - 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*MT*shat^2*beta^4*z^4 + 1/2/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2 + 1/2/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4*MT*shat^2*
+         beta*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol^(-1)*DSTm4^2*MT*shat^2 + 1/4/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dMf1[3,3]*NCol^(-1)*DSTm4^2*MT*shat^2*beta*z - 1/2/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         MT*shat^2*beta^2*z^2 + 1/2/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dMf1[3,3]*NCol*MT*shat^2*beta^3*z - 1/2/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^3*z^3 + 1/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*beta^4 - 2
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*MT*shat^2*
+         beta^4*z^2 + 1/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*
+         NCol*MT*shat^2*beta^4*z^4 - 1/2/( - 1/2*shat - 1/2*shat*beta*z
+         )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
+         *z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2 - 1/2/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4*MT*shat^2*beta*z - 1/4/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*DSTm4^2*MT*
+         shat^2 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dMf1[3,3]*NCol*
+         DSTm4^2*MT*shat^2*beta*z + 1/8/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2 - 1/8/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 
+         1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 + 1/
+         8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*
+         shat^3*beta^3*z - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol^(-1)*shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^4*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^4*z^4 - 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*beta^5*z + 1/4/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*shat^3*
+         beta^5*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*shat^3*beta^5*z^5 + 1/16/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3 + 1/16/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*
+         shat^3*beta*z - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
+         3,3,3]*NCol^(-1)*DSTm4*shat^3*beta^2*z^2 - 1/16/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta^3*z^3 + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol^(-1)*DSTm4^2*shat^3 + 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta*z - 1/
+         32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol^(-1)
+         *DSTm4^2*shat^3*beta^2*z^2 - 1/32/( - 1/2*shat - 1/2*shat*beta
+         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfL1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^3*z^3 - 1/8
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*
+         beta^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfL1[3,3,3]*NCol*shat^3*beta^3*z + 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^3*z^3 + 1/8/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^4 - 
+         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
+         shat^3*beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*shat^3*beta^4*z^4 + 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z - 1/4/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^3
           + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
          *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*
-         shat^3*beta^5*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[
-         3,3,3]*NCol*shat^3*beta^5*z^3 + 1/8/( - 1/2*shat - 1/2*shat*
+         shat^3*beta^5*z^5 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfL1[3,3,3]*NCol*DSTm4*shat^3 - 1/16/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfL1[3,3,3]*NCol*shat^3*beta^5*z^5 + 1/8/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^2
-          - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
-         *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^(-1)*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat - 1/2*shat*beta
-         *z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
-         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3*z - 1/8/( - 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*beta*z + 1/16/( - 
+         1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4*shat^3*
+         beta^2*z^2 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,
+         3]*NCol*DSTm4*shat^3*beta^3*z^3 - 1/32/( - 1/2*shat - 1/2*shat
+         *beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3 - 1/32/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3
-         *z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
-         NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*shat - 1/2*shat*beta*z)
-         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
-         z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^2 - 1/8/( - 1/2*shat
-          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*
-         z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*
+         beta*z + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/
+         2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfL1[3,3,3]*
+         NCol*DSTm4^2*shat^3*beta^2*z^2 + 1/32/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfL1[3,3,3]*NCol*DSTm4^2*shat^3*beta^3*z^3 + 1/8
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*
+         shat^3*beta^2 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
+         3,3,3]*NCol^(-1)*shat^3*beta^2*z^2 + 1/8/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^3*z - 1/8/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3
+         *beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^(-1)*shat^3*beta^4 + 1/4/( - 1/2*shat - 1/2*shat*beta*
+         z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*
+         beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4*z^2 - 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^4
+         *z^4 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
          shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
          NCol^(-1)*shat^3*beta^5*z + 1/4/( - 1/2*shat - 1/2*shat*beta*z
          )/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta
          *z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5*z^3 - 1/8/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
          2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*shat^3*beta^5
-         *z^5 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
-         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
-         *shat^3*beta^2 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
-         shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^2*z^2 - 1/8/( - 1/2*shat - 1/2*shat*
-         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z + 1/8/( - 1/2*
+         *z^5 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2
+         *shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*
+         NCol^(-1)*DSTm4*shat^3 + 1/16/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*
+         z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*beta*z - 1/16/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z^3
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4*shat^3*
+         beta^2*z^2 - 1/16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,
+         3]*NCol^(-1)*DSTm4*shat^3*beta^3*z^3 + 1/32/( - 1/2*shat - 1/2
+         *shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/
+         2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3 + 1/32/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)
+         /( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*
+         DSTm4^2*shat^3*beta*z - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*shat^3*beta^2*z^2 - 1/32/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol^(-1)*DSTm4^2*
+         shat^3*beta^3*z^3 - 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^2 + 1/8/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^2*z^2 - 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^3*z + 
+         1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
+         shat^3*beta^3*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat*
+         beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
+         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4
           + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat
          *beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^4 - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat^3*beta^5*z - 1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
          shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[
-         3,3,3]*NCol*shat^3*beta^4*z^2 + 1/8/( - 1/2*shat - 1/2*shat*
+         3,3,3]*NCol*shat^3*beta^5*z^3 + 1/8/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*
-         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^4*z^4 + 1/8/( - 1/2
-         *shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z - 
-         1/4/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
+         shat*beta*z)*dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 - 1/16/( - 1/
+         2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 
+         1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3 - 1/
+         16/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*
          beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*
-         shat^3*beta^5*z^3 + 1/8/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/
-         2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
-         dZfR1[3,3,3]*NCol*shat^3*beta^5*z^5 ));
+         DSTm4*shat^3*beta*z + 1/16/( - 1/2*shat - 1/2*shat*beta*z)/(
+          - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)
+         *dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^2*z^2 + 1/16/( - 1/2*shat
+          - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*
+         shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4*shat^3*beta^3*
+         z^3 - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
+         *DSTm4^2*shat^3 - 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2
+         *shat - 1/2*shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*
+         dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta*z + 1/32/( - 1/2*shat - 
+         1/2*shat*beta*z)/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat
+          + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol*DSTm4^2*shat^3*beta^2*
+         z^2 + 1/32/( - 1/2*shat - 1/2*shat*beta*z)/( - 1/2*shat - 1/2*
+         shat*beta*z)/( - 1/2*shat + 1/2*shat*beta*z)*dZfR1[3,3,3]*NCol
+         *DSTm4^2*shat^3*beta^3*z^3 ));
  

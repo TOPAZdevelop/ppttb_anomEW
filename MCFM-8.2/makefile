@@ -75,7 +75,7 @@ VPATH		= $(DIRS):$(MOD_QCDLOOP):$(INCPATH):$(TENSORREDDIR)/Include:$(SOURCEDIR)/
 
 # Flags for compilation
 FFLAGS 	= -fno-f2c -ffixed-line-length-none -fopenmp -O2 \
- -I$(INCPATH) -I$(MPIDUMMY) -I$(TENSORREDDIR)/Include -L$(PVDIR) -L$(PVEXTDIR) -J$(OBJNAME) -I$(MOD_QCDLOOP)
+ -I$(INCPATH) -I$(MPIDUMMY) -I$(TENSORREDDIR)/Include -L$(PVDIR) -L$(PVEXTDIR) -J$(OBJNAME) -I$(MOD_QCDLOOP) 
 
 # If using FROOT package for ROOT ntuples, first specify C++ compiler:
 CXXFLAGS=$(CXXFLAGS0) -std=c++11 -Wall $(DROOT) 

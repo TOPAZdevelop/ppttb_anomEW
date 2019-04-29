@@ -498,6 +498,10 @@ c--- anomalous couplings
 !       
 ! 
 ! 
+      read(20,*) C_phiq_333
+      if (verbose) call writeinput(6,' * ',' ','C_phiq_333')
+      read(20,*) C_phiu_33
+      if (verbose) call writeinput(6,' * ',' ','C_phiu_33')
       read(20,*) coupl_gvt
       if (verbose) call writeinput(6,' * ',' ','coupl_gvt')
       read(20,*) coupl_gat
@@ -513,6 +517,9 @@ c--- anomalous couplings
       read(20,*) coupl_rest
       if (verbose) call writeinput(6,' * ',' ','coupl_rest')
 
+      
+      
+      
       if ( nproc >= 550 .and. nproc <= 557 ) then
          if (verbose) call writeinput(6,' * ',' ','cttH')
          if (verbose) call writeinput(6,' * ',' ','cWWH')

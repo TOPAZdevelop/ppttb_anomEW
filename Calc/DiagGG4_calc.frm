@@ -252,7 +252,7 @@ id cep2(DumLor1?DumId)*ep2(DumLor2?DumId) = - MeT(DumLor1,DumLor2) +  (p2(DumLor
 
 id LeviCiv(p1,p2,p3,p4)=0;
 
-id DSTm4=0;
+*****id DSTm4=0;
 
 
 id p3.p4 = p1.p2 - MT^2;

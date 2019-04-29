@@ -18,15 +18,86 @@ endargument;
 id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
 
 
-* move Chir to the left
+* move Chir to the right
 #call moveChirR();
 #call simplify();
 
 
-.sort
+
+repeat;
+#call commuteToLeft(q1);
+#call simplify();
+endrepeat;
+
+
+******************* higher-rank tensor reduction *******************************
+** comment: todo: implmement a higher-rank reduction and show that higher-ranks cancel out 
+
+
+* cancelling l^2
+repeat;
+     id (q1.q1)  *LoopDenom(q1,m0?, ?args ) = LoopDenom(?args) + m0^2*LoopDenom(q1,m0, ?args);
+endrepeat;
 
 
 
+
+* for self energy [12,1] no remaining q1.q1 term
+* doing the shift for the term linear in q1
+id DID(12)*LoopDenom(p2-p3+q1,MZ)*Ga(DumStr1?,q1) = DID(12)*Ga(DumStr1,q1-p2+p3)*LoopDenom(q1,MZ);
+id DID(12)*LoopDenom(p2-p3+q1,MZ)*(q1.pDumX?)     = DID(12)*(q1.pDumX-p2.pDumX+p3.pDumX)*LoopDenom(q1,MZ);
+id DID(12)*LoopDenom(p2-p3+q1,MZ)                 = DID(12)*LoopDenom(q1,MZ);
+
+
+* for s-channel vertex [1,1] no q1 multipy the LoopDenom(p3 + q1,MT, - p4 + q1,MT)*q1.q1
+id DID(1)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(1)*LoopDenom(q1,MT, -p4 -p3 + q1,MT)*(q1.q1+p3.p3-2*q1.p3);
+***this shoudl be equivalent***id DID(1)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(1)*( LoopDenom(q1,MT) + (MZ^2-2*q1.p3+p3.p3)*LoopDenom(q1,MZ, -p3-p4+q1,MT) );  
+
+id DID(1)*LoopDenom(p3 + q1,MT, - p4 + q1,MT)*(q1.pDumX?)    = DID(1)*LoopDenom(q1,MT, - p4 -p3 + q1,MT)*(q1.pDumX-p3.pDumX);
+id DID(1)*LoopDenom(p3 + q1,MT, - p4 + q1,MT)*Ga(DumStr1?,q1)= DID(1)*LoopDenom(q1,MT, - p4 -p3 + q1,MT)*Ga(DumStr1,q1-p3);
+id DID(1)*LoopDenom(p3 + q1,MT, - p4 + q1,MT)                = DID(1)*LoopDenom(q1,MT, - p4 -p3 + q1,MT);
+
+
+* for box [9,1] the LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT) is multiplied at max. with q1^3 and Ga(q1)*Ga(q1) terms are eliminated
+
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*(q1.pDumX?)               = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*(q1.pDumX-p2.pDumX);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*Ga(DumStr1?,q1)           = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*Ga(DumStr1,q1-p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1                           = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)*(q1.pDumY?)         = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX)*(q1.pDumY-p2.pDumY);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)*(q1.pDumY?)     = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2)*(q1.pDumY-p2.pDumY);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)                     = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)                 = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)                                 = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT);
+
+
+* for vertex [3/4,1] no q1 multipy the LoopDenom(...)*q1.q1
+
+id DID(3)*LoopDenom(-p4+q1,MZ,-p1+q1,MT)*q1.q1 = DID(3)*LoopDenom(q1,MZ,-p1+p4+q1,MT)*(q1.q1+p4.p4+2*q1.p4);
+id DID(4)*LoopDenom(-p2+q1,MT,-p3+q1,MZ)*q1.q1 = DID(4)*LoopDenom(q1,MT,-p3+p2+q1,MZ)*(q1.q1+p2.p2+2*q1.p2);
+
+id DID(3)*LoopDenom(-p4+q1,MZ,-p1+q1,MT)*(q1.pDumX?)     = DID(3)*LoopDenom(q1,MZ,-p1+p4+q1,MT)*(q1.pDumX+p4.pDumX);
+id DID(3)*LoopDenom(-p4+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1) = DID(3)*LoopDenom(q1,MZ,-p1+p4+q1,MT)*Ga(DumStr1,q1+p4);
+id DID(3)*LoopDenom(-p4+q1,MZ,-p1+q1,MT)                 = DID(3)*LoopDenom(q1,MZ,-p1+p4+q1,MT);
+id DID(4)*LoopDenom(-p2+q1,MT,-p3+q1,MZ)*(q1.pDumX?)     = DID(4)*LoopDenom(q1,MT,-p3+p2+q1,MZ)*(q1.pDumX+p2.pDumX);
+id DID(4)*LoopDenom(-p2+q1,MT,-p3+q1,MZ)*Ga(DumStr1?,q1) = DID(4)*LoopDenom(q1,MT,-p3+p2+q1,MZ)*Ga(DumStr1,q1+p2);
+id DID(4)*LoopDenom(-p2+q1,MT,-p3+q1,MZ)                 = DID(4)*LoopDenom(q1,MT,-p3+p2+q1,MZ);
+
+
+*Print;
+*Bracket LoopDenom,q1.q1,q1.p1,q1.p2,q1.p3,q1.p4,q1.ep1,q1.ep2;
+*.sort
+*.end
+
+
+
+* expand Ga(pi-pj)=Ga(pi)-Ga(pj)
+id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
+id DID(Col1?)=1;
+
+
+
+
+**************************************************
 
 
 
@@ -54,6 +125,8 @@ id q1(LorW?DumId)                                              = LoopMom(LorW)  
 id SIntDummy                                                   = LoopMom(0);
 
 
+id LoopDenom( q1,m0? ) * LoopMom(?args)                   
+   = i_*Pi^2 * TI(1,?args,m0);
 id LoopDenom( q1,m0?, pDumW?,m1? ) * LoopMom(?args)                   
    = i_*Pi^2 * TI(2,?args,pDumW-q1,m0,m1);
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args) 
@@ -61,6 +134,9 @@ id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args)
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2?, pDumY?,m3? ) * LoopMom(?args) 
    = i_*Pi^2 * TI(4,?args,pDumW-q1,pDumX-q1,pDumY-q1,m0,m1,m2,m3);
 
+   
+id TI(1,0,m0?) 
+ = SI(1,m0);
 id TI(2,0,pDumW?,m0?,m1?) 
  = SI(2,pDumW,m0,m1);
 id TI(3,0,pDumW?,pDumX?,m0?,m1?,m2?) 
@@ -102,44 +178,6 @@ id p2.ep1 = 0;
 id p2.cep1 = 0;
 id p1.ep2 = 0;
 id p1.cep2 = 0;
-
-
-
-
-*** extract rational parts:   f(D) = f(4) + (DST-4) * f'(4)
-
-id DSTm4=DST-4;
-argument;
-id DSTm4=DST-4;
-endargument;
-
-
-*** encapsulate DST terms
-id DST^2 = DOp(DST^2);
-id DST = DOp(DST);
-
-
-
-
-********** check that after this no more DST terms are present
-*id DOp(?args)=1;  
-*#call ExitHere
-**********
-
-
-* calculate f(D) = f(4) + (DST-4)*f'(4)
-
-* the derivatives 
-*
-id DOp( DST )   = 4 + DSTm4;
-id DOp( DST^2 ) = 16+ 8*DSTm4;
-
-* insert rational parts of tensor integrals
-
-#call InsertUVRationalPart;
-
-id DSTm4=0;
-
 
 
 
@@ -209,8 +247,8 @@ id i_ = -i_;
 id cI = -cI;
 
 * removing the WFRC for this piece (higher order)
-id dZfL=1;
-id dZfR=1;
+id dZfL=0;
+id dZfR=0;
 
 id SpiStr(?args) = SpiStr(reverse_(?args));
 
@@ -287,6 +325,7 @@ Global [12,1,1]= [12,1]*([cc13,1]+[cc14,1]+[cc15,1]);
 .sort
 
 
+
 argument;
 id GluP1=Glu1;
 id GluP2=Glu2;
@@ -297,9 +336,6 @@ endargument;
 #call colorAlgebra2();
 
 
-id dZfL*dZfL=0;
-id dZfR*dZfR=0;
-id dZfL*dZfR=0;
 
 
 repeat;
@@ -379,8 +415,6 @@ id cep2(DumLor1?DumId)*ep2(DumLor2?DumId) = - MeT(DumLor1,DumLor2) +  (p2(DumLor
 #call simplify();
 
 id LeviCiv(p1,p2,p3,p4)=0;
-
-id DSTm4=0;
 
 
 id p3.p4 = p1.p2 - MT^2;

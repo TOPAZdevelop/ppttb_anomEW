@@ -19,36 +19,6 @@ id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
 
 
 
-* do SM only 
-id voL=0;
-
-
-**************************************************
-
-* cancelling l^2
-*repeat;
-*    id q1.q1*LoopDenom(q1,MZ?, ?args) = LoopDenom(?args) + MZ^2*LoopDenom(q1,MZ, ?args);
-*endrepeat;
-
-* removing dim-8 terms
-*id voL^4=0;
-
-* checking that only q1-linear terms multiply LoopDenom and not higher 
-*Print;
-*Bracket LoopDenom;
-*.sort
-*.end
-
-* doing the shift q1 --> q1-p3
-*id Ga(DumStr1?,q1)*LoopDenom(p3+q1,MT, -p4+q1,MT) = Ga(DumStr1,q1-p3)*LoopDenom(q1,MT, -p4-p3+q1,MT);
-*id q1(LorX?)*LoopDenom(p3+q1,MT, -p4+q1,MT) = (q1(LorX)-p3(LorX))*LoopDenom(q1,MT, -p4-p3+q1,MT);
-*id LoopDenom(p3+q1,MT, -p4+q1,MT) = LoopDenom(q1,MT, -p4-p3+q1,MT);
-
-
-* expand Ga(pi-pj)=Ga(pi)-Ga(pj)
-*id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
-
-**************************************************
 
 
 id Ga(DumStr1?,p3) = -Ga(DumStr1,p4) + Ga(DumStr1,p1) + Ga(DumStr1,p2);
@@ -96,6 +66,8 @@ id q1(LorW?DumId)                                              = LoopMom(LorW)  
 id SIntDummy                                                   = LoopMom(0);
 
 
+id LoopDenom( q1,m0? ) * LoopMom(?args)                   
+   = i_*Pi^2 * TI(1,?args,m0);
 id LoopDenom( q1,m0?, pDumW?,m1? ) * LoopMom(?args)                   
    = i_*Pi^2 * TI(2,?args,pDumW-q1,m0,m1);
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args) 
@@ -104,7 +76,8 @@ id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2?, pDumY?,m3? ) * LoopMom(?args)
    = i_*Pi^2 * TI(4,?args,pDumW-q1,pDumX-q1,pDumY-q1,m0,m1,m2,m3);
 
    
-   
+id TI(1,0,m0?) 
+ = SI(1,m0);
 id TI(2,0,pDumW?,m0?,m1?) 
  = SI(2,pDumW,m0,m1);
 id TI(3,0,pDumW?,pDumX?,m0?,m1?,m2?) 

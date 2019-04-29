@@ -54,6 +54,8 @@ id q1(LorW?DumId)                                              = LoopMom(LorW)  
 id SIntDummy                                                   = LoopMom(0);
 
 
+id LoopDenom( q1,m0? ) * LoopMom(?args)                   
+   = i_*Pi^2 * TI(1,?args,m0);
 id LoopDenom( q1,m0?, pDumW?,m1? ) * LoopMom(?args)                   
    = i_*Pi^2 * TI(2,?args,pDumW-q1,m0,m1);
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args) 
@@ -61,6 +63,9 @@ id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2? ) * LoopMom(?args)
 id LoopDenom( q1,m0?, pDumW?,m1?, pDumX?,m2?, pDumY?,m3? ) * LoopMom(?args) 
    = i_*Pi^2 * TI(4,?args,pDumW-q1,pDumX-q1,pDumY-q1,m0,m1,m2,m3);
 
+   
+id TI(1,0,m0?) 
+ = SI(1,m0);
 id TI(2,0,pDumW?,m0?,m1?) 
  = SI(2,pDumW,m0,m1);
 id TI(3,0,pDumW?,pDumX?,m0?,m1?,m2?) 
@@ -107,19 +112,16 @@ id p1.cep2 = 0;
 
 
 *** extract rational parts:   f(D) = f(4) + (DST-4) * f'(4)
-
-id DSTm4=DST-4;
-argument;
-id DSTm4=DST-4;
-endargument;
+*
+*id DSTm4=DST-4;
+*argument;
+*id DSTm4=DST-4;
+*endargument;
 
 
 *** encapsulate DST terms
-id DST^2 = DOp(DST^2);
-id DST = DOp(DST);
-
-
-
+*id DST^2 = DOp(DST^2);
+*id DST = DOp(DST);
 
 ********** check that after this no more DST terms are present
 *id DOp(?args)=1;  
@@ -131,14 +133,12 @@ id DST = DOp(DST);
 
 * the derivatives 
 *
-id DOp( DST )   = 4 + DSTm4;
-id DOp( DST^2 ) = 16+ 8*DSTm4;
+*id DOp( DST )   = 4 + DSTm4;
+*id DOp( DST^2 ) = 16+ 8*DSTm4;
 
 * insert rational parts of tensor integrals
 
-#call InsertUVRationalPart;
-
-id DSTm4=0;
+*#call InsertUVRationalPart;
 
 
 
@@ -209,8 +209,8 @@ id i_ = -i_;
 id cI = -cI;
 
 * removing the WFRC for this piece (higher order)
-id dZfL=1;
-id dZfR=1;
+id dZfL=0;
+id dZfR=0;
 
 id SpiStr(?args) = SpiStr(reverse_(?args));
 
@@ -287,6 +287,7 @@ Global [12,1,1]= [12,1]*([cc13,1]+[cc14,1]+[cc15,1]);
 .sort
 
 
+
 argument;
 id GluP1=Glu1;
 id GluP2=Glu2;
@@ -297,9 +298,6 @@ endargument;
 #call colorAlgebra2();
 
 
-id dZfL*dZfL=0;
-id dZfR*dZfR=0;
-id dZfL*dZfR=0;
 
 
 repeat;
@@ -379,8 +377,6 @@ id cep2(DumLor1?DumId)*ep2(DumLor2?DumId) = - MeT(DumLor1,DumLor2) +  (p2(DumLor
 #call simplify();
 
 id LeviCiv(p1,p2,p3,p4)=0;
-
-id DSTm4=0;
 
 
 id p3.p4 = p1.p2 - MT^2;

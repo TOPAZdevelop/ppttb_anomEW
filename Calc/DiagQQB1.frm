@@ -52,6 +52,7 @@ Bracket PreFac,cI,EL,GS,ICol,SW,MW,Pi;
 #write <`WorkPath'DiagQQB1_output.dat> "M[1,1] = (%E);\n ", [1,1,1];
 #write <`WorkPath'DiagQQB1_output.dat> "M[2,1] = (%E);\n ", [2,1,1];
 #write <`WorkPath'DiagQQB1_output.dat> "M[3,1] = (%E);\n ", [3,1,1];
+#write <`WorkPath'DiagQQB1_output.dat> "M[4,1] = (%E);\n ", [4,1,1];
 
 
 

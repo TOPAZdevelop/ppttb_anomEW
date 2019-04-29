@@ -1,6 +1,6 @@
 NumAmps = 3;
 
-AmpList = "  {[1,1],[2,1],[3,1]}";
+AmpList = "  {[1,1],[2,1],[3,1],[4,1]}";
 
 M[1,1] = ( + PreFac * ( 64*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2
          ]*MT^2 + 32*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
@@ -3218,4 +3218,161 @@ M[3,1] = ( + PreFac*EL^2*SW^(-2)*MW^(-2)*Pi^2 * (  - 32*SI[1,0]*
          p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*C33phiq3^2*voL^4*Sqrt2^(-2) - 
          32*SI[3,p3,-p4,MW,0,0]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[
          p1,p4]*Dot[p2,p3]*C33phiq3^2*voL^4*Sqrt2^(-2) ));
+ 
+M[4,1] = ( + PreFac*EL^2*SW^(-2)*MW^(-2)*Pi^2 * ( 16*SI[2, - p3 - p4,MT
+         ,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^4 + 8*
+         SI[2, - p3 - p4,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[
+         p1,p2]*DSTm4*MT^4 + 8*SI[2, - p3 - p4,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*DSTm4*MT^2 + 16*SI[2,
+          - p3 - p4,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3
+         ]*Dot[p2,p4]*MT^2 + 16*SI[2, - p3 - p4,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*MT^2 - 32*SI[3,p3,-p4
+         ,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^6
+          + 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2
+         *Dot[p1,p2]*MH^2*MT^4 + 8*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*DSTm4*MH^2*MT^4 - 32*SI[3,p3
+         ,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p1,p3]*MT^4 - 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p3]*DSTm4*MT^4 - 32*SI[3,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p1,p4]*MT^4 - 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*DSTm4*MT^4 - 32*SI[3,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p2,p3]*MT^4 - 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p3]*DSTm4*MT^4 - 32*SI[3,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p2,p4]*MT^4 - 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*DSTm4*MT^4 + 32*SI[3,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p3,p4]*MT^4 + 8*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2
+         *Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*DSTm4*MH^2*MT^2 - 32*SI[3
+         ,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3
+         ]*Dot[p2,p4]*MT^4 + 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*MH^2*MT^2 - 32*SI[3,
+         p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]
+         *Dot[p2,p3]*MT^4 + 16*SI[3,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*MH^2*MT^2 + 64*SI[3,
+         p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]
+         *Dot[p2,p4]*MT^4 - 32*TC[3,0,0,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^4 - 16*TC[3,0,0,p3,-p4,MH
+         ,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*DSTm4*
+         MT^4 - 16*TC[3,0,0,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[
+         p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*DSTm4*MT^2 - 32*TC[3,0,0,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*
+         Dot[p2,p4]*MT^2 - 32*TC[3,0,0,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*MT^2 - 16*TC[3,1,
+         p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]
+         *MT^6 + 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3
+         ,p4]]^2*Dot[p1,p2]*DSTm4*MT^6 + 32*TC[3,1,p3,-p4,MH,MT,MT]*
+         PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]^2*MT^4 + 16*TC[3
+         ,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,
+         p2]^2*DSTm4*MT^4 + 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p2]^2*Dot[p3,p4]*DSTm4*MT^2 - 32*TC[
+         3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1
+         ,p2]*Dot[p1,p3]*MT^4 - 8*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p3]*DSTm4*MT^4 + 32*
+         TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*
+         Dot[p1,p2]*Dot[p1,p3]*Dot[p2,p4]*MT^2 - 48*TC[3,1,p3,-p4,MH,MT
+         ,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*
+         MT^4 - 24*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,
+         p4]]^2*Dot[p1,p2]*Dot[p1,p4]*DSTm4*MT^4 + 32*TC[3,1,p3,-p4,MH,
+         MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4
+         ]*Dot[p2,p3]*MT^2 - 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*Dot[p3,p4]*MT^2
+          - 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]
+         ^2*Dot[p1,p2]*Dot[p1,p4]*Dot[p3,p4]*DSTm4*MT^2 - 32*TC[3,1,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*
+         Dot[p2,p3]*MT^4 - 8*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p3]*DSTm4*MT^4 - 48*TC[3,
+         1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,
+         p2]*Dot[p2,p4]*MT^4 - 24*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*DSTm4*MT^4 - 16*
+         TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*
+         Dot[p1,p2]*Dot[p2,p4]*Dot[p3,p4]*MT^2 - 16*TC[3,1,p3,-p4,MH,MT
+         ,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*
+         Dot[p3,p4]*DSTm4*MT^2 + 48*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2
+         *MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*MT^4 + 16*TC[3,1
+         ,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2
+         ]*Dot[p3,p4]*DSTm4*MT^4 + 16*TC[3,1,p3,-p4,MH,MT,MT]*
+         PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p1,p4]*Dot[
+         p2,p4]*MT^2 - 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*MT^4 - 16*TC[3,1,p3,-p4,MH
+         ,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,
+         p4]^2*MT^2 - 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p4]^2*Dot[p2,p3]*MT^2 - 16*TC[3,1,p3,-p4,
+         MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2
+         ,p3]*MT^4 + 16*TC[3,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*Dot[p2,p4]*MT^2 + 96*TC[3,
+         1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,
+         p4]*Dot[p2,p4]*MT^4 - 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2
+         *MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^6 - 16*TC[3,1,1,p3,-p4,
+         MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1
+         ,p3]*MT^4 - 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*Dot[p3,p4]*MT^2 - 16*TC[3,
+         1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1
+         ,p2]*Dot[p2,p3]*MT^4 - 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[
+         2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*Dot[p3,p4]*MT^2
+          + 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4
+         ]]^2*Dot[p1,p2]*Dot[p3,p4]*MT^4 + 48*TC[3,1,1,p3,-p4,MH,MT,MT]
+         *PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p1,p4]*Dot[
+         p2,p4]*MT^2 - 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*MT^4 + 16*TC[3,1,1,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*
+         Dot[p2,p4]^2*MT^2 + 16*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]^2*Dot[p2,p3]*MT^2 - 16*TC[3,
+         1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1
+         ,p4]*Dot[p2,p3]*MT^4 + 48*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[
+         2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*Dot[p2,p4]*MT^2
+          + 32*TC[3,1,1,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4
+         ]]^2*Dot[p1,p4]*Dot[p2,p4]*MT^4 - 32*TC[3,1,2,p3,-p4,MH,MT,MT]
+         *PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^6 - 16*TC[3,
+         1,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1
+         ,p2]*Dot[p1,p3]*MT^4 - 16*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[
+         2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*Dot[p3,p4]*MT^2
+          - 16*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4
+         ]]^2*Dot[p1,p2]*Dot[p2,p3]*MT^4 - 16*TC[3,1,2,p3,-p4,MH,MT,MT]
+         *PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*Dot[
+         p3,p4]*MT^2 + 32*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 
+         2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*MT^4 + 48*TC[3,1,2,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*
+         Dot[p1,p4]*Dot[p2,p4]*MT^2 - 32*TC[3,1,2,p3,-p4,MH,MT,MT]*
+         PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*MT^4
+          + 16*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4
+         ]]^2*Dot[p1,p3]*Dot[p2,p4]^2*MT^2 + 16*TC[3,1,2,p3,-p4,MH,MT,
+         MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]^2*Dot[p2,p3]
+         *MT^2 - 32*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[
+         p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*MT^4 + 48*TC[3,1,2,p3,-p4,MH,
+         MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3
+         ]*Dot[p2,p4]*MT^2 + 64*TC[3,1,2,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p4]*MT^4 - 16*TC[3,2,
+         p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]
+         *MT^6 + 16*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3
+         ,p4]]^2*Dot[p1,p2]*DSTm4*MT^6 - 16*TC[3,2,p3,-p4,MH,MT,MT]*
+         PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p3]*MT^4
+          - 8*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^
+         2*Dot[p1,p2]*Dot[p1,p3]*DSTm4*MT^4 - 16*TC[3,2,p3,-p4,MH,MT,MT
+         ]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p1,p4]*
+         MT^4 - 8*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,
+         p4]]^2*Dot[p1,p2]*Dot[p1,p4]*DSTm4*MT^4 - 16*TC[3,2,p3,-p4,MH,
+         MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,p3
+         ]*MT^4 - 8*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3
+         ,p4]]^2*Dot[p1,p2]*Dot[p2,p3]*DSTm4*MT^4 - 16*TC[3,2,p3,-p4,MH
+         ,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p2,
+         p4]*MT^4 - 8*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[
+         p3,p4]]^2*Dot[p1,p2]*Dot[p2,p4]*DSTm4*MT^4 + 48*TC[3,2,p3,-p4,
+         MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3
+         ,p4]*MT^4 + 16*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,p4]*DSTm4*MT^4 - 16*TC[3,2,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p3]*
+         Dot[p2,p4]*MT^4 - 16*TC[3,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2
+          + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p3]*MT^4 + 96*TC[3,2,p3,
+         -p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*
+         Dot[p2,p4]*MT^4 - 16*TC[3,2,2,p3,-p4,MH,MT,MT]*PropDenom[2*
+         MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*MT^6 + 16*TC[3,2,2,p3,-p4,MH
+         ,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p2]*Dot[p3,
+         p4]*MT^4 - 16*TC[3,2,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p3]*Dot[p2,p4]*MT^4 - 16*TC[3,2,2,p3,-p4,
+         MH,MT,MT]*PropDenom[2*MT^2 + 2*Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2
+         ,p3]*MT^4 + 32*TC[3,2,2,p3,-p4,MH,MT,MT]*PropDenom[2*MT^2 + 2*
+         Dot[p3,p4]]^2*Dot[p1,p4]*Dot[p2,p4]*MT^4 ));
  

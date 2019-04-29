@@ -74,7 +74,6 @@ c--- avoid calculating unnecessarily by checking input file flags
       include 'types.f'      
       include 'anomcoup.f'      
       real(8) :: gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,sw2
-      logical,save :: FirstTime=.true.
       
         gvt = gvt + (vev/Lambda_BSM)**2 *(C_phiq_333 - 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
         gat = gat + (vev/Lambda_BSM)**2 *(C_phiq_333 + 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
@@ -92,18 +91,7 @@ c--- avoid calculating unnecessarily by checking input file flags
         gw_sq  = gw_sq  * coupl_gw_sq
         g_rest = 1d0    * coupl_rest
       
-      
-        if( FirstTime ) then
-          print *, "New top couplings:"
-          print *, "gvt   =",gvt
-          print *, "gat   =",gat
-          print *, "gw    =",gw
-          print *, "gvt_sq=",gvt_sq
-          print *, "gat_sq=",gat_sq
-          print *, "gw_sq =",gw_sq
-          print *, "g_rest=",g_rest
-          FirstTime=.false.
-        endif
+
       
       
       return
