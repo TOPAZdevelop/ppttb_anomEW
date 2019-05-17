@@ -12,6 +12,7 @@
 
 #include `WorkPath'TreeVirtQQB1_input.frm
 
+Local test =LoopDenom(q1,MZ,p3 + q1,MT, - p4 + q1,MT)*q1.q1;  
   
 
 id MU=0;

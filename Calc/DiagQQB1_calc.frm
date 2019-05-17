@@ -27,8 +27,9 @@ endrepeat;
 
 
 
-
 ******************* higher-rank tensor reduction *******************************
+************************* method: cancel D0 ************************************
+
 ** comment: implmement a higher-rank reduction and show that higher-ranks cancel out 
 
 
@@ -51,10 +52,10 @@ endrepeat;
 
 
 *
-* doing the shift for the q1.q1 term
+* doing the shift for the q1.q1 term  (CHECK THIS AGAIN!) HERE WAS A BUG
 * 
-id DID(2)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(2)*( LoopDenom(q1,MT) + (MZ^2-2*q1.p3+p3.p3)*LoopDenom(q1,MZ, -p3-p4+q1,MT) );  
-id DID(3)*LoopDenom(p3+q1, 0, -p4+q1, 0)*q1.q1 = DID(3)*( LoopDenom(q1, 0) + (MW^2-2*q1.p3+p3.p3)*LoopDenom(q1,MW, -p3-p4+q1, 0) );
+id DID(2)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(2)*( LoopDenom(q1,MT) + (MT^2-2*q1.p3+p3.p3)*LoopDenom(q1,MT, -p3-p4+q1,MT) );  
+id DID(3)*LoopDenom(p3+q1, 0, -p4+q1, 0)*q1.q1 = DID(3)*( LoopDenom(q1, 0) + (0000-2*q1.p3+p3.p3)*LoopDenom(q1, 0, -p3-p4+q1, 0) );
 
 
 
@@ -75,20 +76,33 @@ id LoopDenom(p3+q1,MT?, -p4+q1,MT?) = LoopDenom(q1,MT, -p3-p4+q1,MT);
 
 
 
+
+
+
+**************************************************
+
+
+******************* higher-rank tensor reduction *******************************
+************************* method: cancel D1 ************************************
+
+
+
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2? ) =  LoopDenom(q1,m0,pDumY,m2) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) +  2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?) =  LoopDenom(q1,m0) - ((pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1))+2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1);
+
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2? ) =  LoopDenom(q1,m0,pDumY,m2) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) +  2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?) =  LoopDenom(q1,m0) - ((pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1))+2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1);
+
+
+**************************************************
 * expand Ga(pi-pj)=Ga(pi)-Ga(pj)
 id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
 id DID(Col1?)=1;
-
-
 
 *Print;
 *Bracket LoopDenom,q1.q1;
 *.sort
 *.end
-
-
-**************************************************
-
 
 
 
