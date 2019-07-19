@@ -118,18 +118,15 @@ id p1.cep2 = 0;
 
 *** extract rational parts:   f(D) = f(4) + (DST-4) * f'(4)
 
-id DSTm4=DST-4;
-argument;
-id DSTm4=DST-4;
-endargument;
+*id DSTm4=DST-4;
+*argument;
+*id DSTm4=DST-4;
+*endargument;
 
 
 *** encapsulate DST terms
-id DST^2 = DOp(DST^2);
-id DST = DOp(DST);
-
-
-
+*id DST^2 = DOp(DST^2);
+*id DST = DOp(DST);
 
 ********** check that after this no more DST terms are present
 *id DOp(?args)=1;  
@@ -141,14 +138,15 @@ id DST = DOp(DST);
 
 * the derivatives 
 *
-id DOp( DST )   = 4 + DSTm4;
-id DOp( DST^2 ) = 16+ 8*DSTm4;
+*id DOp( DST )   = 4 + DSTm4;
+*id DOp( DST^2 ) = 16+ 8*DSTm4;
 
 * insert rational parts of tensor integrals
+*#call InsertUVRationalPart;
+*id DSTm4=0;
 
-#call InsertUVRationalPart;
 
-id DSTm4=0;
+
 
 
 * taking trace from closed loop 
@@ -335,8 +333,7 @@ id e_(LorX?,LorY?,LorZ?,LorW?)=LeviCiv(LorX,LorY,LorZ,LorW);
 
 
 **** the trace generates new DST terms
-**** remove them for now
-id DST=4; 
+id DST=DSTm4+4;
 
 
 #call simplify();
@@ -378,8 +375,6 @@ id cep2(DumLor1?DumId)*ep2(DumLor2?DumId) = - MeT(DumLor1,DumLor2) +  (p2(DumLor
 #call simplify();
 
 id LeviCiv(p1,p2,p3,p4)=0;
-
-id DSTm4=0;
 
 
 

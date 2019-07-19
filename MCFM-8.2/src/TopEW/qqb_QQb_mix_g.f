@@ -25,7 +25,7 @@ c--- given in Eq.(III.19) of Kuhn et al., arXiv:0909.0059
      .     fac1,fac2,ttv1,ttv2,tta1,tta2,mz,qqb(nf),qbq(nf),cs
       real(dp):: p1Dp3,p1Dp4,p2Dp3,p2Dp4
       real(dp):: pt(4),ptt(4),p5(4),
-     .          gvt_sq,gat_sq,gw_sq,g_rest
+     .          gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4
       
 
       msq=0._dp
@@ -77,7 +77,7 @@ C -- check at one phase space point with Doreen
 c**********************************************************************************
 c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
 
-        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4)!   defined in qqb_QQb_mix.f
 
 c     END MARKUS      
 c**********************************************************************************

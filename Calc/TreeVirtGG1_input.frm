@@ -45,9 +45,9 @@ Global [8,1] = (-(DID(8)*ep1(Lor1)*ep2(Lor2)*LoopDenom(q1, MT, p2 + q1, MT, p2 -
 #define NumSM8 "1" 
 
 Global [9,1] = (-(DID(9)*ep1(Lor1)*ep2(Lor2)*LoopDenom(q1, MT, p2 + q1, MT, p2 - p3 + q1, MZ, -p1 + q1, MT)*SumOver(Col3, 3, External)*SumOver(Col4, 3, External)*SumOver(ColInt5, 3, Internal)*SumOver(Glu1, 8, External)*SumOver(Glu2, 8, External)))*(ASpi(1, p3, MT)*
-     ((EL*MT*Chir(1, -1))/(2*MW*SW) - (EL*MT*Chir(1, 1))/(2*MW*SW) - EL/(2*SW*MW)*voL^2*( -2*C33phiq3*Ga(1,-q1-p2+p4)*Chir(1,-1) + C33phiu*Ga(1,-q1-p2+p4)*Chir(1,+1)  ) )*
+     ((EL*MT*Chir(1, -1))/(2*MW*SW) - (EL*MT*Chir(1, 1))/(2*MW*SW) - EL/(2*SW*MW)*voL^2*( -2*C33phiq3*Ga(1,-q1-p2+p3)*Chir(1,-1) + C33phiu*Ga(1,-q1-p2+p3)*Chir(1,+1)  ) )*
 (MT + Ga(1, p2 + q1))*(-(i_*GS*Ga(1, Lor2)*SUNT(Glu2, Col3, ColInt5)) )*(MT + Ga(1, q1))*(-(i_*GS*Ga(1, Lor1)*SUNT(Glu1, ColInt5, Col4)) )*(MT + Ga(1, -p1 + q1))*
-     ((EL*MT*Chir(1, -1))/(2*MW*SW) - (EL*MT*Chir(1, 1))/(2*MW*SW) - EL/(2*SW*MW)*voL^2*( -2*C33phiq3*Ga(1,+q1+p2-p4)*Chir(1,-1) + C33phiu*Ga(1,+q1+p2-p4)*Chir(1,+1)  ) )*     
+     ((EL*MT*Chir(1, -1))/(2*MW*SW) - (EL*MT*Chir(1, 1))/(2*MW*SW) - EL/(2*SW*MW)*voL^2*( -2*C33phiq3*Ga(1,+q1+p2-p3)*Chir(1,-1) + C33phiu*Ga(1,+q1+p2-p3)*Chir(1,+1)  ) )*     
 Spi(1, p4, -MT));
 #define NumSM9 "1" 
 

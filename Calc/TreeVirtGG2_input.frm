@@ -36,9 +36,9 @@ Global [6,1] = (-(DID(6)*ep1(Lor1)*ep2(Lor2)*LoopDenom(q1, MB, p2 + q1, MB, p2 -
 #define NumSM6 "1" 
 
 Global [7,1] = (-(DID(7)*ep1(Lor1)*ep2(Lor2)*LoopDenom(q1, MB, p2 + q1, MB, p2 - p3 + q1, MW, -p1 + q1, MB)*SumOver(Col3, 3, External)*SumOver(Col4, 3, External)*SumOver(ColInt5, 3, Internal)*SumOver(Glu1, 8, External)*SumOver(Glu2, 8, External)))*(ASpi(1, p3, MT)*
-      ((i_*EL*MT*Chir(1, -1))/(MW*Sqrt2*SW) - (i_*EL*MB*Chir(1, 1))/(MW*Sqrt2*SW) + i_*EL/(MW*Sqrt2*SW)*voL^2*( C33phiq3*Ga(1,-q1-p2+p4)*Chir(1,-1) )  )*
+      ((i_*EL*MT*Chir(1, -1))/(MW*Sqrt2*SW) - (i_*EL*MB*Chir(1, 1))/(MW*Sqrt2*SW) + i_*EL/(MW*Sqrt2*SW)*voL^2*( C33phiq3*Ga(1,-q1-p2+p3)*Chir(1,-1) )  )*
 (MB + Ga(1, p2 + q1))*(-(i_*GS*Ga(1, Lor2)*Chir(1, -1)*SUNT(Glu2, Col3, ColInt5)) - i_*GS*Ga(1, Lor2)*Chir(1, 1)*SUNT(Glu2, Col3, ColInt5))*(MB + Ga(1, q1))*(-(i_*GS*Ga(1, Lor1)*Chir(1, -1)*SUNT(Glu1, ColInt5, Col4)) - i_*GS*Ga(1, Lor1)*Chir(1, 1)*SUNT(Glu1, ColInt5, Col4))*(MB + Ga(1, -p1 + q1))*
-      (-((i_*EL*MB*Chir(1, -1))/(MW*Sqrt2*SW)) + (i_*EL*MT*Chir(1, 1))/(MW*Sqrt2*SW) - i_*EL/(MW*Sqrt2*SW)*voL^2*( C33phiq3*Ga(1,q1+p2-p4)*Chir(1,-1) )  )*
+      (-((i_*EL*MB*Chir(1, -1))/(MW*Sqrt2*SW)) + (i_*EL*MT*Chir(1, 1))/(MW*Sqrt2*SW) - i_*EL/(MW*Sqrt2*SW)*voL^2*( C33phiq3*Ga(1,q1+p2-p3)*Chir(1,-1) )  )*
 Spi(1, p4, -MT));
 #define NumSM7 "1" 
 

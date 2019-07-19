@@ -94,7 +94,7 @@ TreeAmpCT = Expand[M[1,1]] //. insertMasses //. insertMT //. PropDenom[x_]->1/x 
 TreeAmp = TreeAmpCT //. {  dZfL->0, dZfR->0  }
 TreeAmpCT=TreeAmpCT-TreeAmp  // FullSimplify
 
-
+(*  note: ICol^2 is 2, see Bachelor Thesis Bergner *)
 
 
 
@@ -124,25 +124,19 @@ CTDiagChi0 = CTDiagChi0  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  
 
 
 (* Chi0 WFRC correction *)
-CTDiagChi0 = TreeAmpCT //. { dZfL->  delZiifL[MT^2] , dZfR->  delZiifR[MT^2]   }   //. EWCounterterms //. {ID[Chi]-> 1, ID[__]-> 0, alpha-> EL^2/(4 Pi)}  // Expand;
+CTDiagChi0 = TreeAmpCT //. { dZfL->  delZiifL[MT^2] , dZfR->  delZiifR[MT^2]   }   //. EWCounterterms //. {ID[Chi]-> 1, ID[__]-> 0, alpha-> EL^2/(4 Pi)}   // Expand;
 CTDiagChi0 = CTDiagChi0  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  // FullSimplify
 
 
 (* renormalized contribution *)
 PreFacRen = EL^2 gs^4 ICol^2/(64 Pi^2 SW^2 MW^2 beta^2);
 
-DiagChi0RENORM = 2*( DiagChi0 + CTDiagChi0 )/PreFacRen   // Collect[#,{voL,SI[___]},FullSimplify]& 
+DiagChi0RENORM = 2*( DiagChi0 + CTDiagChi0 )/PreFacRen   // Collect[#,{SI[___],DB0[___]},FullSimplify]& 
 UVcheck =  DiagChi0RENORM  //. InsertUVDiv  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // FullSimplify
 
 
 (* convert to MCFM *)
 qa3 = DiagChi0RENORM  //. convertToMCFM // FortranForm
-
-
-
-
-
-
 
 
 
@@ -177,7 +171,7 @@ CTDiagPhiPM = CTDiagPhiPM  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT
 (* renormalized contribution *)
 PreFacRen = EL^2 gs^4 ICol^2/(64 Pi^2 SW^2 MW^2 beta^2);
 
-DiagPhi0RENORM = 2*( DiagPhiPM0 + CTDiagPhiPM )/PreFacRen // Collect[#,{voL,SI[___]},FullSimplify]& 
+DiagPhi0RENORM = 2*( DiagPhiPM0 + CTDiagPhiPM )/PreFacRen // Collect[#,{SI[___],DB0[___]},FullSimplify]& 
 UVcheck =  DiagPhi0RENORM  //. InsertUVDiv  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // FullSimplify
 
 
@@ -190,6 +184,3 @@ qa4 = DiagPhi0RENORM  //. convertToMCFM // FortranForm
 
 
 PreFacRen //. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 }
-
-
-

@@ -31,7 +31,7 @@ endrepeat;
 
 
 ******************* higher-rank tensor reduction *******************************
-** comment: todo: implmement a higher-rank reduction and show that higher-ranks cancel out 
+************************* method: cancel D0 ************************************
 
 
 * cancelling l^2
@@ -60,14 +60,16 @@ id DID(1)*LoopDenom(p3 + q1,MT, - p4 + q1,MT)                = DID(1)*LoopDenom(
 
 * for box [9,1] the LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT) is multiplied at max. with q1^3 and Ga(q1)*Ga(q1) terms are eliminated
 
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*(q1.pDumX?)               = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*(q1.pDumX-p2.pDumX);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*Ga(DumStr1?,q1)           = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*Ga(DumStr1,q1-p2);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1                           = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)*(q1.pDumY?)         = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX)*(q1.pDumY-p2.pDumY);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)*(q1.pDumY?)     = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2)*(q1.pDumY-p2.pDumY);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)                     = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)                 = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2);
-id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)                                 = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)*(q1.pDumY?)*(q1.pDumZ?)     = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX)*(q1.pDumY-p2.pDumY)*(q1.pDumZ-p2.pDumZ); 
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)*(q1.pDumY?)*Ga(DumStr1?,q1) = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX)*(q1.pDumY-p2.pDumY)*Ga(DumStr1,q1-p2); 
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*(q1.pDumX?)                       = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*(q1.pDumX-p2.pDumX);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1*Ga(DumStr1?,q1)                   = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2)*Ga(DumStr1,q1-p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*q1.q1                                   = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.q1+p2.p2-2*q1.p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)*(q1.pDumY?)                 = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX)*(q1.pDumY-p2.pDumY);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)*(q1.pDumY?)             = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2)*(q1.pDumY-p2.pDumY);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*(q1.pDumX?)                             = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*(q1.pDumX-p2.pDumX);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)*Ga(DumStr1?,q1)                         = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT)*Ga(DumStr1,q1-p2);
+id DID(9)*LoopDenom(p2+q1,MT,p2-p3+q1,MZ,-p1+q1,MT)                                         = DID(9)*LoopDenom(q1,MT,-p3+q1,MZ,-p1-p2+q1,MT);
 
 
 * for vertex [3/4,1] no q1 multipy the LoopDenom(...)*q1.q1
@@ -96,6 +98,31 @@ id DID(Col1?)=1;
 
 
 
+
+
+**************************************************
+
+
+
+
+
+******************* higher-rank tensor reduction *******************************
+************************* method: cancel D1 ************************************
+
+
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2?, pDumZ?,m3? ) =  LoopDenom(q1,m0,pDumY,m2,pDumZ,m3) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2,pDumZ,m3);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2? ) =  LoopDenom(q1,m0,pDumY,m2) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?)              =  LoopDenom(q1,m0)          - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1);
+
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2?, pDumZ?,m3? ) =  LoopDenom(q1,m0,pDumY,m2,pDumZ,m3) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2,pDumZ,m3);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?, pDumY?,m2? ) =  LoopDenom(q1,m0,pDumY,m2) - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1,pDumY,m2);
+*id q1.q1*LoopDenom(q1,m0?, pDumX?,m1?)              =  LoopDenom(q1,m0)          - ( (pDumX.pDumX-q1.q1-2*(pDumX.q1-q1.q1)) + 2*(pDumX.q1-q1.q1)-m1^2)*LoopDenom(q1,m0,pDumX,m1);
+
+
+
+* expand Ga(pi-pj)=Ga(pi)-Ga(pj)
+*id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
+*id DID(Col1?)=1;
 
 **************************************************
 

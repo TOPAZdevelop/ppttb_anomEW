@@ -41,7 +41,6 @@ id SumOver(?args) = 1;
 
 
 id i_=cI;
-*****id GS^4 = PreFac;
 
 id p1?.p2? = Dot(p1,p2);
 argument;

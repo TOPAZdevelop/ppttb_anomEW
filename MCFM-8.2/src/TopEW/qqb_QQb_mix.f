@@ -17,7 +17,7 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
       integer j,k
       real(dp):: msq(-nf:nf,-nf:nf),p(mxpart,4),gaq(nf),gvq(nf),
      .     gat,gvt,ss,beta,z,qqb(nf),qbq(nf),cs,sw2,cw2,mz,T3(nf),
-     .     gvt_sq,gat_sq,gw_sq,g_rest
+     .     gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4
 
       if(first) then
          first=.false.
@@ -38,7 +38,7 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
 c**********************************************************************************
 c     MARKUS: add dim-6 operator contributions ( variables are in common block of anomcoup.f and set in mdata.f )       
 
-        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest)
+        call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4)!   defined in qqb_QQb_mix.f
 
 c     END MARKUS      
 c**********************************************************************************

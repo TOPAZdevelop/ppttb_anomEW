@@ -24,6 +24,7 @@ c---          (if applicable), otherwise equal to zero
       include 'first.f'
       include 'taucut.f'
       include 'lhcb.f'
+      logical, save :: firsttime=.true.
 
 c--- APPLgrid - use of grids
 c      include 'ptilde.f'
@@ -45,7 +46,8 @@ c---  own plotting we provide the dummy routine userplotter
 c---  the index of the plot - stored in the nplot.f common and used for                                                      
 c---  keeping track of the plot index across different files (GPS)                                                           
       nextnplot = 1
-
+     
+     
 c---  first allow for user plots
       call userplotter(p,wt,wt2,nd)
 
@@ -90,10 +92,11 @@ c--- Special plotting routine for WW -> leptons
          return
       endif
       
+     
 c--- work out which plotting routine to use when first called
 c-----> saves string comparison in general and important for combining SCET
-      if (first) then
-        first=.false.
+      if (firsttime) then
+        firsttime=.false.
         if     (kcase==kW_only) then
           plotindex=1
 !          plotindex=1000 ! revert to default plotting routine
@@ -197,6 +200,10 @@ c--- photon processes also need to know the dipole number
         endif
       endif
 
+!       print *, "sss",nproc, kcase,plotindex,ktt_mix,ktwo_ew;pause
+      
+      
+      
       select case (plotindex)
       case (1)
         call nplotter_W_only(p,wt,wt2,switch)

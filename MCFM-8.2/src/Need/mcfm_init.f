@@ -119,7 +119,7 @@ c--- Note: version 6.4 onwards, scale cutoff with c.o.m. energy
 * npart=9 is a dummy value, to ensure that all histograms are included
       npart=9
       val=1.e-15_dp   
-      nprocbelow = nproc
+      nprocbelow = nproc    
       call nplotter(p,val,val**2,1)
        
       do j=1,mxpart

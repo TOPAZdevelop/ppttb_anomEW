@@ -30,7 +30,7 @@ insertMasses = {
 
 insertMT={ SI[args___]->SI[args], DB0[args___]->DB0[args], MT -> Sqrt[shat/4 (1-beta^2)]};
 
-convertToMCFM = {shat->s , SW->Sqrt[SW2], NCol->3,  voL^2-> vol2, voL^4-> vol4, SI[1,args___]->xI1[args,musq,ep],SI[2,args___]->xI2[args,musq,ep],SI[3,args___]->xI3[args,musq,ep],SI[4,args___]->xI4[args,musq,ep]};
+convertToMCFM = {shat->s , SW->Sqrt[SW2], NCol->3,  voL^2-> vol2, voL^4-> vol4,  vol2^2->vol4, SI[1,args___]->xI1[args,musq,ep],SI[2,args___]->xI2[args,musq,ep],SI[3,args___]->xI3[args,musq,ep],SI[4,args___]->xI4[args,musq,ep]};
 
 InsertFinitePartSquared = {r_.* DSTm4* SI[1,m0sq_]-> r* (-2*m0sq), r_.* DSTm4* SI[2,p1_,m0sq_,m1sq_]-> r* (-2)}; 
 
@@ -107,26 +107,28 @@ TreeAmpCTT=inputTree-TreeAmpT  // FullSimplify
 
 
 
-
+TwoTimesRe = 2;
 
 
 
 (* Chi0 box diagram  t-channel *)
 (* Note that TheRedAmpList[[9]] \[Equal] TheRedAmpList[[8]] with z\[Rule]-z  , i.e. t-channel vs u-channel *)
 
-DiagChi0Box=TheRedAmpList[[9]]  //.{ PreFac-> EL^2*GS^4*SW^(-2)*MW^(-2)*Pi^2  } //. insertMT   // Collect[#,SI[___],Simplify]&;
+PreFacDiagChi0Box=EL^2 GS^4/(256 MW^2 Pi^2 SW^2);
+% /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
+
+DiagChi0Box= TwoTimesRe * TheRedAmpList[[9]]/PreFacDiagChi0Box  //.{ PreFac-> EL^2*GS^4*SW^(-2)*MW^(-2)*Pi^2  } //. insertMT   // Collect[#,SI[___],Simplify]&;
 % //. voL-> 0 
 UVCheck=DiagChi0Box  //. InsertUVDiv //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal // Factor
  % //. voL-> 0  // Factor
 
 
-PreFacDiagChi0Box=EL^2 GS^4/(128 MZ^2 Pi^2 SW^2);
-% /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
+
 
 
 (* remember to replace arguments of xI function  0-->0d0  *)
 
-bx3 = DiagChi0Box/PreFacDiagChi0Box  //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___]},FullSimplify]&  // FortranForm
+bx3 = Expand[DiagChi0Box]  //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___]},FullSimplify]&  // FortranForm
 
 
 
@@ -167,13 +169,12 @@ PreFacDiagChi0SVert = EL^2 GS^4 MZ^2 /(64 Pi^2 MW^2 SW^2 );
 % /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
 
 
-DiagChi0SVertRENORM = 2*( DiagChi0SVert + CTDiagChi0SVert )/PreFacDiagChi0SVert  // Collect[#,SI[___],FullSimplify]&
+DiagChi0SVertRENORM = TwoTimesRe*( DiagChi0SVert + CTDiagChi0SVert )/PreFacDiagChi0SVert  // Collect[#,SI[___],FullSimplify]&
 UVcheck =  DiagChi0SVertRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
-% //. voL-> 0
 
 
 (* convert to MCFM *)
-vrts3 = DiagChi0SVertRENORM  //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm
+vrts3 =Expand[ DiagChi0SVertRENORM ] //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm
 
 
 
@@ -205,13 +206,13 @@ PreFacDiagChi0Vert = EL^2 GS^4 /(256 Pi^2 MW^2 SW^2 );
 % /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
 
 
-DiagChi0VertRENORM = 2*( DiagChi0Vert + CTDiagChi0Vert )/PreFacDiagChi0Vert  // Collect[#,SI[___],Simplify]&
+DiagChi0VertRENORM = TwoTimesRe*( DiagChi0Vert + CTDiagChi0Vert )/PreFacDiagChi0Vert  // Collect[#,SI[___],Simplify]&
 UVcheck =  DiagChi0VertRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
 % //. voL->0 
 
 
 (* convert to MCFM *)
-vrt3 = DiagChi0VertRENORM  //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm 
+vrt3 =Expand[ DiagChi0VertRENORM ] //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm 
 
 
 
@@ -231,14 +232,14 @@ UVCheck=DiagChi0Self  //. InsertUVDiv //. insertMT   // Series[#,{DSTm4,0,-1}]& 
 Get[ ProjectPath<>"DiagGG4_output.dat" ];
 MassCTChi0 = M[2,1]  // Simplify;
 MassCTChi0 =MassCTChi0   //. {dMf1[3,3]-> delM[MT^2], dZfL1[__]-> delZiifL[MT^2],  dZfR1[__]-> delZiifR[MT^2] }   //. EWCounterterms //. {ID[Chi]-> 1, ID[__]-> 0, alpha-> EL^2/(4 Pi), Sqrt[MT^2]-> MT} // Expand; 
-MassCTChi0 = MassCTChi0  //. InsertFinitePartSquared //. DSTm4->0  //. insertMT // FullSimplify;
+MassCTChi0 = MassCTChi0  //. InsertFinitePartSquared //. DSTm4->0  //. insertMT // Simplify;
 UVCheck = MassCTChi0  //. InsertUVDiv //. insertMT // Series[#,{DSTm4,0,-1}]& // Normal // Factor
 
 
 (* renormalized contribution *)
 PreFacDiagChi0Self = EL^2 GS^4/(256 MW^2 Pi^2 SW^2);
 
-DiagChi0SelfRENORM = 2*( DiagChi0Self + MassCTChi0 )/PreFacDiagChi0Self  // Simplify
+DiagChi0SelfRENORM = TwoTimesRe*( DiagChi0Self + MassCTChi0 )/PreFacDiagChi0Self  // Simplify
 UVcheck =  DiagChi0SelfRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
 % //. voL->0 
 
@@ -248,4 +249,44 @@ PreFacDiagChi0Self = EL^2 GS^4/(256 MW^2 Pi^2 SW^2);
 
 
 (* convert to MCFM *)
-slf3 = DiagChi0SelfRENORM  //. convertToMCFM  // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm  
+slf3 = Expand[DiagChi0SelfRENORM ] //. convertToMCFM  // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PreFacDiagChi0Vert
+PreFacDiagChi0Self
+PreFacDiagChi0Box
+
+
+UVCheckBox=DiagChi0Box  //. InsertUVDiv //. insertMT //. NCol->3 // Series[#,{DSTm4,0,-1}]& // Normal// Factor
+UVcheckTCh =  DiagChi0VertRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  //. NCol->3// Series[#,{DSTm4,0,-1}]& // Normal  // Factor
+UVcheckSelf =  DiagChi0SelfRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT //. NCol->3 // Series[#,{DSTm4,0,-1}]& // Normal// Factor
+
+UVCheckAll = DiagChi0Box + DiagChi0VertRENORM + DiagChi0SelfRENORM //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT //. NCol->3 // Series[#,{DSTm4,0,-1}]& // Normal// Factor
+
+
+

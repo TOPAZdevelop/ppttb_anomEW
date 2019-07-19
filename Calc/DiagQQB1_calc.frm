@@ -52,7 +52,7 @@ endrepeat;
 
 
 *
-* doing the shift for the q1.q1 term  (CHECK THIS AGAIN!) HERE WAS A BUG
+* doing the shift for the q1.q1 term
 * 
 id DID(2)*LoopDenom(p3+q1,MT, -p4+q1,MT)*q1.q1 = DID(2)*( LoopDenom(q1,MT) + (MT^2-2*q1.p3+p3.p3)*LoopDenom(q1,MT, -p3-p4+q1,MT) );  
 id DID(3)*LoopDenom(p3+q1, 0, -p4+q1, 0)*q1.q1 = DID(3)*( LoopDenom(q1, 0) + (0000-2*q1.p3+p3.p3)*LoopDenom(q1, 0, -p3-p4+q1, 0) );
@@ -95,6 +95,9 @@ id LoopDenom(p3+q1,MT?, -p4+q1,MT?) = LoopDenom(q1,MT, -p3-p4+q1,MT);
 
 
 **************************************************
+
+
+
 * expand Ga(pi-pj)=Ga(pi)-Ga(pj)
 id Ga(DumStr1?,LorX?)=Ga(DumStr1,LorX);
 id DID(Col1?)=1;
@@ -253,8 +256,8 @@ id i_ = -i_;
 id cI = -cI;
 
 * removing the WFRC for this piece (higher order)
-id dZfL=1;
-id dZfR=1;
+id dZfL=0;
+id dZfR=0;
 
 id SpiStr(?args) = SpiStr(reverse_(?args));
 

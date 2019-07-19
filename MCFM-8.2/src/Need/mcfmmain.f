@@ -31,12 +31,14 @@
       include 'nproc.f'
       include 'histo.f'
       include 'accumhist.f'
+      include 'first.f'
       real(dp):: integ,integ_err,r,er
       logical:: dryrun
       logical, parameter :: newIntegration = .false.
       integer:: itmxplots
       character*256 inputfile,workdir
       common/dryrun/dryrun
+
 
 * basic variable initialization, print-out
       call mcfm_init(inputfile,workdir)

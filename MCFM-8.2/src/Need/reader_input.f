@@ -104,7 +104,7 @@ c      common/qmass/cmass,bmass
       data cttH/1.0_dp/
       data cWWH/1.0_dp/
 
-      verbose=.false.
+      verbose=.true.
       if (rank.eq.0) verbose=.true.
 
       werkdir=workdir
@@ -516,6 +516,10 @@ c--- anomalous couplings
       if (verbose) call writeinput(6,' * ',' ','coupl_gw_sq')
       read(20,*) coupl_rest
       if (verbose) call writeinput(6,' * ',' ','coupl_rest')
+      read(20,*) coupl_vol2
+      if (verbose) call writeinput(6,' * ',' ','coupl_vol2')
+      read(20,*) coupl_vol4
+      if (verbose) call writeinput(6,' * ',' ','coupl_vol4')
 
       
       
