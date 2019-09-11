@@ -28,11 +28,12 @@ Global [3,1] = (DID(3)*LoopDenom(q1, MW, p3 + q1, MB, -p4 + q1, MB)*MeT(Lor1, Lo
 #define NumSM3 "2" 
 
 Global [4,1] = (DID(1)*LoopDenom(q1, MH, p3 + q1, MT, -p4 + q1, MT)*MeT(Lor1, Lor2)*PropDenom(p3 + p4, 0)*SumOver(Col1, 3, External)*SumOver(Col2, 3, External)*SumOver(Col3, 3, External)*SumOver(Col4, 3, External)*SumOver(GluInt5, 8, Internal))*(ASpi(1, p2, -MU)*(-(i_*GS*Ga(1, Lor1)*Chir(1, -1)*SUNT(GluInt5, Col2, Col1)) - i_*GS*Ga(1, Lor1)*Chir(1, 1)*SUNT(GluInt5, Col2, Col1))*Spi(1, p1, MU))*(ASpi(2, p3, MT)*
-     ((-i_*EL)/(2*MW*SW)*MT*Chir(2, -1) + (-i_*EL)/(2*MW*SW)*MT*Chir(2, 1))*
+     (-i_)*( EL/(2*MW*SW)*MT*(1+voL^2*C33phibox)*(Chir(2, -1)+Chir(2, 1)) - voL^2/Sqrt2*(C33uphiS*Chir(2, -1)+C33uphi*Chir(2, 1)) )*
 (MT + Ga(2, p3 + q1))*(-(i_*GS*Ga(2, Lor2)*Chir(2, -1)*SUNT(GluInt5, Col3, Col4)) - i_*GS*Ga(2, Lor2)*Chir(2, 1)*SUNT(GluInt5, Col3, Col4))*(MT + Ga(2, -p4 + q1))*
-     ((-i_*EL)/(2*MW*SW)*MT*Chir(2, -1) + (-i_*EL)/(2*MW*SW)*MT*Chir(2, 1))*
+     (-i_)*( EL/(2*MW*SW)*MT*(1+voL^2*C33phibox)*(Chir(2, -1)+Chir(2, 1)) - voL^2/Sqrt2*(C33uphiS*Chir(2, -1)+C33uphi*Chir(2, 1)) )*
 Spi(2, p4, -MT));
 #define NumSM1 "2" 
 
 
 #define AmpList "{[1\,1]\,[2\,1],[3\,1],[4\,1]}"
+

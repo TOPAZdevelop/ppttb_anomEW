@@ -120,6 +120,7 @@ c--- note relative signs, so no collinear contribution only soft
         msqc(6,j,k)= -four*msq35_2(j,k)*sub35_2(qq)
         msqc(7,j,k)= -four*msq45_1(j,k)*sub45_1(qq)
         msqc(8,j,k)= +four*msq45_2(j,k)*sub45_2(qq)
+                
       elseif (j < 0) then
         msqc(1,j,k)= -four*msq15_3(j,k)*sub15_3(qq)
         msqc(2,j,k)= +four*msq25_3(j,k)*sub25_3(qq)
@@ -130,9 +131,18 @@ c--- note relative signs, so no collinear contribution only soft
         msqc(6,j,k)= +four*msq35_2(j,k)*sub35_2(qq)
         msqc(7,j,k)= +four*msq45_1(j,k)*sub45_1(qq)
         msqc(8,j,k)= -four*msq45_2(j,k)*sub45_2(qq)
+                
       endif
+        
 
+      
       enddo
+
+
+!       print *, " REAL SUBTRACTION AMPLITUDE SQUARED:  msqc="
+!       write(14,*) msqc
+!       pause
+
 
       return
       end

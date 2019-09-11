@@ -1,0 +1,22 @@
+WFRCPreFactor = -alphaO4Pi/(4*MW^2*SW^2)
+ 
+SigmatChiL = MT^2*TC[2, 1, -p1, MT, MZ] + 4*C33phiq3*MT^2*voL^2*
+      (SI[2, -p1, MT, MZ] + TC[2, 1, -p1, MT, MZ]) + 
+     4*C33phiq3^2*voL^4*(SI[1, MZ] + 2*MT^2*(SI[2, -p1, MT, MZ] + 
+         TC[2, 1, -p1, MT, MZ]))
+ 
+SigmatChiR = MT^2*TC[2, 1, -p1, MT, MZ] + 2*C33phiu*MT^2*voL^2*
+      (SI[2, -p1, MT, MZ] + TC[2, 1, -p1, MT, MZ]) + 
+     C33phiu^2*voL^4*(SI[1, MZ] + 2*MT^2*(SI[2, -p1, MT, MZ] + 
+         TC[2, 1, -p1, MT, MZ]))
+ 
+SigmatChiS = MT^2*SI[2, -p1, MT, MZ] + (2*C33phiq3 + C33phiu)*voL^2*
+      (SI[1, MZ] + MT^2*(SI[2, -p1, MT, MZ] + TC[2, 1, -p1, MT, MZ])) + 
+     2*C33phiq3*C33phiu*voL^4*(SI[1, MZ] + 2*MT^2*(SI[2, -p1, MT, MZ] + 
+         TC[2, 1, -p1, MT, MZ]))
+ 
+SigmatPhiL = 2*C33phiq3^2*voL^4*(SI[1, MW] + MT^2*TC[2, 1, -p1, 0, MW])
+ 
+SigmatPhiR = 2*MT^2*TC[2, 1, -p1, 0, MW]
+ 
+SigmatPhiS = 2*C33phiq3*voL^2*(SI[1, MW] + MT^2*TC[2, 1, -p1, 0, MW])

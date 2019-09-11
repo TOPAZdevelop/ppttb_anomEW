@@ -502,6 +502,10 @@ c--- anomalous couplings
       if (verbose) call writeinput(6,' * ',' ','C_phiq_333')
       read(20,*) C_phiu_33
       if (verbose) call writeinput(6,' * ',' ','C_phiu_33')
+      read(20,*) kappa_htt
+      if (verbose) call writeinput(6,' * ',' ','kappa_htt')
+      read(20,*) kappa_tilde_htt
+      if (verbose) call writeinput(6,' * ',' ','kappa_tilde_htt')
       read(20,*) coupl_gvt
       if (verbose) call writeinput(6,' * ',' ','coupl_gvt')
       read(20,*) coupl_gat

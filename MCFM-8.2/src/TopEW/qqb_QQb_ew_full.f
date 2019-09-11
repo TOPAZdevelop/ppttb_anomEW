@@ -33,7 +33,9 @@
       beta = sqrt(1._dp-4._dp*mt**2/ss)
       z = (s(2,3)-s(1,3))/ss/beta
 
-!      print*, beta, ss
+        print *,   "THIS SHOULD NOT BE USED"
+        pause
+
 
       call qqbQQb_ew_oneloop(qqbew,ss,beta,z)
       call ggQQb_ew_oneloop(ggew1,ss,beta,z)

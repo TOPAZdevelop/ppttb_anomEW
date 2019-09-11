@@ -168,7 +168,8 @@ qqb_QQb_mix.o \
 qqb_QQb_mix_g.o \
 qqb_QQb_mix_gs.o \
 qqb_QQb_mix_v.o \
-qqb_QQb_mix_z.o \
+qqb_QQb_mix_z.o 
+# bbb_ttb.o \
 
 EWFILES += \
 single.o \
@@ -2866,6 +2867,7 @@ FOROPTS = -include=$(INCPATH) -nonovice -nopretty -quiet
 Bin/mcfm_omp: $(ALLMCFM)
 	@$(FC) $(FFLAGS) -L$(LIBDIR) -L$(PVDIR) -L$(RECURDIR) -L$(OVDIR) -o $@ \
 	$(patsubst %,$(OBJNAME)/%,$(ALLMCFM)) $(LIBFLAGS) 
+# 	/users/pep/mschulze/lib/HELAS-3.0/libdhelas3.gf.a /users/pep/mschulze/lib/MadGraph-2.49/switchmom.o 
 	@echo $(PDFMSG)
 	@echo $(NTUPMSG)
 	@echo "   ----> Executable is mcfm_omp <----"

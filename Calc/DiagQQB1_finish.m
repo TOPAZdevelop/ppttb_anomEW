@@ -30,17 +30,22 @@ insertMasses = {
 
 insertMT={ SI[args___]->SI[args], DB0[args___]->DB0[args], MT -> Sqrt[shat/4 (1-beta^2)]};
 
-convertToMCFM = {shat->s , SW->Sqrt[SW2], voL^2-> vol2, voL^4-> vol4, SI[1,args___]->xI1[args,musq,ep],SI[2,args___]->xI2[args,musq,ep],SI[3,args___]->xI3[args,musq,ep]};
+convertToMCFM = {shat->s , SW->Sqrt[SW2], voL^2-> vol2, voL^4-> vol4, voL^-2-> 1/vol2, 1/voL^-4-> 1/vol4, SI[1,args___]->xI1[args,musq,ep],SI[2,args___]->xI2[args,musq,ep],SI[3,args___]->xI3[args,musq,ep]};
 
 InsertFinitePartSquared = {r_.* DSTm4* SI[1,m0sq_]-> r* (-2*m0sq), r_.* DSTm4* SI[2,p1_,m0sq_,m1sq_]-> r* (-2)}; 
 
+
+(* for the Higgs exchange we remove the C33phibox operator and rewrite everything in terms of kappa and kappa_tilde *)
+eq1 = kap == 1 - 2 SW MW/EL/MT 1/Sqrt[2] * voL^2 * (C33uphi+C33uphiS)/2;
+eq2 = kapT ==  - 2 SW MW/EL/MT 1/Sqrt[2] * voL^2 * (C33uphi-C33uphiS)/(2*I);
+InsertKappa = Solve[{eq1,eq2},{C33uphi,C33uphiS}][[1]] // FullSimplify;
+InsertKappa = Append[InsertKappa, C33phibox->0 ]
 
 
 TheAmpList    = StringReplace[AmpList,"["->"M["] // ToExpression;
 TheRedAmpList = StringReplace[AmpList,"["->"redM["] // ToExpression;
 
-
- (* generate list of all tensor integral coefficients *)
+(* generate list of all tensor integral coefficients *)
    TCList={};
    For[i=1,i<=Length[TheAmpList],i++,
          TCList = Union[TCList, Cases[ TheAmpList[[i]] ,TC[___],100] ];
@@ -104,25 +109,6 @@ DiagChi0=TheRedAmpList[[2]]/(16 Pi^4)  //.{ PreFac-> gs^4*ICol^2 } //. insertMT;
 % //. voL->0   // FullSimplify
 
 
-(******  OUTDATED 
-(* Chi0 WFRC correction *)
-Get[ProjectPath<>"Selfenergies_output.dat"];
-
-SigL = SigmatChiL //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-SigR = SigmatChiR //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-SigS = SigmatChiS //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-
-deltaZChi0L = WFRCPreFactor*( - SigL - MT^2 ( D[SigL,psq]+ D[SigR,psq] + 2 *D[SigS,psq]) )  //. psq-> MT^2  //. Derivative[0,1,0,0][SI][2,psq_,m1sq_,m2sq_]-> DB0[psq,m1sq,m2sq] //FullSimplify;
-deltaZChi0R = WFRCPreFactor*( - SigR - MT^2 ( D[SigL,psq]+ D[SigR,psq] + 2 *D[SigS,psq]) )  //. psq-> MT^2  //. Derivative[0,1,0,0][SI][2,psq_,m1sq_,m2sq_]-> DB0[psq,m1sq,m2sq] //FullSimplify;
-
-CTDiagChi0 = TreeAmpCT //. { dZfL-> deltaZChi0L, dZfR->deltaZChi0R, alphaO4Pi-> alpha/(4 Pi) , alpha-> EL^2/(4 Pi)  }   // Expand;
-CTDiagChi0 = CTDiagChi0  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  // FullSimplify
-*********)
-
-
-
-
-
 (* Chi0 WFRC correction *)
 CTDiagChi0 = TreeAmpCT //. { dZfL->  delZiifL[MT^2] , dZfR->  delZiifR[MT^2]   }   //. EWCounterterms //. {ID[Chi]-> 1, ID[__]-> 0, alpha-> EL^2/(4 Pi)}   // Expand;
 CTDiagChi0 = CTDiagChi0  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  // FullSimplify
@@ -136,31 +122,21 @@ UVcheck =  DiagChi0RENORM  //. InsertUVDiv  //. insertMT  // Series[#,{DSTm4,0,-
 
 
 (* convert to MCFM *)
-qa3 = DiagChi0RENORM  //. convertToMCFM // FortranForm
+qa3 = Expand[DiagChi0RENORM]  //. convertToMCFM // Collect[#,{SI[___],DB0[___]},FullSimplify]&  // FortranForm
+
+
+
+
+
+
+
+
 
 
 
 (* Phi+/- boson exchange *)
 DiagPhiPM0=TheRedAmpList[[3]]/(16 Pi^4)  //.{ PreFac-> gs^4*ICol^2, 1/Sqrt2^2-> 1/2 } //. insertMT;
 % //. voL->0 // FullSimplify
-
-
-(******  OUTDATED 
-
-(* Phi+/- WFRC correction *)
-Get[ProjectPath<>"Selfenergies_output.dat"];
-
-SigL = SigmatPhiL //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-SigR = SigmatPhiR //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-SigS = SigmatPhiS //.TIReduction // SIInvariants[ #,{p1.p1->psq}]& // Collect[#,{voL},FullSimplify]&;
-
-deltaZPhiPML = WFRCPreFactor*( - SigL - MT^2 ( D[SigL,psq]+ D[SigR,psq] + 2 *D[SigS,psq]) )  //. psq-> MT^2  //. {Derivative[0,1,0,0][SI][2,psq_,m1sq_,m2sq_]-> DB0[psq,m1sq,m2sq], SI[1,0]-> 0} //FullSimplify;
-deltaZPhiPMR = WFRCPreFactor*( - SigR - MT^2 ( D[SigL,psq]+ D[SigR,psq] + 2 *D[SigS,psq]) )  //. psq-> MT^2  //. {Derivative[0,1,0,0][SI][2,psq_,m1sq_,m2sq_]-> DB0[psq,m1sq,m2sq], SI[1,0]-> 0} //FullSimplify;
-
-CTDiagPhiPM = TreeAmpCT //. { dZfL-> deltaZPhiPML, dZfR->deltaZPhiPMR, alphaO4Pi-> alpha/(4 Pi) , alpha-> EL^2/(4 Pi)  } //Expand;
-CTDiagPhiPM = CTDiagPhiPM   //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  // FullSimplify
-
-*********)
 
 
 (* Phi+/- WFRC correction *)
@@ -177,10 +153,51 @@ UVcheck =  DiagPhi0RENORM  //. InsertUVDiv  //. insertMT  // Series[#,{DSTm4,0,-
 
 (* convert to MCFM *)
 (* remember to replace 0 --> 0d0 in arguments of integrals  *)
-qa4 = DiagPhi0RENORM  //. convertToMCFM // FortranForm
+qa4 = Expand[DiagPhi0RENORM] //. convertToMCFM  // Collect[#,{SI[___],DB0[___]},FullSimplify]& // FortranForm
 
 
 
 
 
-PreFacRen //. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 }
+
+
+
+
+
+
+
+
+
+
+
+
+(* Higgs boson exchange *)
+DiagHiggs=TheRedAmpList[[4]]/(16 Pi^4)  //.{ PreFac-> gs^4*ICol^2 } //. insertMT //. Sqrt2->Sqrt[2];
+% //. voL->0   // FullSimplify
+
+
+(* Chi0 WFRC correction *)
+CTDiagHiggs = TreeAmpCT //. { dZfL->  delZiifL[MT^2] , dZfR->  delZiifR[MT^2]   }   //. EWCounterterms //. {ID[Hig]-> 1, ID[__]-> 0, alpha-> EL^2/(4 Pi)}  // Expand;
+CTDiagHiggs = CTDiagHiggs  //. InsertFinitePartSquared //. DSTm4->0 //. insertMT  //. Sqrt[EL^2]->EL //. 1/Sqrt[EL^2]->1/EL  // FullSimplify
+
+
+(* renormalized contribution *)
+PreFacRen = EL^2 gs^4 ICol^2/(64 Pi^2 SW^2 MW^2 beta^2);
+
+DiagHiggsRENORM = 2*( DiagHiggs + CTDiagHiggs )/PreFacRen   //. InsertKappa  // Collect[#,{voL^2,voL^4,EL,SI[___],DB0[___]},FullSimplify]& 
+UVcheck =  DiagHiggsRENORM  //. InsertUVDiv  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // FullSimplify 
+
+
+(* convert to MCFM *)
+(* remember to replace 0 --> 0d0 in arguments of integrals  *)
+qa5 = Expand[DiagHiggsRENORM]  //. insertMT //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm
+
+
+
+
+
+
+
+
+
+

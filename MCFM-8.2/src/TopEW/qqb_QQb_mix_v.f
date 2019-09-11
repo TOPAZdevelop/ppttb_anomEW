@@ -8,14 +8,20 @@ c--- including mixed QCD-weak LO process
       include 'constants.f'
       include 'breit.f'
       include 'sprods_com.f'
+      include 'ewcouple.f'
       include 'masses.f'
       include 'qcdcouple.f'
       include 'scheme.f'
 !      include 'first.f'
       include 'noglue.f'
+      include 'anomcoup.f'
       real(dp):: msq(-nf:nf,-nf:nf),p(mxpart,4),ss,beta,z,
      &     qqbew(5),qbqew(5),ggew1,ggew2,m2(-nf:nf,-nf:nf)
       integer j,k
+      real(dp) :: Mbbar_ttbar,Mbarb_ttbar,aemmz,mw,shat,that,till_check
+      real(dp) :: sw2,cw2,gvt,gat,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4
+      real(dp) :: PMG(1:4,1:4),ResMG
+      common/em/aemmz
       
       scheme = 'dred'
 
@@ -29,11 +35,12 @@ c--- including mixed QCD-weak LO process
       ss = s(1,2)
       beta = sqrt(1._dp-4._dp*mt**2/ss)
       z = (s(1,3)-s(2,3))/ss/beta
-
-         print *, "fixing kinematics for comparison"
-         ss=   173308.20441330347d0
-         beta=  0.55464632643236811d0
-         z=  -0.61536288270299611d0      
+      mw = wmass
+      
+!       print *, "fixing kinematics for comparison in qqb_QQb_mix_v.f"
+!       ss=   173308.20441330347d0
+!       beta=  0.55464632643236811d0
+!       z=  +0.61536288270299611d0      
       
 c--- avoid calculating unnecessarily by checking input file flags
       if (ggonly) then
@@ -42,7 +49,10 @@ c--- avoid calculating unnecessarily by checking input file flags
         call qqbQQb_ew_oneloop(qqbew,ss,beta,z)
         call qqbQQb_ew_oneloop(qbqew,ss,beta,-z)
       endif
-      
+!       print *, "virtqq/born", qqbew
+!       print *, "virtqq/born", qbqew     
+
+
       if (noglue .or. omitgg) then
         ggew1=zip
         ggew2=zip
@@ -51,7 +61,89 @@ c--- avoid calculating unnecessarily by checking input file flags
         call ggQQb_ew_oneloop(ggew2,ss,beta,-z)
       endif
       
+!        print *, "virtgg/born", ggew1
+!        print *, "virtgg/born", ggew2
+
+!     this is for  Cpq3=  13.000000000000000   Cpu=  5.0000000000000000  for vol2 >0 , vol4>0     
+!        print *, "ratio1", qqbew/(/-1.4757774020536695d-002, 
+!      &                           -4.2609888664684847d-002,  
+!      &                           -1.4757774020536695d-002,  
+!      &                           -4.2609888664684847d-002,  
+!      &                           -1.4757774020536695d-002/)  
+!        print *, "ratio2", qbqew/(/-5.8308261197494958d-002, 
+!      &                           -1.7475701014336532d-002,  
+!      &                           -5.8308261197494958d-002,  
+!      &                           -1.7475701014336532d-002,  
+!      &                           -5.8308261197494958d-002/)  
+!        print *, "ratio3", ggew1/(-5.4430573399833621d-002)  
+!        print *, "ratio4", ggew2/(-0.13033209790126796d0  )
+
+!     this is for  Cpq3= -13.000000000000000   Cpu=  5.0000000000000000       for vol2 >0 , vol4>0     
+!      print *, "ratio1", qbqew/(/-1.2714991939120214d-003, 
+!     &                           2.8438348797801157d-002,  
+!     &                           -1.2714991939120214d-003,  
+!     &                           2.8438348797801157d-002,  
+!     &                           -1.2714991939120214d-003/)  
+!      print *, "ratio2", qqbew/(/3.6961212336970986d-002, 
+!     &                           6.3731961832221243d-003,  
+!     &                           3.6961212336970986d-002,  
+!     &                           6.3731961832221243d-003,  
+!     &                           3.6961212336970986d-002/)  
+!      print *, "ratio3", ggew1/(1.4794182518949119d-002  )  
+!      print *, "ratio4", ggew2/( -5.0709055364319311d-004 )  
+
+!     this is for  Cpq3= +13.000000000000000   Cpu= -5.0000000000000000      for vol2 >0 , vol4>0      
+!      print *, "ratio1", qbqew/(/3.4858339486468605E-003, 
+!     &                           -3.8101006914137314E-002,  
+!     &                           3.4858339486468605E-003,  
+!     &                           -3.8101006914137314E-002,  
+!     &                           3.4858339486468605E-003/)  
+!      print *, "ratio2", qqbew/(/-5.5792191441357768E-002, 
+!     &                            -3.8900230589952360E-003  ,  
+!     &                           -5.5792191441357768E-002,  
+!     &                           -3.8900230589952360E-003  ,  
+!     &                           -5.5792191441357768E-002/)  
+!      print *, "ratio3", ggew1/( -7.6268737890503271E-002 )  
+!      print *, "ratio4", ggew2/( -3.2563095544884020E-002 )  
+
+!     this is for  Cpq3= -13.000000000000000   Cpu= -5.0000000000000000     for vol2 >0 , vol4>0      
+!      print *, "ratio1", qbqew/(/ 2.1839339216189221E-003, 
+!     &                            1.8159055694696054E-002 ,  
+!     &                           2.1839339216189221E-003,  
+!     &                            1.8159055694696054E-002 ,  
+!     &                            2.1839339216189221E-003/)  
+!      print *, "ratio2", qqbew/(/2.4689107239455523E-002, 
+!     &                            5.1706992849107677E-003  ,  
+!     &                          2.4689107239455523E-002,  
+!     &                          5.1706992849107677E-003 ,  
+!     &                          2.4689107239455523E-002/)  
+!      print *, "ratio3", ggew1/( 3.8086211379597447E-004 )  
+!      print *, "ratio4", ggew2/(  -5.6888644920950167E-003 )  
+
+
+
+
+! !     this is for  Cpq3=  13.000000000000000   Cpu=  5.0000000000000000    for vol2 >0 , vol4==0        
+!        print *, "ratio1", qqbew/(/ -8.5347870772868959d-003, 
+!      &                           -3.6386901721435015d-002,  
+!      &                            -8.5347870772868959d-003,  
+!      &                           -3.6386901721435015d-002,  
+!      &                            -8.5347870772868959d-003/)  
+!        print *, "ratio2", qbqew/(/-5.2085274254245140E-002, 
+!      &                            -1.1252714071086719E-002,  
+!      &                           -5.2085274254245140E-002,  
+!      &                            -1.1252714071086719E-002,  
+!      &                           -5.2085274254245140E-002/)  
+!        print *, "ratio3", ggew1/(-3.1390539346056533E-002)  
+!        print *, "ratio4", ggew2/( -7.6430442041101998E-002  )
+! 
+! 
+! 
+!       pause     
+
+
       call qqb_QQb(p,m2)
+      
 
       msq = 0._dp
 
@@ -67,6 +159,89 @@ c--- avoid calculating unnecessarily by checking input file flags
       end do
 
       msq = msq*m2!/gsq**2*16._dp*pi**2!*0.01_dp
+      
+
+
+            
+! ! ! ! ! ! ! ! !             swapping momenta because the ME below is calculated with p1+p2-->p3+p4
+        s(1,3) = -s(1,3)
+        s(1,4) = -s(1,4)
+        s(2,3) = -s(2,3)
+        s(2,4) = -s(2,4)
+! 
+!       print*,s(1,2),+2*(p(1,4)*p(2,4)-p(1,1)*p(2,1)-p(1,2)*p(2,2)-p(1,3)*p(2,3))
+!       print*,s(1,3),-2*(p(1,4)*p(3,4)-p(1,1)*p(3,1)-p(1,2)*p(3,2)-p(1,3)*p(3,3))
+!       print*,s(1,4),-2*(p(1,4)*p(4,4)-p(1,1)*p(4,1)-p(1,2)*p(4,2)-p(1,3)*p(4,3))
+!       print*,s(2,3),-2*(p(3,4)*p(2,4)-p(3,1)*p(2,1)-p(3,2)*p(2,2)-p(3,3)*p(2,3))
+!       print*,s(2,4),-2*(p(4,4)*p(2,4)-p(4,1)*p(2,1)-p(4,2)*p(2,2)-p(4,3)*p(2,3))
+!       print*,s(3,4),+2*(p(3,4)*p(4,4)-p(3,1)*p(4,1)-p(3,2)*p(4,2)-p(3,3)*p(4,3))
+        
+!         print *, "test",p(1,4),p(1,1:3)
+!         print *, "test",p(2,4),p(2,1:3)
+!         print *, "test",p(3,4),p(3,1:3)
+!         print *, "test",p(4,4),p(4,1:3)
+        
+        
+        
+
+       sw2 = xw
+       cw2 = 1._dp - sw2
+       gvt = ((1d0/2d0)-2._dp*sw2*(2d0/3d0))/2._dp/sqrt(sw2*cw2)
+       gat = (1d0/2d0)/2._dp/sqrt(sw2*cw2)
+       gw = 0.5_dp/sqrt(2._dp*sw2)
+       call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4)
+
+      
+      
+        Mbbar_ttbar=(-8*(esq/4d0/pi)*as*Pi**2*8*gw_sq*
+     -    (mt**2*s(1,2)*(mt**2 + 2*MW**2 + s(1,3)) + 
+     -      (2*MW**2*s(1,2) - (mt**2 + 2*MW**2)*s(1,3))*s(2,3)))/
+     -  (9*MW**2*s(1,2)*(-mt**2 + MW**2 + s(1,3)))*4d0
+
+        Mbarb_ttbar =(-8*(esq/4d0/pi)*as*Pi**2*8*gw_sq*
+     -    (mt**2*s(1,2)*(mt**2 + 2*MW**2 + s(2,3)) + 
+     -      (2*MW**2*s(1,2) - (mt**2 + 2*MW**2)*s(2,3))*s(1,3)))/
+     -  (9*MW**2*s(1,2)*(-mt**2 + MW**2 + s(2,3)))*4d0
+
+        shat = s(1,2)
+        that = -s(1,3) + mt**2
+        till_check = (-2*esq*4*pi*as*(mt**6 + mt**4*(2*MW**2 + shat - 2*that) 
+     & + 2*MW**2*(shat + that)**2 + mt**2*(that**2 - 2*MW**2*(shat + 2*that)))
+     &  *8*gw_sq)/(9*MW**2*shat*(MW**2-that))
+        
+        
+        msq(+5,-5) = msq(+5,-5)  + Mbbar_ttbar
+        msq(-5,+5) = msq(-5,+5)  + Mbarb_ttbar
+
+        
+        s(1,3) = -s(1,3)   ! undo the swap from above 
+        s(1,4) = -s(1,4)
+        s(2,3) = -s(2,3)
+        s(2,4) = -s(2,4)
+        
+        
+! ! ! ! ! ! ! ! ! ! ! ! !       
+
+!       PMG(1:4,1) = -(/p(1,4),p(1,1),p(1,2),p(1,3)/)
+!       PMG(1:4,2) = -(/p(2,4),p(2,1),p(2,2),p(2,3)/)
+!       PMG(1:4,3) =  (/p(3,4),p(3,1),p(3,2),p(3,3)/)
+!       PMG(1:4,4) =  (/p(4,4),p(4,1),p(4,2),p(4,3)/)
+!       call coupsm(0)
+!       call SBBB_TTB(PMG,ResMG)
+! 
+!       print *, "Mbbar_ttbar ",Mbbar_ttbar
+!       print *, "Mbarb_ttbar ",Mbarb_ttbar
+!       print *, "ratio1",   -4.8668147577302694d0/Mbbar_ttbar
+!       print *, "ratio2",   -2.3832594037514752d0/Mbarb_ttbar
+!       
+! !       print *, till_check
+! !       print *, till_check/Mbbar_ttbar
+! !       print *, ResMG
+!       print *, "ratio MG SM",ResMG/Mbbar_ttbar      
+!       
+!       pause
+
+
 
       end subroutine qqb_QQb_mix_v
 

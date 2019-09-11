@@ -135,9 +135,9 @@ c---   llplot:  equal to "lin"/"log" for linear/log scale
       call bookplot(n,tag,'m34',m34,wt,wt2,500._dp,10000._dp,200._dp,'lin')
       n=n+1
 
-      call bookplot(n,tag,'ptt CHM1',pt3,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
-      call bookplot(n,tag,'ptt CHM1',pt4,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
-      n=n+1
+!       call bookplot(n,tag,'ptt CHM1',pt3,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
+!       call bookplot(n,tag,'ptt CHM1',pt4,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
+!       n=n+1
 !       call bookplot(n,tag,'ptt CHM2',pt3,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
 !       call bookplot(n,tag,'ptt CHM2',pt4,wt*half,wt2*half**2,60._dp,100._dp,40._dp,'lin')
 !       n=n+1

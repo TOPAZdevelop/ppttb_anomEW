@@ -200,7 +200,7 @@ c--- photon processes also need to know the dipole number
         endif
       endif
 
-!       print *, "sss",nproc, kcase,plotindex,ktt_mix,ktwo_ew;pause
+!       print *, "sss",nproc, kcase,plotindex,ktt_mix,ktt_tot;pause
       
       
       

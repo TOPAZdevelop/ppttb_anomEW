@@ -24,12 +24,29 @@ c--- for top pair production, q(-p1)+qbar(-p2) -->  Q(p3)+Q~(P4)
          write(6,*) 'Heavy Quark mass:', mass2
       endif
 
+      
+!       p= reshape( ! use this point for comparison of vol2>0 vol4=0
+!      .(/
+!      .    0d0,   0d0,  -190.32693206964728d0,   190.32693206964728d0,   
+!      .    0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   
+!      .    0d0,   0d0,   0d0,   371.75945810707674d0,  -371.75945810707674d0,   
+!      .    0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   
+!      .    0d0,  -192.52614214911787d0,   1066.8609386650890d0, 
+!      .     -393.87339113072892d0,  -480.46140538524219d0,   0d0,   0d0,  
+!      .     0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,  
+!      .      0d0,  -192.52614214911787d0,  -1066.8609386650890d0,  
+!      .       599.63649322229423d0,   659.75058759191234d0,   0d0,  
+!      .        0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0,   0d0, 
+!      .          0d0   /) , (/mxpart,4/))
+     
+      
       sw2 = xw
       cw2 = 1._dp - sw2
       T3 = (/-0.5_dp,0.5_dp,-0.5_dp,0.5_dp,-0.5_dp/)
       gvq(1:5) = (T3(1:5)-2._dp*sw2*Q(1:5))/2._dp/sqrt(sw2*cw2)
       gaq(1:5) = T3(1:5)/2._dp/sqrt(sw2*cw2)
       gw = 0.5_dp/sqrt(2._dp*sw2)
+
 
       gvt = gvq(2)
       gat = gaq(2)
@@ -43,9 +60,8 @@ c     MARKUS: add dim-6 operator contributions ( variables are in common block o
 c     END MARKUS      
 c**********************************************************************************
       
-      
       mz = zmass
-
+      
       call dotem(4,p,s)
 
       ss = s(1,2)
@@ -60,7 +76,9 @@ c*******************************************************************************
      .     + (2._dp - beta**2*(1._dp - z**2))*gvq*gvt
      .     - 2._dp*beta*z*gaq*gat )
 
-      msq=zip
+
+      
+      msq=zip 
       do j=-nf,nf
          k=-j
          if((j == 0) .and. (k == 0)) then
@@ -74,7 +92,12 @@ c*******************************************************************************
  
 ! factor of two for the interference, 1/Nc**2/4 is the color and spin average
       msq = msq*2._dp*esq*gsq/Nc**2/4._dp
-!      msq = 0._dp
 
 
+!       print *, " REAL AMPLITUDE SQUARED:  msqmix="
+!       write(13,*) msq
+!       pause
+
+      
+      
       end subroutine qqb_QQb_mix

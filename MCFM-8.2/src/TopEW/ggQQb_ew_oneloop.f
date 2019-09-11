@@ -14,7 +14,8 @@ C --- by J. H. Kuehn, A. Scharf and P. Uwer
      .     mw,mz,mh,born,aemmz,trih,trizx,gw_sq,gab,g_rest
       real(dp) :: MARKUS_vrts3,MARKUS_slf3,MARKUS_vrt3,MARKUS_bx3
       real(dp) :: MARKUS_vrts4,MARKUS_slf4,MARKUS_vrt4,MARKUS_bx4,MARKUS_trizx
-      real(dp) :: C33phiq3,C33phiu,vol2,vol4
+      real(dp) :: MARKUS_vrts5,MARKUS_slf5,MARKUS_vrt5,MARKUS_bx5,MARKUS_trih
+      real(dp) :: C33phiq3,C33phiu,vol2,vol4,kap,kapT
       real(dp) :: db0,myDB0
       integer ep,ierr
       complex(dp) :: cdb0,cdb0p
@@ -56,7 +57,9 @@ c     MARKUS: add dim-6 operator contributions ( variables are in common block o
 
      
         C33phiq3 = C_phiq_333 
-        C33phiu  = C_phiu_33        
+        C33phiu  = C_phiu_33     
+        kap = kappa_htt
+        kapT= kappa_tilde_htt   
 
         call ResetEWCouplings(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4)!   defined in qqb_QQb_mix.f
        
@@ -73,7 +76,8 @@ c*******************************************************************************
       chifac = (1d0/16._dp/sw2/cw2)/mz**2 !  MARKUS: replaced gat_sq coupl. by explicit expression
 c --- sigma0 is jacobian additional to matrix element square
 c --- sigma0 = gsq**2*beta/64._dp/pi/s/(Nc**2-1._dp)
-      sigma0 = 1._dp
+      sigma0 = 1._dp                    !  MARKUS: Note that the tree is proportional to it and all loop corrections are proportional to it. Therefore the return value vew/born is independent of it. 
+                                        !          Hence, the Jacobian from dz is also dropping out. And the Jacobian is whatever is in the born of m2 outside of this routine. 
 c      sigma0 = 1._dp/16._dp
 
       t = -s*(1._dp+beta*z)/2._dp+mt**2
@@ -1032,6 +1036,34 @@ c--- it therefore affects Higgs diagrams as the square
 !           pause
 
 
+
+
+!     MARKUS: higgs contribution vertex, s-channel gluon 
+        MARKUS_vrts5 =  (alpha*MZ**2)/(16*MW**2*Pi*SW2)/16d0 * (
+     -      (24*beta**2*(-1 + beta**2)**2*s*
+     -     ((kap**2 + kapT**2)*MH**2 + (-1 + beta**2)*kap**2*s)*z**2*
+     -     DB0(MT**2,MT**2,MH**2))/(MZ**2*(-1 + beta**2*z**2)) - 
+     -  (48*(-1 + beta**2)*((-1 + 2*beta**2)*(kap**2 + kapT**2)*MH**2 + 
+     -       beta**2*(-1 + beta**2)*kap**2*s)*z**2*xI2(MT**2,MH**2,MT**2,musq,ep))/
+     -   (MZ**2*(-1 + beta**2*z**2)) + 
+     -  (48*beta**2*(-1 + beta**2)*(kap**2 + kapT**2)*MH**2*z**2*
+     -     xI2(MT**2,MT**2,MH**2,musq,ep))/(MZ**2*(-1 + beta**2*z**2)) + 
+     -  (48*(-1 + beta**2)**2*((kap**2 + kapT**2)*MH**2 + beta**2*kap**2*s)*z**2*
+     -     xI2(s,MT**2,MT**2,musq,ep))/(MZ**2*(-1 + beta**2*z**2)) + 
+     -  (24*(-1 + beta**2)**2*(2*(kap**2 + kapT**2)*MH**4 + 
+     -       beta**2*(3*kap**2 + kapT**2)*MH**2*s + 
+     -       beta**2*(-1 + beta**2)*kap**2*s**2)*z**2*
+     -     xI3(MT**2,MT**2,s,MT**2,MH**2,MT**2,musq,ep))/(MZ**2*(-1 + beta**2*z**2))  )
+
+
+!           print *, "MCFM vrts5  ",vrts(5)
+!           print *, "MARKUS_vrts5",MARKUS_vrts5
+!           pause
+
+
+
+
+
 !     MARKUS: chi contribution to self energy
           MARKUS_slf3 = (alpha)/(64*MW**2*Pi*SW2)/16d0*(
      -       (8*s*(-3 + beta*z)*(-7 + 9*beta*z)*
@@ -1211,9 +1243,59 @@ c--- it therefore affects Higgs diagrams as the square
 !           print *, "MARKUS_slf4",MARKUS_slf4
 !           pause
           
+          
+
+
+!     MARKUS: higgs contribution to self energy
+       MARKUS_slf5=(alpha)/(64*MW**2*Pi*SW2)/16d0*(           
+     -  (-16*(-1 + beta**2)*s*((kap**2 + kapT**2)*MH**2 + (-1 + beta**2)*kap**2*s)*
+     -     (-7 + 9*beta*z)*(-1 + beta*
+     -        (z + beta*(-2 - beta*z + 3*z**2 + beta**2*(2 - 3*z**2 + z**4))))*
+     -     DB0(MT**2,MT**2,MH**2))/(3d0*(-1 + beta*z)*(1 + beta*z)**2) + 
+     -  (64*(kap**2 + kapT**2)*(-7 + 9*beta*z)*
+     -     (-1 + beta**2*(-1 + 3*z**2) + beta**4*(1 - 3*z**2 + z**4))*
+     -     xI1(MH**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)*(1 + beta**2 + 2*beta*z)) - 
+     -  (64*(kap**2 + kapT**2)*(-7 + 9*beta*z)*
+     -     (-1 + beta**2*(-1 + 3*z**2) + beta**4*(1 - 3*z**2 + z**4))*
+     -     xI1(MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)*(1 + beta**2 + 2*beta*z)) + 
+     -  (32*(-7 + 9*beta*z)*(kapT**2*MH**2*
+     -        (2 + beta**2*(2 - 6*z**2 - 3*beta*z*(-1 + z**2) + 
+     -             beta**2*(-5 + 9*z**2 - 2*z**4) + beta**4*(2 - 3*z**2 + z**4) - 
+     -             beta**3*z*(2 - 3*z**2 + z**4))) + 
+     -       kap**2*((-1 + beta**2)**2*s*
+     -           (-1 + beta**2*(-1 + 2*z**2) + beta**4*(2 - 3*z**2 + z**4)) + 
+     -          MH**2*(2 + beta**2*
+     -              (2 - 6*z**2 - 3*beta*z*(-1 + z**2) + 
+     -                beta**2*(-5 + 9*z**2 - 2*z**4) + beta**4*(2 - 3*z**2 + z**4) - 
+     -                beta**3*z*(2 - 3*z**2 + z**4)))))*
+     -     xI2(MT**2,MT**2,MH**2,musq,ep))/(3d0*(-1 + beta*z)*(1 + beta*z)**3) - 
+     -  (16*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     ((kap - kapT)*(kap + kapT)*s + 2*beta*(kap - kapT)*(kap + kapT)*s*z + 
+     -       2*beta**3*z*(-((kap**2 + kapT**2)*(3*MH**2 + s)) + 
+     -          (kap**2*(3*MH**2 - s) + 3*kapT**2*(MH**2 + s))*z**2) + 
+     -       2*beta**8*kap**2*s*(2 - 3*z**2 + z**4) + 
+     -       4*beta**7*kap**2*s*z*(2 - 3*z**2 + z**4) + 
+     -       beta**2*(kap**2*(s - 2*s*z**2 + 4*MH**2*(-1 + z**2)) + 
+     -          kapT**2*(4*MH**2*(-1 + z**2) + s*(-1 + 2*z**2))) + 
+     -       2*beta**5*z*(kapT**2*(2*MH**2 + s - 3*(MH**2 + s)*z**2 + 
+     -             (MH**2 + s)*z**4) + 
+     -          kap**2*(-(s*(5 - 7*z**2 + z**4)) + MH**2*(2 - 3*z**2 + z**4))) + 
+     -       beta**6*(kapT**2*(s*z**2*(1 - 3*z**2 + z**4) + 
+     -             2*MH**2*(2 - 3*z**2 + z**4)) + 
+     -          kap**2*(2*MH**2*(2 - 3*z**2 + z**4) + 
+     -             s*(-2 + 5*z**2 - 3*z**4 + z**6))) + 
+     -       beta**4*(kapT**2*(s + 2*(-1 + z**2)*(MH**2 + 2*s*z**2)) + 
+     -          kap**2*(2*MH**2*(-1 + z**2) + s*(-5 + 2*(z**2 + z**4)))))*
+     -     xI2(MT**2 - (s*(1 + beta*z))/2d0,MH**2,MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**3*(1 + beta**2 + 2*beta*z))  )
        
        
-       
+!           print *, "MCFM slf5  ",slf(5)
+!           print *, "MARKUS_slf5",MARKUS_slf5
+!           pause
+          
        
 !        chi0 vertex correction
        MARKUS_vrt3 = (alpha)/(64*MW**2*Pi*SW2)/16d0 *(
@@ -1468,8 +1550,72 @@ c--- it therefore affects Higgs diagrams as the square
 !           pause
 
             
-       
-       
+
+
+       MARKUS_vrt5 = (alpha)/(64*MW**2*Pi*SW2)/16d0*(        
+     -    (16*(-1 + beta**2)**2*(kap**2 + kapT**2)*s*(-7 + 9*beta*z))/
+     -   (3d0*(1 + beta*z)**2) + (32*(-1 + beta**2)*s*
+     -     ((kap**2 + kapT**2)*MH**2 + (-1 + beta**2)*kap**2*s)*(-7 + 9*beta*z)*
+     -     (-1 + beta*(z + beta*(-2 - beta*z + 3*z**2 + 
+     -             beta**2*(2 - 3*z**2 + z**4))))*DB0(MT**2,MT**2,MH**2))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2) - 
+     -  (64*(kap**2 + kapT**2)*(-7 + 9*beta*z)*
+     -     (-1 + beta*(-z + beta*(-2 + 4*z**2 + beta*(-4*z + 6*z**3) + 
+     -             beta**3*z*(3 - 6*z**2 + 2*z**4) + beta**2*(1 - 4*z**2 + 2*z**4))))
+     -      *xI1(MH**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2*(1 + beta**2 + 2*beta*z)) + 
+     -  (64*(kap**2 + kapT**2)*(-7 + 9*beta*z)*
+     -     (-1 + beta*(-z + beta*(-2 + 4*z**2 + beta*(-4*z + 6*z**3) + 
+     -             beta**3*z*(3 - 6*z**2 + 2*z**4) + beta**2*(1 - 4*z**2 + 2*z**4))))
+     -      *xI1(MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2*(1 + beta**2 + 2*beta*z)) - 
+     -  (16*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (kapT**2*((-1 + beta)*(1 + beta)*s*(-1 + beta*z)*
+     -           (1 + beta**2 + 2*beta*z) + 
+     -          2*MH**2*(1 + beta*(-z + 
+     -                beta*(-3 + beta*z + 2*z**2 + 2*beta**2*(2 - 3*z**2 + z**4)))))
+     -        + kap**2*(2*MH**2*(1 + 
+     -             beta*(-z + beta*
+     -                 (-3 + beta*z + 2*z**2 + 2*beta**2*(2 - 3*z**2 + z**4)))) + 
+     -          (-1 + beta**2)*s*(-1 + 
+     -             beta*(-z + beta*
+     -                 (-5 + beta*z + 6*z**2 + 4*beta**2*(2 - 3*z**2 + z**4))))))*
+     -     xI2(MT**2,MH**2,MT**2,musq,ep))/(3d0*(-1 + beta*z)*(1 + beta*z)**3) + 
+     -  (64*(kap**2 + kapT**2)*MH**2*(-7 + 9*beta*z)*
+     -     (-1 + beta*(z + beta*(-2 - beta*z + 3*z**2 + 
+     -             beta**2*(2 - 3*z**2 + z**4))))*xI2(MT**2,MT**2,MH**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2) + 
+     -  (16*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (kapT**2*(beta*s*(z + beta*
+     -              (-1 + beta**5*z + 3*z**2 + 4*beta**2*z**2*(-3 + 2*z**2) + 
+     -                beta*z*(-7 + 6*z**2) + beta**3*(z - 6*z**3 + 4*z**5) + 
+     -                beta**4*(-1 + 7*z**2 - 6*z**4 + 2*z**6))) + 
+     -          2*MH**2*(1 + beta*(z + 
+     -                beta*(-4 + 2*z**2 + beta**2*(-3 + 4*z**2) + 
+     -                   beta*(-8*z + 6*z**3) + 2*beta**4*(2 - 3*z**2 + z**4) + 
+     -                   beta**3*z*(5 - 6*z**2 + 2*z**4))))) + 
+     -       kap**2*(beta*s*(z + beta*
+     -              (3 - z**2 + beta*(z - 2*z**3) + 
+     -                beta**3*z*(-23 + 26*z**2 - 4*z**4) + 4*beta**2*(-2 + z**4) + 
+     -                4*beta**6*(2 - 3*z**2 + z**4) + 
+     -                beta**4*(-5 + 11*z**2 - 6*z**4 + 2*z**6) + 
+     -                beta**5*z*(17 + 8*z**2*(-3 + z**2)))) + 
+     -          2*MH**2*(1 + beta*(z + 
+     -                beta*(-4 + 2*z**2 + beta**2*(-3 + 4*z**2) + 
+     -                   beta*(-8*z + 6*z**3) + 2*beta**4*(2 - 3*z**2 + z**4) + 
+     -                   beta**3*z*(5 - 6*z**2 + 2*z**4))))))*
+     -     xI2(MT**2 - (s*(1 + beta*z))/2d0,MH**2,MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**3*(1 + beta**2 + 2*beta*z)) - 
+     -  (8*(-1 + beta**2)**2*s**2*(-7 + 9*beta*z)*
+     -     (kap**2*(-3 + beta**2 - 2*beta*z) + kapT**2*(1 + beta**2 + 2*beta*z))*
+     -     xI3(0d0,MT**2,MT**2 - (s*(1 + beta*z))/2d0,MT**2,MT**2,MH**2,musq,ep))/
+     -   (3d0*(1 + beta*z)**2) )
+     
+!           print *, "MCFM vrt5  ",vrt(5)
+!           print *, "MARKUS_vrt5",MARKUS_vrt5
+!           pause
+
+            
        
        
        
@@ -1524,7 +1670,7 @@ c--- it therefore affects Higgs diagrams as the square
      -             C33phiu**2*vol4) - 
      -          2*(2*C33phiq3 + C33phiu)*(2*vol2 + (2*C33phiq3 + C33phiu)*vol4))*z**5)
      -      *xI1(MT**2,musq,ep))/
-     -   (3.*(-1 + beta*z)*(1 + beta*z)**2*(1 + beta**2 + 2*beta*z)) + 
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2*(1 + beta**2 + 2*beta*z)) + 
      -  (16*(-7 + 9*beta*z)*(-4*beta**2 + 4*beta**4 - 12*beta**2*C33phiq3*vol2 + 
      -       16*beta**4*C33phiq3*vol2 - 6*beta**2*C33phiu*vol2 + 
      -       8*beta**4*C33phiu*vol2 - 4*C33phiq3**2*vol4 - 
@@ -1882,21 +2028,116 @@ c--- it therefore affects Higgs diagrams as the square
      -     (4*MW**2 + s*(1 + beta**2 + 2*beta*z))*
      -     (16*MW**4 + 8*beta*MW**2*s*(beta + z) + 
      -       s**2*(3 + beta*(2*z + beta*(-2 + beta**2 + 2*beta*z + 2*z**2))))*
-     -     xI4(0d0,0d0,MT**2,MT**2,s,MT**2 - (s*(1 + beta*z))/2,0d0,0d0,0d0,MW**2,musq,ep))/
+     - xI4(0d0,0d0,MT**2,MT**2,s,MT**2 - (s*(1 + beta*z))/2,0d0,0d0,0d0,MW**2,musq,ep))/
      -   (-6 + 6*beta**2*z**2)  )
      
 !           print *, "MCFM bx4  ",bx(4)
 !           print *, "MARKUS_bx4",MARKUS_bx4
 !           pause
 
+
+       
+       
+!        higgs box   
+         MARKUS_bx5= (alpha)/(64*MW**2*Pi*SW2)/16d0*  (
+     -   (8*beta*(-1 + beta**2)*(kap**2 + kapT**2)*s*z*(-7 + 9*beta*z)*(-1 + z**2))/
+     -   (3 - 3*beta**2*z**2) + (32*beta*(-1 + beta**2)*(kap**2 + kapT**2)*
+     -     (-7 + 9*beta*z)*(-1 + z**2)*(z + 2*beta*(-2 + z**2))*xI1(MH**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)*(1 + beta**2 + 2*beta*z)) - 
+     -  (32*beta*(-1 + beta**2)*(kap**2 + kapT**2)*(-7 + 9*beta*z)*(-1 + z**2)*
+     -     (z + 2*beta*(-2 + z**2))*xI1(MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)*(1 + beta**2 + 2*beta*z)) + 
+     -  (16*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (-6*beta**3*(kap**2 + kapT**2)*MH**2 - 
+     -       beta*(-1 + beta**2)*((2 + 3*beta**2)*kap**2 - (-2 + beta**2)*kapT**2)*
+     -        s - ((5 - 8*beta**2 + 4*beta**4)*(kap**2 + kapT**2)*MH**2 + 
+     -          beta**2*(-1 + beta**2)*((-3 + 4*beta**2)*kap**2 + kapT**2)*s)*z + 
+     -       beta*((-5 + 12*beta**2)*(kap**2 + kapT**2)*MH**2 + 
+     -          (-1 + beta**2)*((1 + 6*beta**2)*kap**2 + kapT**2)*s)*z**2 + 
+     -       ((3 - 4*beta**2 + 2*beta**4)*(kap**2 + kapT**2)*MH**2 + 
+     -          beta**2*(-1 + beta**2)*((-1 + 2*beta**2)*kap**2 + kapT**2)*s)*z**3 + 
+     -       beta*(-((-3 + 4*beta**2)*(kap**2 + kapT**2)*MH**2) - 
+     -          2*beta**2*(-1 + beta**2)*kap**2*s)*z**4)*
+     -     xI2(MT**2,MH**2,MT**2,musq,ep))/(3d0*beta*(-1 + beta*z)*(1 + beta*z)**2) +
+     -  (8*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (2*(kap**2 + kapT**2)*MH**2*z*(5 - 3*z**2) + 
+     -       4*beta**4*kap**2*s*z*(-2 + z**2) + 
+     -       2*beta*(kap**2 + kapT**2)*s*(-1 + z**2) + 
+     -       beta**2*z*(kap**2*(s*(7 - 3*z**2) + 4*MH**2*(-2 + z**2)) + 
+     -          kapT**2*(4*MH**2*(-2 + z**2) + s*(-1 + z**2))))*
+     -     xI2(s,MT**2,MT**2,musq,ep))/(3d0*beta*(-1 + beta**2*z**2)) - 
+     -  (16*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     ((kap**2 + kapT**2)*s + 2*beta*(kap**2 + kapT**2)*(MH**2 + s)*z + 
+     -       2*beta**7*kap**2*s*z*(-2 + z**2) + 
+     -       beta**6*s*(kapT**2 + kap**2*(-3 - 6*z**2 + 4*z**4)) + 
+     -       2*beta**3*z*(kap**2*(s + 2*MH**2*(-1 + z**2)) + 
+     -          kapT**2*(2*MH**2*(-1 + z**2) + s*(-5 + 3*z**2))) + 
+     -       beta**2*(kap**2*(s*z**2 + 2*MH**2*(1 + z**2)) + 
+     -          kapT**2*(2*MH**2*(1 + z**2) + s*(-4 + 3*z**2))) + 
+     -       beta**4*(kap**2*(3*s*z**2 + 2*MH**2*(-3 + z**4)) + 
+     -          kapT**2*(s*z**2*(-5 + 4*z**2) + 2*MH**2*(-3 + z**4))) + 
+     -       beta**5*z*(kapT**2*(3*s + (-2 + z**2)*(2*MH**2 + s*z**2)) + 
+     -          kap**2*(2*MH**2*(-2 + z**2) + s*(-5 + 2*z**2 + z**4))))*
+     -     xI2(MT**2 - (s*(1d0 + beta*z))/2d0,MH**2,MT**2,musq,ep))/
+     -   (3d0*(-1 + beta*z)*(1 + beta*z)**2*(1 + beta**2 + 2*beta*z)) - 
+     -  (8*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (kapT**2*(8*MH**4 + 4*beta*MH**2*s*(beta + z) + 
+     -          s**2*(2 + beta*(2*z + beta*(-2 + beta**2 + z**2)))) + 
+     -       kap**2*(8*MH**4 + 4*MH**2*s*(-2 + beta*(3*beta + z)) + 
+     -          s**2*(6 + beta*(-2*z + beta*(-10 + 5*beta**2 + 4*beta*z + z**2)))))*
+     -     xI3(0d0,0d0,s,MT**2,MT**2,MT**2,musq,ep))/(-3 + 3*beta**2*z**2) + 
+     -  (8*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (kap**2*(8*MH**4*(1 + beta*z) + 
+     -          4*MH**2*s*(1 + beta*z)*(-2 + beta*(3*beta + z)) + 
+     -          s**2*(6 + beta*(3*z + 
+     -                beta*(5*(-2 + beta**2) + 4*beta*(-1 + beta**2)*z + 
+     -                   (-1 + 4*beta**2)*z**2 + beta*z**3)))) + 
+     -       kapT**2*(8*MH**4*(1 + beta*z) + 4*beta*MH**2*s*(beta + z)*(1 + beta*z) + 
+     -          s**2*(2 + beta*(3*z + beta*(-2 + 3*z**2 + beta*(beta + z**3))))))*
+     -     xI3(0d0,MT**2,MT**2 - (s*(1 + beta*z))/2d0,MT**2,MT**2,MH**2,musq,ep))/
+     -   (-3 + 3*beta**2*z**2) + (8*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (2*(kap**2 + kapT**2)*MH**4*z*(5 - 3*z**2) + 
+     -       2*beta**6*kap**2*s**2*z*(-4 + z**2) + 
+     -       2*beta*(kap**2 + kapT**2)*MH**2*s*(-1 + z**2) - 
+     -       2*beta**5*kap**2*s**2*(1 + z**2) + 
+     -       beta**3*s*(-2*(kap**2 + kapT**2)*MH**2 + (kap - kapT)*(kap + kapT)*s)*
+     -        (1 + z**2) + beta**2*z*
+     -        (kap**2*(-7*s**2 + 2*MH**2*s*(10 - 3*z**2) + 4*MH**4*(-4 + z**2)) + 
+     -          kapT**2*(-s**2 + 4*MH**4*(-4 + z**2) - 2*MH**2*s*(-2 + z**2))) - 
+     -       beta**4*s*z*(kapT**2*(s - 2*MH**2*(-4 + z**2)) + 
+     -          kap**2*(-6*MH**2*(-4 + z**2) + s*(-13 + 2*z**2))))*
+     -     xI3(MT**2,MT**2,s,MT**2,MH**2,MT**2,musq,ep))/(3d0*beta*(-1 + beta**2*z**2))
+     -    - (4*(-1 + beta**2)*(-7 + 9*beta*z)*
+     -     (kapT**2*(16*MH**6 + 16*beta*MH**4*s*(beta + z) + 
+     -          beta*s**3*(beta + z)*(1 + beta*z)**2 + 
+     -          2*MH**2*s**2*(2 + beta*
+     -              (2*z + beta*(-1 + 2*beta**2 + 4*beta*z + (2 + beta**2)*z**2)))) + 
+     -       kap**2*(16*MH**6 + 16*MH**4*s*(-1 + beta*(2*beta + z)) + 
+     -          s**3*(2 + beta**2 + 5*beta*z + 8*beta**5*z + beta**3*z*(-10 + z**2) + 
+     -             beta**4*(-6 + z**2) + 2*beta**6*(2 + z**2)) + 
+     -          2*MH**2*s**2*(6 + beta*
+     -              (-6*z + beta*(-13 + 12*beta*z + 2*z**2 + beta**2*(10 + z**2))))))*
+     -     xI4(0d0,0d0,MT**2,MT**2,s,MT**2 - (s*(1 + beta*z))/2d0,MT**2,MT**2,MT**2,MH**2,
+     -      musq,ep))/(-3 + 3*beta**2*z**2) )
+
+
+!           print *, "MCFM bx5  ",bx(5)
+!           print *, "MARKUS_bx5",MARKUS_bx5
+!           pause
+
+
 !       over writing      
               trizx = MARKUS_trizx
+              bx(5) = MARKUS_bx5
               bx(4) = MARKUS_bx4
               bx(3) = MARKUS_bx3
+              vrt(5) = MARKUS_vrt5
               vrt(4) = MARKUS_vrt4
               vrt(3) = MARKUS_vrt3
+              slf(5) = MARKUS_slf5
               slf(4) = MARKUS_slf4
               slf(3) = MARKUS_slf3
+              vrts(5) = MARKUS_vrts5
               vrts(4) = MARKUS_vrts4
               vrts(3) = MARKUS_vrts3
           
@@ -1910,24 +2151,24 @@ c--- it therefore affects Higgs diagrams as the square
 
     
     
-         print *, "trizx",trizx
-         print *, "vrts(1)",vrts(1)
-         print *, "vrts(2)",vrts(2)
-         print *, "vrts(3)",vrts(3)
-         print *, "vrts(4)",vrts(4)
-         print *, "slf(1)",slf(1)
-         print *, "slf(2)",slf(2)
-         print *, "slf(3)",slf(3)
-         print *, "slf(4)",slf(4)
-         print *, "vrt(1)",vrt(1)
-         print *, "vrt(2)",vrt(2)
-         print *, "vrt(3)",vrt(3)
-         print *, "vrt(4)",vrt(4)
-         print *, "bx(1)",bx(1)
-         print *, "bx(2)",bx(2)
-         print *, "bx(3)",bx(3)
-         print *, "bx(4)",bx(4)
-         print *, ""
+!         print *, "trizx",trizx
+!         print *, "vrts(1)",vrts(1)
+!         print *, "vrts(2)",vrts(2)
+!         print *, "vrts(3)",vrts(3)
+!         print *, "vrts(4)",vrts(4)
+!         print *, "slf(1)",slf(1)
+!         print *, "slf(2)",slf(2)
+!         print *, "slf(3)",slf(3)
+!         print *, "slf(4)",slf(4)
+!         print *, "vrt(1)",vrt(1)
+!         print *, "vrt(2)",vrt(2)
+!         print *, "vrt(3)",vrt(3)
+!         print *, "vrt(4)",vrt(4)
+!         print *, "bx(1)",bx(1)
+!         print *, "bx(2)",bx(2)
+!         print *, "bx(3)",bx(3)
+!         print *, "bx(4)",bx(4)
+!         print *, ""
     
          
 !          print *, "vrts(3)",vrts(3)/(1.5029916090356055d-003 )      ! comparison with Till, see email from 7/9/19, 1:41 PM
@@ -1939,7 +2180,7 @@ c--- it therefore affects Higgs diagrams as the square
 !          print *, "bx(3)",bx(3)/(-7.4310552429120158d-002 )
 !          print *, "bx(4)",bx(4)/(-6.7662433380976869d-004)
 !          print *, "trizx",trizx/(-0.58559759480203011d0)
-         pause    
+!         pause    
     
 !          print *, "vrts(1)",vrts(1)/(4.7935059840374244d-003 )
 !          print *, "vrts(2)",vrts(2)/( 4.5112451732988584d-003)
@@ -1962,6 +2203,7 @@ c--- it therefore affects Higgs diagrams as the square
       vew = vew + (trih + trizx)/2._dp
 
       vew = vew/born
+
 
 
       end subroutine ggQQb_ew_oneloop
