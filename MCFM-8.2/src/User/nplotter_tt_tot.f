@@ -132,9 +132,14 @@ c---     xmax:  highest value to bin
 c---       dx:  bin width
 c---   llplot:  equal to "lin"/"log" for linear/log scale
            
-      call bookplot(n,tag,'m34',m34,wt,wt2,500._dp,10000._dp,200._dp,'lin')
+      call bookplot(n,tag,'m_ttbar',m34,wt,wt2,350._dp,2000._dp,50._dp,'lin')
       n=n+1
-
+      call bookplot(n,tag,'pt_t',pt3,wt,wt2,00.0_dp,2000._dp,50._dp,'lin')
+      n=n+1
+      call bookplot(n,tag,'dy_ttbar',dely,wt,wt2,-6._dp,6._dp,0.25_dp,'lin')
+      n=n+1
+      
+      
 !       call bookplot(n,tag,'ptt CHM1',pt3,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
 !       call bookplot(n,tag,'ptt CHM1',pt4,wt*half,wt2*half**2,0._dp,5000._dp,50._dp,'lin')
 !       n=n+1

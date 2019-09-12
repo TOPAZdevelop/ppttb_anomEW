@@ -19,9 +19,9 @@
 +1		[ih1 =1 for proton and -1 for antiproton]
 +1		[ih2 =1 for proton and -1 for antiproton]
 125d0		[hmass]
-172d0	[scale:QCD scale choice]
-172d0	[facscale:QCD fac_scale choice]
-'none'		[dynamicscale]
+1d0	[scale:QCD scale choice]
+1d0	[facscale:QCD fac_scale choice]
+'HT'		[dynamicscale]
 .false.		[zerowidth]
 .false.		[removebr]
 3		[itmx1, number of iterations for pre-conditioning]
@@ -41,7 +41,7 @@
 1.275d0		[charm mass]
 
 [Pdf selection]
-'CT14.NN'	[pdlabel]
+'mstw8nn'	[pdlabel]
 'xx.LHgrid'	[LHAPDF gridfile]
 -1           	[LHAPDF set]
 

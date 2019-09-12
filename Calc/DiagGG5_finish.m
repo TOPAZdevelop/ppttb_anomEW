@@ -152,7 +152,7 @@ PreFacDiagHiggsSVert = EL^2 GS^4 MZ^2 /(64 Pi^2 MW^2 SW^2 );
 % /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
 
 
-DiagHiggsSVertRENORM = TwoTimesRe*( DiagHiggsSVert + CTDiagHiggsSVert )/PreFacDiagHiggsSVert //. InsertKappa  // Collect[#,SI[___],FullSimplify]&
+DiagHiggsSVertRENORM = TwoTimesRe*( DiagHiggsSVert + CTDiagHiggsSVert )/PreFacDiagHiggsSVert //. InsertKappa //. insertMT  // Collect[#,SI[___],FullSimplify]&
 UVcheck =  DiagHiggsSVertRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
 
 
@@ -175,14 +175,12 @@ PreFacDiagHiggsVert = EL^2 GS^4 /(256 Pi^2 MW^2 SW^2 );
 % /. { EL^2-> alpha(4Pi), gs^4-> (alphas(4Pi))^2 } // FortranForm
 
 
-DiagHiggsVertRENORM = TwoTimesRe*( DiagHiggsVert + CTDiagHiggsVert )/PreFacDiagHiggsVert  // Collect[#,SI[___],Simplify]&
+DiagHiggsVertRENORM = TwoTimesRe*( DiagHiggsVert + CTDiagHiggsVert )/PreFacDiagHiggsVert //. InsertKappa //. insertMT  // Collect[#,SI[___],Simplify]&
 UVcheck =  DiagHiggsVertRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
 
 
 (* convert to MCFM *)
-vrt3 =Expand[ DiagHiggsVertRENORM ] //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm 
-
-
+vrt5 =Expand[ DiagHiggsVertRENORM ] //. convertToMCFM // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm 
 
 
 
@@ -207,7 +205,7 @@ UVCheck = MassCTHiggs  //. InsertUVDiv //. insertMT // Series[#,{DSTm4,0,-1}]& /
 (* renormalized contribution *)
 PreFacDiagHiggsSelf = EL^2 GS^4/(256 MW^2 Pi^2 SW^2);
 
-DiagHiggsSelfRENORM = TwoTimesRe*( DiagHiggsSelf + MassCTHiggs )/PreFacDiagHiggsSelf  // Simplify
+DiagHiggsSelfRENORM = TwoTimesRe*( DiagHiggsSelf + MassCTHiggs )/PreFacDiagHiggsSelf //. InsertKappa //. insertMT   // Collect[#,{SI[___]},FullSimplify]&
 UVcheck =  DiagHiggsSelfRENORM  //. InsertUVDiv //. DB0[MT^2,MT^2,__]->0  //. insertMT  // Series[#,{DSTm4,0,-1}]& // Normal  // Factor
 
 
@@ -216,32 +214,7 @@ PreFacDiagHiggsSelf = EL^2 GS^4/(256 MW^2 Pi^2 SW^2);
 
 
 (* convert to MCFM *)
-slf3 = Expand[DiagHiggsSelfRENORM ] //. convertToMCFM  // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+slf5 = Expand[DiagHiggsSelfRENORM ] //. convertToMCFM  // Collect[#,{xI1[___],xI2[___],xI3[___],xI4[___],DB0[___]},FullSimplify]&  // FortranForm  
 
 
 PreFacDiagHiggsVert
