@@ -81,7 +81,6 @@ TheRedAmpList[[5]] = TheRedAmpList[[5]]/(16 Pi^4);
 TheRedAmpList[[6]] = TheRedAmpList[[6]]/(16 Pi^4);
 TheRedAmpList[[7]] = TheRedAmpList[[7]]/(16 Pi^4); 
 TheRedAmpList[[8]] = TheRedAmpList[[8]]/(16 Pi^4); 
-TheRedAmpList[[9]] = TheRedAmpList[[9]]/(16 Pi^4);
 
 SIList // TableForm 
 
@@ -100,17 +99,8 @@ UVcheck =  DiagZChiTriangle  //. InsertUVDiv  //. {SI[arg___]->SI[arg], MT -> Sq
 
 
 trizx = Expand[DiagZChiTriangle] //. { EL^2 -> alpha (4 Pi), gs^4 -> (alphas (4 Pi))^2 }   //.    convertToMCFM //   Collect[#, {xI1[___], xI2[___], xI3[___], xI4[___], DB0[___]}, FullSimplify] &  // FortranForm  
-
-
 Tilltrizx = (-16*alpha*alphas^2*(-1 + beta^2)^2*Pi*s^2*(1 + 4*Cpq3*vol2 + 2*Cpu*vol2 +   (2*Cpq3 + Cpu)^2*vol4)*xI3[0, 0, s, MT^2, MT^2, MT^2, musq, ep])/ (CW^2*MZ^2*SW2*(-1 + beta^2*z^2)) ;
 Tilltrizx // Factor//FullSimplify
-
-
-
-
-
-DiagZChiTriangle//. { EL^2 -> alpha (4 Pi), GS^4 -> (alphas (4 Pi))^2 } //. shat->s // FullSimplify // Factor
-
 
 dum1=DiagZChiTriangle //. { EL^2 -> alpha (4 Pi), GS^4 -> (alphas (4 Pi))^2, gat-> 1/(4 SW CW) } //. shat->s // FullSimplify
 
@@ -122,7 +112,18 @@ dum1-dum2 // Expand
 
 
 
+(* for the Higgs exchange we remove the C33phibox operator and rewrite everything in terms of kappa and kappa_tilde *)
+eq1 = kap == 1 - 2 SW MW/EL/MT 1/Sqrt[2] * voL^2 * (C33uphi+C33uphiS)/2;
+eq2 = kapT ==  - 2 SW MW/EL/MT 1/Sqrt[2] * voL^2 * (C33uphi-C33uphiS)/(2*I);
+InsertKappa = Solve[{eq1,eq2},{C33uphi,C33uphiS}][[1]] // FullSimplify;
+InsertKappa = Append[InsertKappa, C33phibox->0 ]
 
+
+DiagHiggsTriangle = TwoTimesRe * (TheRedAmpList[[7]]+TheRedAmpList[[8]])  //.{ la2->0 , MW->CW MZ, Sqrt2->Sqrt[2], NCol->3, EL^2 -> alpha (4 Pi), GS^4 -> (alphas (4 Pi))^2, EL-> 2 Sqrt[alpha Pi]} //. InsertKappa //. {SI[arg___]->SI[arg], MT -> Sqrt[shat/4 (1-beta^2)] } // FullSimplify
+
+
+trih = DiagHiggsTriangle //. convertToMCFM// FullSimplify 
+% // FortranForm  
 
 
 

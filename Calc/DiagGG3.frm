@@ -58,16 +58,18 @@ Bracket PreFac,cI,EL,GS,ICol,SW,MW,Pi,PropDenom,TC;
 #write <`WorkPath'DiagGG3_output.dat> "AmpList = \" `AmpList'\";\n";
 
 
-#write <`WorkPath'DiagGG3_output.dat> "M[0,0] = (%E);\n ", [10,1,1];
-#write <`WorkPath'DiagGG3_output.dat> "M[0,1] = (%E);\n ", [11,1,1];
-#write <`WorkPath'DiagGG3_output.dat> "M[0,2] = (%E);\n ", [12,1,1];
-#write <`WorkPath'DiagGG3_output.dat> "M[0,3] = (%E);\n ", [13,1,1];
+*#write <`WorkPath'DiagGG3_output.dat> "M[0,0] = (%E);\n ", [10,1,1];
+*#write <`WorkPath'DiagGG3_output.dat> "M[0,1] = (%E);\n ", [11,1,1];
+*#write <`WorkPath'DiagGG3_output.dat> "M[0,2] = (%E);\n ", [12,1,1];
+*#write <`WorkPath'DiagGG3_output.dat> "M[0,3] = (%E);\n ", [13,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[1,1] = (%E);\n ", [1,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[2,1] = (%E);\n ", [2,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[3,1] = (%E);\n ", [3,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[4,1] = (%E);\n ", [4,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[5,1] = (%E);\n ", [5,1,1];
 #write <`WorkPath'DiagGG3_output.dat> "M[6,1] = (%E);\n ", [6,1,1];
+#write <`WorkPath'DiagGG3_output.dat> "M[7,1] = (%E);\n ", [7,1,1];
+#write <`WorkPath'DiagGG3_output.dat> "M[8,1] = (%E);\n ", [8,1,1];
 
 
 

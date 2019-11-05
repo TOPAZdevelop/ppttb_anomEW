@@ -39,10 +39,10 @@ c--- including mixed QCD-weak LO process
       mw = wmass
       mz = zmass
       
-      print *, "fixing kinematics for comparison in qqb_QQb_mix_v.f"
-      ss=   173308.20441330347d0
-      beta=  0.55464632643236811d0
-      z=  +0.61536288270299611d0      
+!       print *, "fixing kinematics for comparison in qqb_QQb_mix_v.f"
+!       ss=   173308.20441330347d0
+!       beta=  0.55464632643236811d0
+!       z=  +0.61536288270299611d0      
       
 c--- avoid calculating unnecessarily by checking input file flags
       if (ggonly) then
@@ -306,11 +306,12 @@ c--- avoid calculating unnecessarily by checking input file flags
         msq(-4,+4) = msq(-4,+4) + Mqbarq_ttbar(2)  
 
         
-!       print *, "compare my SM numbers to Tills"
-!       print *, "uub-->Z/ga->ttb",Mqqbar_ttbar(1)/(5.0381696907254763d-003)
-!       print *, "ubu-->Z/ga->ttb",Mqbarq_ttbar(1)/(9.4168523388888086d-004)
-!       print *, "ddb-->Z/ga->ttb",Mqqbar_ttbar(2)/(7.8823843963619824d-003)
-!       print *, "dbd-->Z/ga->ttb",Mqbarq_ttbar(2)/(2.5629809611877876d-003)
+!       print *, ""
+!       print *, "uub-->Z/ga->ttb",Mqqbar_ttbar(1)
+!       print *, "ddb-->Z/ga->ttb",Mqqbar_ttbar(2)
+! 
+!       print *, "ubu-->Z/ga->ttb",Mqbarq_ttbar(1)
+!       print *, "dbd-->Z/ga->ttb",Mqbarq_ttbar(2)
         
         
        z = -z ! undo       
@@ -402,9 +403,8 @@ c--- avoid calculating unnecessarily by checking input file flags
         msq(-5,+5) = msq(-5,+5) + Mqbarq_ttbar(1)        
 
 
-!       print *, "compare my SM numbers to Tills"
-!       print *, "b bb-->Z/ga->ttb",Mqqbar_ttbar(1)/(4.2533792229600229d-002 )
-!       print *, "bb b-->Z/ga->ttb",Mqbarq_ttbar(1)/(-1.0159869421922808d-004)
+!       print *, "b bb-->Z/ga->ttb",Mqqbar_ttbar(1)
+!       print *, "bb b-->Z/ga->ttb",Mqbarq_ttbar(1)
 ! 
 !       pause
 ! 
@@ -483,8 +483,7 @@ c--- avoid calculating unnecessarily by checking input file flags
       real(8) :: gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,sw2
       real(8) :: gvtBSM,gatBSM,gwBSM,vol2,vol4
       real(8) :: gw_sq_gat,gw_sq_gvt,gw_qu,gatgvt
-      
-      
+        
         vol2 = (vev/Lambda_BSM)**2 * coupl_vol2 
         vol4 = (vev/Lambda_BSM)**4 * coupl_vol4
       

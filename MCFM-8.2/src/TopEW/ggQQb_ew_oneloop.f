@@ -981,10 +981,25 @@ c--- it therefore affects Higgs diagrams as the square
     
     
     
-!----------------------------------- anomalous Goldstone boson contributions replacing the ones above -------------------------------------------------------------
+!----------------------------------- anomalous Higgs boson contributions replacing the ones above -------------------------------------------------------------
 !        remove GS**4*16d0  from my results  (apart from box where there is a mismatch)
 
 
+
+       MARKUS_trih  =(alpha*(-1 + beta**2)**2*Pi*s**2*
+     - (-2*beta**2*kap**2 + (beta**4*kap**2 + kapT**2)*s*
+     - xI3(0d0,0d0,s,MT**2,MT**2,MT**2,musq,ep)))/
+     - (CW2*MZ**2*(MH**2 - s)*SW2*(-1 + beta**2*z**2))/(16d0*pi**2)
+            
+     
+!           print *, "MCFM trih   ",trih
+!           print *, "MARKUS_trizx",MARKUS_trih
+!           pause
+          
+
+
+!----------------------------------- anomalous Goldstone boson contributions replacing the ones above -------------------------------------------------------------
+!        remove GS**4*16d0  from my results  (apart from box where there is a mismatch)
 
 
        MARKUS_trizx  = 1d0/16d0*( -((alpha*(-1 + beta**2)**2*s**2*
@@ -2127,6 +2142,7 @@ c--- it therefore affects Higgs diagrams as the square
 
 
 !       over writing      
+              trih = MARKUS_trih
               trizx = MARKUS_trizx
               bx(5) = MARKUS_bx5
               bx(4) = MARKUS_bx4
