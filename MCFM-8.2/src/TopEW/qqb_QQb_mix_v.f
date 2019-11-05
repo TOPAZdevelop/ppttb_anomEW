@@ -212,6 +212,9 @@ c--- avoid calculating unnecessarily by checking input file flags
 
      
      
+        msq(+5,-5) = msq(+5,-5)  + Mbbar_ttbar
+        msq(-5,+5) = msq(-5,+5)  + Mbarb_ttbar
+
      
 !         shat = ss
 !         that = -s(1,3) + mt**2
@@ -219,9 +222,6 @@ c--- avoid calculating unnecessarily by checking input file flags
 !      & + 2*MW**2*(shat + that)**2 + mt**2*(that**2 - 2*MW**2*(shat + 2*that)))
 !      &  *8*gw_sq)/(9*MW**2*shat*(MW**2-that))
 !         
-!         msq(+5,-5) = msq(+5,-5)  + Mbbar_ttbar
-!         msq(-5,+5) = msq(-5,+5)  + Mbarb_ttbar
-! 
 ! 
 ! ! ! ! ! ! ! ! ! ! ! ! !       
 ! 

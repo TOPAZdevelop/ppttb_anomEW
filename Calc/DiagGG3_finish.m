@@ -119,11 +119,11 @@ InsertKappa = Solve[{eq1,eq2},{C33uphi,C33uphiS}][[1]] // FullSimplify;
 InsertKappa = Append[InsertKappa, C33phibox->0 ]
 
 
-DiagHiggsTriangle = TwoTimesRe * (TheRedAmpList[[7]]+TheRedAmpList[[8]])  //.{ la2->0 , MW->CW MZ, Sqrt2->Sqrt[2], NCol->3, EL^2 -> alpha (4 Pi), GS^4 -> (alphas (4 Pi))^2, EL-> 2 Sqrt[alpha Pi]} //. InsertKappa //. {SI[arg___]->SI[arg], MT -> Sqrt[shat/4 (1-beta^2)] } // FullSimplify
+DiagHiggsTriangle = TwoTimesRe * Expand[TheRedAmpList[[7]]+TheRedAmpList[[8]]] //. InsertKappa  //.{ la2->0 , MW->CW MZ, Sqrt2->Sqrt[2], NCol->3, EL^2 -> alpha (4 Pi), GS^4 -> (alphas (4 Pi))^2}  //. {SI[arg___]->SI[arg], MT -> Sqrt[shat/4 (1-beta^2)] } // FullSimplify
 
 
 trih = DiagHiggsTriangle //. convertToMCFM// FullSimplify 
 % // FortranForm  
 
 
-
+DiagHiggsTriangle  // FullSimplify
