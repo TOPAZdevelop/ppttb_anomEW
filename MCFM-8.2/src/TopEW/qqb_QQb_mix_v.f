@@ -199,6 +199,7 @@ c--- avoid calculating unnecessarily by checking input file flags
        call ResetEWCouplings2(sw2,gvt,gat,gw,gvt_sq,gat_sq,gw_sq,g_rest,vol2,vol4,gatgvt,gw_qu,gw_sq_gvt,gw_sq_gat)
 
 
+ 
 !      calculating b bbar --> W(t-channel)  --> t tbar interference with QCD tree
         Mbbar_ttbar=(-8*(esq/4d0/pi)*as*Pi**2*8*gw_sq*
      -    (mt**2*ss*(mt**2 + 2*MW**2 + s(1,3)) + 
@@ -405,7 +406,6 @@ c--- avoid calculating unnecessarily by checking input file flags
 
 !       print *, "b bb-->Z/ga->ttb",Mqqbar_ttbar(1)
 !       print *, "bb b-->Z/ga->ttb",Mqbarq_ttbar(1)
-! 
 !       pause
 ! 
 ! ! ! ! ! ! ! ! ! ! ! ! ! !       
@@ -446,10 +446,10 @@ c--- avoid calculating unnecessarily by checking input file flags
         vol2 = (vev/Lambda_BSM)**2 * coupl_vol2 
         vol4 = (vev/Lambda_BSM)**4 * coupl_vol4
       
-        gvtBSM = (C_phiq_333 - 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gvtBSM = (C_phiq_333-0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
         gvt_sq = gvt**2 + 2*gvt*vol2*gvtBSM + vol4*gvtBSM**2
         
-        gatBSM = (C_phiq_333 + 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gatBSM = (C_phiq_333+0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
         gat_sq = gat**2 + 2*gat*vol2*gatBSM + vol4*gatBSM**2
                 
         gwBSM = (C_phiq_333)*0.5d0/dsqrt(2d0)/dsqrt(sw2)
@@ -487,20 +487,25 @@ c--- avoid calculating unnecessarily by checking input file flags
         vol2 = (vev/Lambda_BSM)**2 * coupl_vol2 
         vol4 = (vev/Lambda_BSM)**4 * coupl_vol4
       
-        gvtBSM = (C_phiq_333 - 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gvtBSM = (C_phiq_333-0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
         gvt_sq = gvt**2 + 2*gvt*vol2*gvtBSM + vol4*gvtBSM**2
         
-        gatBSM = (C_phiq_333 + 0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
+        gatBSM = (C_phiq_333+0.5d0*C_phiu_33)/2d0/dsqrt(sw2*(1d0-sw2))
         gat_sq = gat**2 + 2*gat*vol2*gatBSM + vol4*gatBSM**2
                 
         gwBSM = (C_phiq_333)*0.5d0/dsqrt(2d0)/dsqrt(sw2)
         gw_sq = gw**2 + 2*gw*vol2*gwBSM + vol4*gwBSM**2           
 
         ! these terms contained dim-10 couplings, i.e. vol2^4 or vol2*vol4, which have been set to zero here
-        gatgvt = gat*gvt + gatBSM*gvt*vol2 + gat*gvtBSM*vol2
-        gw_qu = gw**4 + 4*gw**3*vol2*gwBSM + 2*gw**2*vol4*gwBSM**2
-        gw_sq_gvt = gvt*gw**2 + gvtBSM*gw**2*vol2 + 2*gvt*gw*gwBSM*vol2 + gvt*gwBSM**2*vol4
-        gw_sq_gat = gat*gw**2 + gatBSM*gw**2*vol2 + 2*gat*gw*gwBSM*vol2 + gat*gwBSM**2*vol4
+        gatgvt = gat*gvt + gatBSM*gvt*vol2 + gat*gvtBSM*vol2 
+     -         + gatBSM*gvtBSM*vol4
+        gw_qu = gw**4 + 4*gw**3*vol2*gwBSM + 6*gw**2*vol4*gwBSM**2
+        gw_sq_gvt = gvt*gw**2 + gvtBSM*gw**2*vol2 
+     -            + 2*gvt*gw*gwBSM*vol2 + 2*gw*gwBSM*gvtBSM*vol4
+     -            + gvt*gwBSM**2*vol4
+        gw_sq_gat = gat*gw**2 + gatBSM*gw**2*vol2 
+     -            + 2*gat*gw*gwBSM*vol2 + 2*gw*gwBSM*gatBSM*vol4
+     -            + gat*gwBSM**2*vol4
        
        
 !       finally shifting the original values
