@@ -213,8 +213,8 @@ c--- avoid calculating unnecessarily by checking input file flags
 
      
      
-        msq(+5,-5) = msq(+5,-5)  + Mbbar_ttbar
-        msq(-5,+5) = msq(-5,+5)  + Mbarb_ttbar
+!         msq(+5,-5) = msq(+5,-5)  + Mbbar_ttbar   ! removing the additional terms for 1:1 comparison with original MCFM 
+!         msq(-5,+5) = msq(-5,+5)  + Mbarb_ttbar
 
      
 !         shat = ss
@@ -296,15 +296,15 @@ c--- avoid calculating unnecessarily by checking input file flags
      -  )
      
      
-        msq(+1,-1) = msq(+1,-1) + Mqqbar_ttbar(1)
-        msq(-1,+1) = msq(-1,+1) + Mqbarq_ttbar(1)
-        msq(+3,-3) = msq(+3,-3) + Mqqbar_ttbar(1)
-        msq(-3,+3) = msq(-3,+3) + Mqbarq_ttbar(1)  
-
-        msq(+2,-2) = msq(+2,-2) + Mqqbar_ttbar(2)
-        msq(-2,+2) = msq(-2,+2) + Mqbarq_ttbar(2)
-        msq(+4,-4) = msq(+4,-4) + Mqqbar_ttbar(2)
-        msq(-4,+4) = msq(-4,+4) + Mqbarq_ttbar(2)  
+!         msq(+1,-1) = msq(+1,-1) + Mqqbar_ttbar(1)   ! removing the additional terms for 1:1 comparison with original MCFM 
+!         msq(-1,+1) = msq(-1,+1) + Mqbarq_ttbar(1)
+!         msq(+3,-3) = msq(+3,-3) + Mqqbar_ttbar(1)
+!         msq(-3,+3) = msq(-3,+3) + Mqbarq_ttbar(1)  
+! 
+!         msq(+2,-2) = msq(+2,-2) + Mqqbar_ttbar(2)
+!         msq(-2,+2) = msq(-2,+2) + Mqbarq_ttbar(2)
+!         msq(+4,-4) = msq(+4,-4) + Mqqbar_ttbar(2)
+!         msq(-4,+4) = msq(-4,+4) + Mqbarq_ttbar(2)  
 
         
 !       print *, ""
@@ -400,8 +400,8 @@ c--- avoid calculating unnecessarily by checking input file flags
        
        
        
-        msq(+5,-5) = msq(+5,-5) + Mqqbar_ttbar(1)
-        msq(-5,+5) = msq(-5,+5) + Mqbarq_ttbar(1)        
+!         msq(+5,-5) = msq(+5,-5) + Mqqbar_ttbar(1)   ! removing the additional terms for 1:1 comparison with original MCFM 
+!         msq(-5,+5) = msq(-5,+5) + Mqbarq_ttbar(1)        
 
 
 !       print *, "b bb-->Z/ga->ttb",Mqqbar_ttbar(1)
